@@ -1,61 +1,30 @@
-var $form_wrapper	= $('#form_wrapper'),
-$currentForm	= $form_wrapper.children('form.active'),
-$linkform		= $form_wrapper.find('.linkform');
-
-$form_wrapper.children('form').each(function(i)
+function field_focus(field, email)
   {
-	  var $theForm	= $(this);
-	  //solve the inline display none problem when using fadeIn/fadeOut
-	  if(!$theForm.hasClass('active'))
-		  $theForm.hide();
-	
-    $theForm.data(
-      {
-		    width	: $theForm.width(),
-		    height	: $theForm.height()
-	    });
-  });
-
-setWrapperWidth();
-
-$linkform.bind('click', function(e)
-  {
-    var $link	= $(this);
-    var target	= $link.attr('rel');
-	  
-    $currentForm.fadeOut(400, function()
+    if(field.value == email)
     {
-		  //remove class "active" from current form
-		  $currentForm.removeClass('active');
-		  //new current form
-		  $currentForm= $form_wrapper.children('form.'+target);
-		  //animate the wrapper
-		  $form_wrapper.stop()
-					 .animate({
-						width	: $currentForm.data('width') + 'px',
-						height	: $currentForm.data('height') + 'px'
-					 },500,function(){
-						//new form gets class "active"
-						$currentForm.addClass('active');
-						//show the new form
-						$currentForm.fadeIn(400);
-					 });
-	  });
-	  e.preventDefault();
-  });
-
-  function setWrapperWidth()
-  {
-	  $form_wrapper.css({
-		  width	: $currentForm.data('width') + 'px',
-		  height	: $currentForm.data('height') + 'px'
-	  });
+      field.value = '';
+    }
   }
-  
-  $form_wrapper.find('input[type="submit"]')
-			 .click(function(e){
-				e.preventDefault();
-			 });	
+
+  function field_blur(field, email)
+  {
+    if(field.value == '')
+    {
+      field.value = email;
+    }
+  }
+
+//Fade in dashboard box
+$(document).ready(function(){
+    $('.box').hide().fadeIn(1000);
+    });
+
+//Stop click event
+$('a').click(function(event){
+    event.preventDefault(); 
+	});
+
+
 
 /**
  *  Parse requests handler
