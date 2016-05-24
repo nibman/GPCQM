@@ -25,11 +25,10 @@ $('a').click(function(event)
 {
     if(event.currentTarget == "http://gpcqm.herokuapp.com/#login")
     {
-      console.log($( "input[name='email']" ));
-      console.log($( "input[name='email']" )[0].value);
-      console.log($( "input[name='email']" ).next().value);
+      var u = $( "input[name='email']" )[0].value;
+      var p = $( "input[name='password']" )[0].value;
+      Serdy.logIn(u, p);
       // Serdy.createUser("gronour", "GNiB12031974NiBM")
-      // Serdy.logIn("");
     }
     else if(event.currentTarget == "http://gpcqm.herokuapp.com/#signup")
     {

@@ -12,6 +12,7 @@ Serdy.isLoggedIn = function()
 
 Serdy.logIn = function(uname, pwd)
 {
+    console.log("logging in with {uname:"+uname+", pwd:"+pwd+"}...");
     Parse.User.logIn(uname, pwd, 
     {
         success: function(user) 
