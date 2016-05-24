@@ -15,19 +15,25 @@ function field_focus(field, email)
   }
 
 //Fade in dashboard box
-$(document).ready(function(){
+$(document).ready(function()
+  {
     $('.box').hide().fadeIn(1000);
-    });
+  });
 
 //Stop click event
 $('a').click(function(event)
 {
-    for (var e in event)
+    if(event.currentTarget == "http://gpcqm.herokuapp.com/#login")
     {
-      console.log(e + " = " + event[e]);  
+      console.log("login");
     }
+    else if(event.currentTarget == "http://gpcqm.herokuapp.com/#signup")
+    {
+       console.log("signup");
+    }
+    
     event.preventDefault(); 
-	});
+});
 
 
 
