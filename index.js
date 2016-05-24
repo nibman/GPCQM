@@ -37,7 +37,7 @@ app.use(mountPath, api);
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) 
 {
-  var currentUser = Pare.User.current();
+  var currentUser = Parse.User.current();
   if(currentUser)
   {
     res.status(200).send('This is where the data entry and event management occurs');
