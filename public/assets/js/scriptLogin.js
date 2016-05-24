@@ -22,7 +22,10 @@ $(document).ready(function(){
 //Stop click event
 $('a').click(function(event)
 {
-  console.log("LOOOODODODOD");
+    for (var e in event)
+    {
+      console.log(e + " = " + event[e]);  
+    }
     event.preventDefault(); 
 	});
 
