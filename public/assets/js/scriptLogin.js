@@ -1,46 +1,61 @@
-/**
- *  Steps handler
- */
+var $form_wrapper	= $('#form_wrapper'),
+$currentForm	= $form_wrapper.children('form.active'),
+$linkform		= $form_wrapper.find('.linkform');
 
-var Steps = {}
+$form_wrapper.children('form').each(function(i)
+  {
+	  var $theForm	= $(this);
+	  //solve the inline display none problem when using fadeIn/fadeOut
+	  if(!$theForm.hasClass('active'))
+		  $theForm.hide();
+	
+    $theForm.data(
+      {
+		    width	: $theForm.width(),
+		    height	: $theForm.height()
+	    });
+  });
 
-Steps.init = function() {
-  this.buildParseUrl();
-  this.bindBtn('#step-1-btn', function(e){
-    ParseRequest.postData();
-    e.preventDefault();
-  })
-}
+setWrapperWidth();
 
-Steps.buildParseUrl = function() {
-  var url = Config.getUrl();
-  $('#parse-url').html(url + '/parse');
-}
+$linkform.bind('click', function(e)
+  {
+    var $link	= $(this);
+    var target	= $link.attr('rel');
+	  
+    $currentForm.fadeOut(400, function()
+    {
+		  //remove class "active" from current form
+		  $currentForm.removeClass('active');
+		  //new current form
+		  $currentForm= $form_wrapper.children('form.'+target);
+		  //animate the wrapper
+		  $form_wrapper.stop()
+					 .animate({
+						width	: $currentForm.data('width') + 'px',
+						height	: $currentForm.data('height') + 'px'
+					 },500,function(){
+						//new form gets class "active"
+						$currentForm.addClass('active');
+						//show the new form
+						$currentForm.fadeIn(400);
+					 });
+	  });
+	  e.preventDefault();
+  });
 
-Steps.bindBtn = function(id, callback) {
-  $(id).click(callback)
-}
-
-Steps.closeStep = function(id) {
-  $(id).addClass('step--disabled');
-}
-
-Steps.openStep  = function(id) {
-  $(id).removeClass('step--disabled');
-}
-
-Steps.fillStepOutput  = function(id, data) {
-  $(id).html('Output: ' + data).slideDown();
-}
-
-Steps.fillBtn  = function(id, message) {
-  $(id).addClass('success').html('✓  ' + message);
-}
-
-Steps.showWorkingMessage = function() {
-  $('#step-4').delay(500).slideDown();
-}
-
+  function setWrapperWidth()
+  {
+	  $form_wrapper.css({
+		  width	: $currentForm.data('width') + 'px',
+		  height	: $currentForm.data('height') + 'px'
+	  });
+  }
+  
+  $form_wrapper.find('input[type="submit"]')
+			 .click(function(e){
+				e.preventDefault();
+			 });	
 
 /**
  *  Parse requests handler
@@ -150,4 +165,3 @@ XHR.GET = function(path, callback) {
  *  Boot
  */
 
-Steps.init();

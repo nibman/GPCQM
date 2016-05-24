@@ -35,8 +35,17 @@ var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
-app.get('/', function(req, res) {
-  res.status(200).send('I dream of being a website.  Please star the parse-server repo on GitHub!');
+app.get('/', function(req, res) 
+{
+  var currentUser = Pare.User.current();
+  if(currentUser)
+  {
+    res.status(200).send('This is where the data entry and event management occurs');
+  }
+  else
+  {
+    res.sendFile(path.join(__dirname, '/public/login.html'));
+  }
 });
 
 // There will be a test page available on the /test path of your server url
