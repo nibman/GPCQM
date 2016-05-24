@@ -25,7 +25,8 @@ $('a').click(function(event)
 {
     if(event.currentTarget == "http://gpcqm.herokuapp.com/#login")
     {
-      console.log("login");
+      Serdy.createUser("gronour", "GNiB12031974NiBM")
+      //Serdy.logIn("");
     }
     else if(event.currentTarget == "http://gpcqm.herokuapp.com/#signup")
     {
