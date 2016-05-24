@@ -1,3 +1,7 @@
+Parse.initialize("gpcqm");
+Parse.serverURL = 'http://gpcqm.herokuapp.com/parse'
+
+
 var Serdy = {};
 
 Serdy.isLoggedIn = function()
