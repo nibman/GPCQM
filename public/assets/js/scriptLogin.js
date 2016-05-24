@@ -20,7 +20,9 @@ $(document).ready(function(){
     });
 
 //Stop click event
-$('a').click(function(event){
+$('a').click(function(event)
+{
+  console.log("LOOOODODODOD");
     event.preventDefault(); 
 	});
 
