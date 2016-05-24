@@ -1,4 +1,4 @@
-# parse-server-example
+# GPCQM based on parse
 
 Example project using the [parse-server](https://github.com/ParsePlatform/parse-server) module on Express.
 
