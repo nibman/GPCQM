@@ -26,7 +26,7 @@ $('a').click(function(event)
     if(event.currentTarget == "http://gpcqm.herokuapp.com/#login")
     {
       console.log($( "input[name='email']" ));
-      console.log($( "input[name='email']" ).text);
+      console.log($( "input[name='email']" ).next().value);
       // Serdy.createUser("gronour", "GNiB12031974NiBM")
       // Serdy.logIn("");
     }
