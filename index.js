@@ -4,6 +4,17 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
+var serdymetrics = require("pubnub").init({
+    publish_key: "pub-c-16d7d717-ff4b-4d94-8ac0-88e5ea163ffa",
+    subscribe_key: "sub-c-49a703aa-1bae-11e6-a01f-0619f8945a4f"
+});
+
+var fs = require('fs')
+    , util = require('util')
+    , stream = require('stream')
+    , es = require('event-stream')
+    , jsonfile = require('jsonfile')
+    , moment = require('moment');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -37,7 +48,7 @@ app.use(mountPath, api);
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) 
 {
-  var currentUser = Parse.User.current();
+  /*var currentUser = Parse.User.current();
   if(currentUser)
   {
     res.status(200).send('This is where the data entry and event management occurs');
@@ -45,8 +56,48 @@ app.get('/', function(req, res)
   else
   {
     res.sendFile(path.join(__dirname, '/public/login.html'));
-  }
+  }*/
+  
+  startTempBiometricsParser();
+  
 });
+
+function startTempBiometricsParser()
+{
+  serdymetrics.subscribe({
+  			channel: 'serdyMetrics',
+  			message: function(e) { parseData.parse(e, ""); }
+		});
+}
+
+function parseData(e)
+{
+  console.log(e);
+  var bioData = {date:moment(), data:e};
+  var pl = new Buffer(JSON.stringify(bioData)).toString("base64");
+  saveJSONFile("/json/biometricsLive.json", JSON.stringify(pl), {spaces: 2});
+}
+
+function saveJSONFile(path, obj)
+{
+    var file = path;
+    var obj = obj;
+
+    jsonfile.writeFile(file, obj, function (err)
+        {
+            console.log("Done saving");
+            if (err == null)
+            {
+                console.log("file written");
+            }
+            else
+            {
+                console.error(err)
+            }
+        });
+
+}
+
 
 // There will be a test page available on the /test path of your server url
 // Remove this before launching your app
