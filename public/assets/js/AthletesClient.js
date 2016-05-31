@@ -29,6 +29,10 @@ var Athletes =
         { 
             success:function(object)
             {
+                for (var i=0; i<object.length; ++i)
+                {
+                    console.log(object[i]);
+                }
                 successCB(object);
             },
             error:function(object, error)
