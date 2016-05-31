@@ -28,7 +28,12 @@
       }
       function athletesReceived(a)
       {
-          console.log("athletesReceived "+a);
+          console.log("athletesReceived "+a.length);
+          for (var e in a)
+          {
+             console.log(e+" = "+a[e]);
+          }
+        
       }
       
       Athletes.getAllAthletes(athletesReceived);
