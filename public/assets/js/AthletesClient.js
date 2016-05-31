@@ -4,6 +4,10 @@ Parse.serverURL = 'http://gpcqm.herokuapp.com/parse'
 
 var Athletes = 
 {
+    keys:["firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter", 
+            "vectorPowerMeter", "quarqPowerMeter", "speedCadence", "powerMeter", 
+            "garminSpeedCadence", "team", "gps", "wheelCir"],
+         
     getAthleteByID:function(id, successCB, e)
     {   
         var Athlete = Parse.Object.extend("Athlete");
@@ -29,12 +33,18 @@ var Athletes =
         { 
             success:function(object)
             {
+                var a = [];
                 for (var i=0; i<object.length; ++i)
                 {
-                    var firstName = object[i].get('firstName');
-                    console.log(firstName);
+                    var e =  { };
+                    for (var j=0; j<keys.lengthl; ++j)
+                    {
+                        e[keys[j]] = object[i].get(keys[j]);
+                    }
+                    a.push(e); 
+                    console.log(e);
                 }
-                successCB(object);
+                successCB(a);
             },
             error:function(object, error)
             {
