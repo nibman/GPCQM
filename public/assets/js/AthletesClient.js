@@ -7,7 +7,7 @@ Athletes =
             "vectorPowerMeter", "quarqPowerMeter", "speedCadence", "powerMeter", 
             "garminSpeedCadence", "team", "gps", "wheelCir"],
          
-    getAthleteByID:function(id, successCB, e)
+    getAthleteByID:function(id, successCB, err)
     {   
         var Athlete = Parse.Object.extend("Athlete");
         var query = new Parse.Query(Athlete);
@@ -19,11 +19,11 @@ Athletes =
             },
             error:function(object, error)
             {
-               e != null ? e(error) : errorDefault(error);
+               err != null ? err(error) : errorDefault(error);
             }
          });
     },
-    getAllAthletes:function(successCB, e)
+    getAllAthletes:function(successCB, err)
     {
         var Athlete = Parse.Object.extend("Athlete");
         var query = new Parse.Query(Athlete);
@@ -46,11 +46,11 @@ Athletes =
             },
             error:function(object, error)
             {
-                e != null ? e(error) : errorDefault(error);
+                err != null ? err(error) : errorDefault(error);
             }
          });
     },
-    saveAthlete:function(athleteID, athleteObj, successCB, e)
+    saveAthlete:function(athleteID, athleteObj, successCB, err)
     {
         if (athleteID != null)
         {
@@ -80,13 +80,13 @@ Athletes =
                         },
                         error:function(object, error)
                         {
-                            e != null ? e(error) : errorDefault(error);
+                            err != null ? err(error) : errorDefault(error);
                         }
                     })
                 },
                 error:function(object, error)
                 {
-                    e != null ? e(error) : errorDefault(error);
+                    err != null ? err(error) : errorDefault(error);
                 }
             });
         }
@@ -95,7 +95,7 @@ Athletes =
             Athlete.createAthlete(athleteObj,successCB, e);
         }
     },
-    createAthlete:function(athleteObj, successCB, error)
+    createAthlete:function(athleteObj, successCB, err)
     {
         var Athlete = Parse.Object.extend("Athlete");
         var a = new Athlete();
@@ -109,13 +109,13 @@ Athletes =
             {
                 successCB(a);
             },
-            error:function(a, e)
+            error:function(a, err)
             {
-                e != null ? e(error) : errorDefault(error);
+                err != null ? err(error) : errorDefault(error);
             } 
         });
     },
-    deleteAthlete:function(athleteID)
+    deleteAthlete:function(athleteID, successCB, err)
     {
         var Athlete = Parse.Object.extend("Athlete");
             var query = new Parse.Query(Athlete);
@@ -131,13 +131,13 @@ Athletes =
                         },
                         error:function(object, error)
                         {
-                            e != null ? e(error) : errorDefault(error);
+                            err != null ? err(error) : errorDefault(error);
                         }
                     });
                 },
                 error:function(object, error)
                 {
-                    e != null ? e(error) : errorDefault(error);
+                    err != null ? err(error) : errorDefault(error);
                 }
             });
     },
