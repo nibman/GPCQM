@@ -28,7 +28,7 @@ var Athletes =
     {
         var Athlete = Parse.Object.extend("Athlete");
         var query = new Parse.Query(Athlete);
-        
+        var k = keys;
         query.find( 
         { 
             success:function(object)
@@ -37,9 +37,9 @@ var Athletes =
                 for (var i=0; i<object.length; ++i)
                 {
                     var e =  { };
-                    for (var j=0; j<keys.lengthl; ++j)
+                    for (var j=0; j<k.lengthl; ++j)
                     {
-                        e[keys[j]] = object[i].get(keys[j]);
+                        e[k[j]] = object[i].get(k[j]);
                     }
                     a.push(e); 
                     console.log(e);
