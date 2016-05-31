@@ -1,9 +1,8 @@
 Parse.initialize("gpcqm");
 Parse.serverURL = 'http://gpcqm.herokuapp.com/parse'
 
-
-var Athletes = 
-{
+Athletes = 
+ {
     keys:["firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter", 
             "vectorPowerMeter", "quarqPowerMeter", "speedCadence", "powerMeter", 
             "garminSpeedCadence", "team", "gps", "wheelCir"],
