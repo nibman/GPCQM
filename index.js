@@ -54,7 +54,7 @@ app.get('/', function(req, res)
 
 app.get('/athletes', function(req, res) 
 {
-  res.redirect("/athletes.html");
+  res.redirect("/public/athletes.html");
 });
 
 
