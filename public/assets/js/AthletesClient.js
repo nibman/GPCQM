@@ -28,7 +28,7 @@ var Athletes =
     {
         var Athlete = Parse.Object.extend("Athlete");
         var query = new Parse.Query(Athlete);
-        var k = keys;
+        var k = Athletes.keys;
         query.find( 
         { 
             success:function(object)
