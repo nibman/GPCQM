@@ -37,6 +37,9 @@ app.use(mountPath, api);
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) 
 {
+  res.status(200).send('This is where the data entry and event management occurs');
+  
+  /*
   var currentUser = Parse.User.current();
   if(currentUser)
   {
@@ -45,7 +48,7 @@ app.get('/', function(req, res)
   else
   {
     res.sendFile(path.join(__dirname, '/public/login.html'));
-  }
+  }*/
 });
 
 // There will be a test page available on the /test path of your server url
