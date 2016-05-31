@@ -36,7 +36,7 @@ Athletes =
                 for (var i=0; i<object.length; ++i)
                 {
                     var e =  { };
-                    for (var j=0; j<k.lengthl; ++j)
+                    for (var j=0; j<k.length; ++j)
                     {
                         e[k[j]] = object[i].get(k[j]);
                         console.log(k[j]+" = "+e[k[j]]);
