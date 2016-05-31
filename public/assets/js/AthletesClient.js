@@ -16,7 +16,7 @@ var Athletes =
             },
             error:function(object, error)
             {
-                e(error);
+               e != null ? e(error) : errorDefault(error);
             }
          });
     },
@@ -31,9 +31,9 @@ var Athletes =
             {
                 successCB(object);
             },
-            error:function(object, e)
+            error:function(object, error)
             {
-                e(error);
+                e != null ? e(error) : errorDefault(error);
             }
          });
     },
@@ -44,5 +44,9 @@ var Athletes =
     deleteAthlete:function(athleteID)
     {
         
+    },
+    errorDefault:function(e)
+    {
+        console.log("Error "+e);
     }
 };
