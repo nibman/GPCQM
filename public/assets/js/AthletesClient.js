@@ -31,7 +31,8 @@ var Athletes =
             {
                 for (var i=0; i<object.length; ++i)
                 {
-                    console.log(object[i]);
+                    var firstName = object[i].get('firstName');
+                    console.log(firstName);
                 }
                 successCB(object);
             },
