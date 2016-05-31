@@ -35,7 +35,14 @@
          }  
       }
       
-      Athletes.getAllAthletes(athletesReceived);
+      function athleteSaved(a)
+      {
+        console.log("athleteSaved "+a.toString());
+      }
+      
+      // Athletes.getAllAthletes(athletesReceived);
+      Athletes.createAthlete({firstName:"Allo", lastName:"Yooii"}, athleteSaved);
+      
   </script>  
 </body>
 </html>
