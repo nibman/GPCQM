@@ -6,7 +6,7 @@ var Athletes =
 {
     getAthleteByID:function(id, successCB, e)
     {   
-        var Athlete = parse.Object.extend("Athlete");
+        var Athlete = Parse.Object.extend("Athlete");
         var query = new Parse.Query(Athlete);
         query.get(id, 
         { 
@@ -22,7 +22,7 @@ var Athletes =
     },
     getAllAthletes:function(successCB, e)
     {
-        var Athlete = parse.Object.extend("Athlete");
+        var Athlete = Parse.Object.extend("Athlete");
         var query = new Parse.Query(Athlete);
         
         query.find( 
