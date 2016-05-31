@@ -31,9 +31,12 @@
           console.log("athletesReceived "+a.length);
           for (var e in a)
           {
-             console.log(e+" = "+a[e]);
+            var obj = a[e];
+            for (var b in obj)
+            {
+              console.log(b+" = "+obj[b]); 
+            } 
           }
-        
       }
       
       Athletes.getAllAthletes(athletesReceived);
