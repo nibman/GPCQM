@@ -19,7 +19,7 @@ Athletes =
             },
             error:function(object, error)
             {
-               err != null ? err(error) : errorDefault(error);
+               err != null ? err(error) : Athletes.errorDefault(error);
             }
          });
     },
@@ -46,7 +46,7 @@ Athletes =
             },
             error:function(object, error)
             {
-                err != null ? err(error) : errorDefault(error);
+                err != null ? err(error) : Athletes.errorDefault(error);
             }
          });
     },
@@ -80,13 +80,13 @@ Athletes =
                         },
                         error:function(object, error)
                         {
-                            err != null ? err(error) : errorDefault(error);
+                            err != null ? err(error) : Athletes.errorDefault(error);
                         }
                     })
                 },
                 error:function(object, error)
                 {
-                    err != null ? err(error) : errorDefault(error);
+                    err != null ? err(error) : Athletes.errorDefault(error);
                 }
             });
         }
@@ -111,7 +111,7 @@ Athletes =
             },
             error:function(a, err)
             {
-                err != null ? err(error) : errorDefault(error);
+                err != null ? err(error) : Athletes.errorDefault(error);
             } 
         });
     },
@@ -131,13 +131,13 @@ Athletes =
                         },
                         error:function(object, error)
                         {
-                            err != null ? err(error) : errorDefault(error);
+                            err != null ? err(error) : Athletes.errorDefault(error);
                         }
                     });
                 },
                 error:function(object, error)
                 {
-                    err != null ? err(error) : errorDefault(error);
+                    err != null ? err(error) : Athletes.errorDefault(error);
                 }
             });
     },
