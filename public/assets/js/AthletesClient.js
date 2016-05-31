@@ -56,7 +56,7 @@ Athletes =
         {
             var Athlete = Parse.Object.extend("Athlete");
             var query = new Parse.Query(Athlete);
-            query.get(id, 
+            query.get(athleteID, 
             { 
                 success:function(athlete)
                 {
