@@ -4,17 +4,6 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
-var serdymetrics = require("pubnub").init({
-    publish_key: "pub-c-16d7d717-ff4b-4d94-8ac0-88e5ea163ffa",
-    subscribe_key: "sub-c-49a703aa-1bae-11e6-a01f-0619f8945a4f"
-});
-
-var fs = require('fs')
-    , util = require('util')
-    , stream = require('stream')
-    , es = require('event-stream')
-    , jsonfile = require('jsonfile')
-    , moment = require('moment');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
