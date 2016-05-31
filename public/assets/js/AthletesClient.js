@@ -4,7 +4,7 @@ Parse.serverURL = 'http://gpcqm.herokuapp.com/parse'
 
 var Athletes = 
 {
-    getAthleteByID = function(id, successCB, e)
+    getAthleteByID:function(id, successCB, e)
     {   
         var Athlete = parse.Object.extend("Athlete");
         var query = new Parse.Query(Athlete);
@@ -20,7 +20,7 @@ var Athletes =
             }
          });
     },
-    getAllAthletes = function(successCB, e)
+    getAllAthletes:function(successCB, e)
     {
         var Athlete = parse.Object.extend("Athlete");
         var query = new Parse.Query(Athlete);
@@ -37,11 +37,11 @@ var Athletes =
             }
          });
     },
-    setAthlete = function(athleteID, athleteObj, successCB, error)
+    setAthlete:function(athleteID, athleteObj, successCB, error)
     {
         
     },
-    deleteAthlete = function(athleteID)
+    deleteAthlete:function(athleteID)
     {
         
     }
