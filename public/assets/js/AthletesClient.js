@@ -39,10 +39,8 @@ Athletes =
                     for (var j=0; j<k.length; ++j)
                     {
                         e[k[j]] = object[i].get(k[j]);
-                        console.log(k[j]+" = "+e[k[j]]);
                     }
                     a.push(e); 
-                    console.log(e);
                 }
                 successCB(a);
             },
