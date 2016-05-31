@@ -40,9 +40,13 @@
         console.log("athleteSaved "+a.toString());
       }
       
+      function athleteDeleted(a)
+      {
+        console.log("athleteDeleted");
+      }
       
-      
-      Athletes.saveAthlete("R3nQqgE4Lq", {lastName:"pouiuiu", team:"Oui"}, athleteSaved);
+      Athletes.deleteAthlete("R3nQqgE4Lq", athleteDeleted);
+      // Athletes.saveAthlete("R3nQqgE4Lq", {lastName:"pouiuiu", team:"Oui"}, athleteSaved);
       // Athletes.getAllAthletes(athletesReceived);
       // Athletes.createAthlete({firstName:"Allo", lastName:"Yooii"}, athleteSaved);
       
