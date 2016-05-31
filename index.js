@@ -48,7 +48,7 @@ app.use(mountPath, api);
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) 
 {
-  /*var currentUser = Parse.User.current();
+  var currentUser = Parse.User.current();
   if(currentUser)
   {
     res.status(200).send('This is where the data entry and event management occurs');
@@ -56,48 +56,8 @@ app.get('/', function(req, res)
   else
   {
     res.sendFile(path.join(__dirname, '/public/login.html'));
-  }*/
-  
-  startTempBiometricsParser();
-  
+  }
 });
-
-function startTempBiometricsParser()
-{
-  serdymetrics.subscribe({
-  			channel: 'serdyMetrics',
-  			message: function(e) { parseData.parse(e, ""); }
-		});
-}
-
-function parseData(e)
-{
-  console.log(e);
-  var bioData = {date:moment(), data:e};
-  var pl = new Buffer(JSON.stringify(bioData)).toString("base64");
-  saveJSONFile("/json/biometricsLive.json", JSON.stringify(pl), {spaces: 2});
-}
-
-function saveJSONFile(path, obj)
-{
-    var file = path;
-    var obj = obj;
-
-    jsonfile.writeFile(file, obj, function (err)
-        {
-            console.log("Done saving");
-            if (err == null)
-            {
-                console.log("file written");
-            }
-            else
-            {
-                console.error(err)
-            }
-        });
-
-}
-
 
 // There will be a test page available on the /test path of your server url
 // Remove this before launching your app
