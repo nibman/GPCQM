@@ -1,0 +1,39 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to the Athletes management JS API for Serdy's biometric data collecting toolset.\n\n\nAthletes API overview\n\n\nThis is a very simple and uncompressed JS api to communicate with Serdy's Parse / NodeJS / Epxress server and to edit the athlete list we will be using for the biometrics.  \n\n\nAthletes.getAllAthletes\n\n\ninclude the AthletesClient.js file in your code first\n\n\nfunction errorReceived(err)\n{\n    console.log(\nerrror \n+err)\n}\n\nfunction athletesReceived(a)\n{\n    console.log(\nathletesReceived \n+a.length);\n    for (var i=0; i\na.length; ++i)\n    {\n    console.log(a[i]);\n    }  \n}\n\nAthletes.getAllAthletes(athletesReceived, errorReceived);\n\n\n\n\nAthletes.createAthlete\n\n\ninclude the AthletesClient.js file in your code first\n\n\nfunction errorReceived(err)\n{\n    console.log(\nerrror \n+err)\n}\n\nfunction athleteCreated(a)\n{\n    console.log(\nathlete created \n);\n    // updated athlete is in a  \n}\n\nAthletes.createAthlete({firstName:\nAllo\n, lastName:\nYooii\n}, athleteCreated, errorReceived);\n\n\n\n\n\nAthletes.saveAthlete\n\n\ninclude the AthletesClient.js file in your code first\n\n\nfunction athleteSaved(a)\n{\n    console.log(\nathlete saved \n);\n}\n\n// The error callback is always optionnal in every methods. \n// We left it empty here to illustrate it. \n\nAthletes.saveAthlete(athleteID, {lastName:\npouiuiu\n, team:\nOui\n}, athleteSaved);  \n\n\n\n\n\nAthletes.deleteAthlete\n\n\nfunction error(e)\n      {\n          console.log(\"errror \"+e)\n      }\n      function athletesReceived(a)\n      {\n         console.log(\"athletesReceived \"+a.length);\n         for (var i=0; i\na.length; ++i)\n         {\n           console.log(a[i]);\n         }\n\n      }\n\n\n  function athleteSaved(a)\n  {\n    console.log(\"athleteSaved \"+a.toString());\n  }\n\n  function athleteDeleted(a)\n  {\n    console.log(\"athleteDeleted\");\n  }\n\n  Athletes.deleteAthlete(\"R3nQqgE4Lq\", athleteDeleted);\n  // Athletes.saveAthlete(\"R3nQqgE4Lq\", {lastName:\"pouiuiu\", team:\"Oui\"}, athleteSaved);\n  // Athletes.getAllAthletes(athletesReceived);\n  // Athletes.createAthlete({firstName:\"Allo\", lastName:\"Yooii\"}, athleteSaved);", 
+            "title": "API de gestion des athl\u00e8tes"
+        }, 
+        {
+            "location": "/#welcome-to-the-athletes-management-js-api-for-serdys-biometric-data-collecting-toolset", 
+            "text": "", 
+            "title": "Welcome to the Athletes management JS API for Serdy's biometric data collecting toolset."
+        }, 
+        {
+            "location": "/#athletes-api-overview", 
+            "text": "This is a very simple and uncompressed JS api to communicate with Serdy's Parse / NodeJS / Epxress server and to edit the athlete list we will be using for the biometrics.", 
+            "title": "Athletes API overview"
+        }, 
+        {
+            "location": "/#athletesgetallathletes", 
+            "text": "include the AthletesClient.js file in your code first  function errorReceived(err)\n{\n    console.log( errror  +err)\n}\n\nfunction athletesReceived(a)\n{\n    console.log( athletesReceived  +a.length);\n    for (var i=0; i a.length; ++i)\n    {\n    console.log(a[i]);\n    }  \n}\n\nAthletes.getAllAthletes(athletesReceived, errorReceived);", 
+            "title": "Athletes.getAllAthletes"
+        }, 
+        {
+            "location": "/#athletescreateathlete", 
+            "text": "include the AthletesClient.js file in your code first  function errorReceived(err)\n{\n    console.log( errror  +err)\n}\n\nfunction athleteCreated(a)\n{\n    console.log( athlete created  );\n    // updated athlete is in a  \n}\n\nAthletes.createAthlete({firstName: Allo , lastName: Yooii }, athleteCreated, errorReceived);", 
+            "title": "Athletes.createAthlete"
+        }, 
+        {
+            "location": "/#athletessaveathlete", 
+            "text": "include the AthletesClient.js file in your code first  function athleteSaved(a)\n{\n    console.log( athlete saved  );\n}\n\n// The error callback is always optionnal in every methods. \n// We left it empty here to illustrate it. \n\nAthletes.saveAthlete(athleteID, {lastName: pouiuiu , team: Oui }, athleteSaved);", 
+            "title": "Athletes.saveAthlete"
+        }, 
+        {
+            "location": "/#athletesdeleteathlete", 
+            "text": "function error(e)\n      {\n          console.log(\"errror \"+e)\n      }\n      function athletesReceived(a)\n      {\n         console.log(\"athletesReceived \"+a.length);\n         for (var i=0; i a.length; ++i)\n         {\n           console.log(a[i]);\n         } \n      }    function athleteSaved(a)\n  {\n    console.log(\"athleteSaved \"+a.toString());\n  }\n\n  function athleteDeleted(a)\n  {\n    console.log(\"athleteDeleted\");\n  }\n\n  Athletes.deleteAthlete(\"R3nQqgE4Lq\", athleteDeleted);\n  // Athletes.saveAthlete(\"R3nQqgE4Lq\", {lastName:\"pouiuiu\", team:\"Oui\"}, athleteSaved);\n  // Athletes.getAllAthletes(athletesReceived);\n  // Athletes.createAthlete({firstName:\"Allo\", lastName:\"Yooii\"}, athleteSaved);", 
+            "title": "Athletes.deleteAthlete"
+        }
+    ]
+}
