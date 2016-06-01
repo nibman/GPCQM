@@ -248,32 +248,15 @@ Athletes.saveAthlete(athleteID, {lastName:&quot;pouiuiu&quot;, team:&quot;Oui&qu
 </code></pre>
 
 <h2 id="athletesdeleteathlete">Athletes.deleteAthlete</h2>
-<p>function error(e)
-      {
-          console.log("errror "+e)
-      }
-      function athletesReceived(a)
-      {
-         console.log("athletesReceived "+a.length);
-         for (var i=0; i&lt;a.length; ++i)
-         {
-           console.log(a[i]);
-         }<br />
-      }</p>
-<pre><code>  function athleteSaved(a)
-  {
-    console.log("athleteSaved "+a.toString());
-  }
+<p><em>include the AthletesClient.js file in your code first</em></p>
+<pre><code>
+function athleteDeleted(a)
+{
 
-  function athleteDeleted(a)
-  {
-    console.log("athleteDeleted");
-  }
+}
 
-  Athletes.deleteAthlete("R3nQqgE4Lq", athleteDeleted);
-  // Athletes.saveAthlete("R3nQqgE4Lq", {lastName:"pouiuiu", team:"Oui"}, athleteSaved);
-  // Athletes.getAllAthletes(athletesReceived);
-  // Athletes.createAthlete({firstName:"Allo", lastName:"Yooii"}, athleteSaved);
+Athletes.deleteAthlete(athleteID, athleteDeleted);
+
 </code></pre>
           <aside class="copyright" role="note">
             
