@@ -29,7 +29,11 @@
       function athletesReceived(a)
       {
          var k = Athletes.keys;
-         var myOrder = ["firstName", "lastName", "athleteID", "dossard", "hrm", "team"];
+         
+         var myOrder = ["firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter",
+            "powerMeter", "vectorPowerMeter", "quarqPowerMeter", "speedCadence",  
+            "garminSpeedCadence", "team", "gps"];
+         
          var rows = [];
          for (var i=0; i<a.length; ++i)
          {
