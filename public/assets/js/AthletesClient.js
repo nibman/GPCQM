@@ -72,6 +72,8 @@ Athletes =
                 {
                     e[k[j]] = athlete.get(k[j]);
                 };
+                
+                e['objectId'] = athlete.get('objectId');  
                 successCB(e);
             },
             error:function(object, error)
@@ -98,6 +100,7 @@ Athletes =
                     {
                         e[k[j]] = object[i].get(k[j]);
                     };
+                    e['objectId'] = object[i].get('objectId');
                     a.push(e); 
                 }
                 successCB(a);
