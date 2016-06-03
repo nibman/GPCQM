@@ -7,7 +7,7 @@ Athletes =
             "vectorPowerMeter", "quarqPowerMeter", "speedCadence", "powerMeter", 
             "garminSpeedCadence", "team", "gps", "wheelCir"],
     
-    resultModel:keys,
+    resultModel:Athletes.keys,
     
     setKeyNames:function(keySetID, keyNames, keyNamesSaved, err)
     {
@@ -23,8 +23,8 @@ Athletes =
                     {
                         success:function(keys)
                         {
-                            resultModel = keys.get('keyNames');
-                            keyNamesSaved(resultModel);
+                            Athletes.resultModel = keys.get('keyNames');
+                            keyNamesSaved(Athletes.resultModel);
                         },
                         error:function(object, error)
                         {
