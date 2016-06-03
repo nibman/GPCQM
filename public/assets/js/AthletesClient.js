@@ -14,7 +14,7 @@ Athletes =
     setKeyNames:function(keySetID, keyNames, keyNamesSaved, err)
     {
         var Keys = Parse.Object.extend("Keys");
-        var query = new Parse.Query(keys);
+        var query = new Parse.Query(Keys);
         query.equalTo("keySetID", keySetID);
         query.find( 
         { 
