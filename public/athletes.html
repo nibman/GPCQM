@@ -24,14 +24,31 @@
   <script>
       function error(e)
       {
-          console.log("errror "+e)
+          console.log("errror "+e);
       }
       function athletesReceived(a)
       {
-         console.log("athletesReceived "+a.length);
+         var k = Athletes.keys;
+         var myOrder = ["firstName", "lastName", "athleteID", "dossard", "hrm", "team"];
+         var rows = [];
          for (var i=0; i<a.length; ++i)
          {
-           console.log(a[i]);
+           var myAthlete = a[i];
+           var myRow = [];
+           for (var j=0; j<myOrder.length; ++j)
+           {
+             if(k[myOrder[j]] != null)
+             {
+                myRow.push(k[myOrder[j]]); 
+             }
+             else
+             {
+               myRow.push("");
+             }
+             
+           }
+           rows.push(myRow);
+           // console.log(a[i]);
          }  
       }
       
@@ -45,7 +62,15 @@
         console.log("athleteDeleted");
       }
       
-      Athletes.deleteAthlete("R3nQqgE4Lq", athleteDeleted);
+      function keyNamesSaved(keyNames)
+      {
+        console.log("keyNames saved" + keyNames.toString());
+      }
+      
+      
+      Athletes.setKeyNames("gpcqm1", ["firstName", "lastName"]. keyNamesSaved);
+      
+      // Athletes.deleteAthlete("R3nQqgE4Lq", athleteDeleted);
       // Athletes.saveAthlete("R3nQqgE4Lq", {lastName:"pouiuiu", team:"Oui"}, athleteSaved);
       // Athletes.getAllAthletes(athletesReceived);
       // Athletes.createAthlete({firstName:"Allo", lastName:"Yooii"}, athleteSaved);

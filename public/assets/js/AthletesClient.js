@@ -6,7 +6,39 @@ Athletes =
     keys:["objectId", "firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter", 
             "vectorPowerMeter", "quarqPowerMeter", "speedCadence", "powerMeter", 
             "garminSpeedCadence", "team", "gps", "wheelCir"],
-         
+    
+    resultModel=keys,
+    
+    setKeyNames:function(keySetID, keyNames, keyNamesSaved, err)
+    {
+        var Keys = Parse.Object.extend("Keys");
+        var query = new Parse.Query(keys);
+        query.equalTo("keySetID", keySetID);
+        query.find( 
+        { 
+            success:function(object)
+            {
+                object.set('keyNames', keyNames);
+                object.save(null, 
+                    {
+                        success:function(keys)
+                        {
+                            resultModel = keys.get('keyNames');
+                            keyNamesSaved(resultModel);
+                        },
+                        error:function(object, error)
+                        {
+                            err != null ? err(error) : Athletes.errorDefault(error);
+                        }
+                    })
+                
+            },
+            error:function(object, error)
+            {
+                
+            }
+        });        
+    },    
     getAthleteByID:function(id, successCB, err)
     {   
         var Athlete = Parse.Object.extend("Athlete");
@@ -33,6 +65,7 @@ Athletes =
             success:function(object)
             {
                 var a = [];
+        
                 for (var i=0; i<object.length; ++i)
                 {
                     var e =  { };
@@ -42,7 +75,7 @@ Athletes =
                     };
                     a.push(e); 
                 }
-                successCB(a);
+                successCB(mapResults(a));
             },
             error:function(object, error)
             {
@@ -144,5 +177,9 @@ Athletes =
     errorDefault:function(e)
     {
         console.log("Error "+e);
+    },
+    mapResults:function(res)
+    {
+        
     }
 };
