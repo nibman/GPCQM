@@ -29,11 +29,7 @@
       function athletesReceived(a)
       {
          var k = Athletes.keys;
-         
-         var myOrder = ["firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter",
-            "powerMeter", "vectorPowerMeter", "quarqPowerMeter", "speedCadence",  
-            "garminSpeedCadence", "team", "gps"];
-         
+         var myOrder = ["firstName", "lastName", "athleteID", "dossard", "hrm", "team"];
          var rows = [];
          for (var i=0; i<a.length; ++i)
          {
@@ -68,12 +64,14 @@
       
       function keyNamesReceived(keyNames)
       {
-        console.log("keyNames keyNamesReceived " + keyNames.toString());
+        console.log("keyNames keyNamesReceived" + keyNames.toString());
       }
       
-      Athletes.getKeyNames("gpcqm1", keyNamesReceived);
+      // Athletes.getKeyNames("gpcqm1", keyNamesReceived);
       
-      // Athletes.setKeyNames("gpcqm1", ["firstName", "lastName"], keyNamesSaved);
+      Athletes.setKeyNames("gpcqm1", ["firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter",
+            "powerMeter", "vectorPowerMeter", "quarqPowerMeter", "speedCadence",  
+            "garminSpeedCadence", "team", "gps"], keyNamesSaved);
       
       // Athletes.deleteAthlete("R3nQqgE4Lq", athleteDeleted);
       // Athletes.saveAthlete("R3nQqgE4Lq", {lastName:"pouiuiu", team:"Oui"}, athleteSaved);
