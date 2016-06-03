@@ -16,7 +16,7 @@ Athletes =
         var Keys = Parse.Object.extend("Keys");
         var query = new Parse.Query(Keys);
         query.equalTo("keySetID", keySetID);
-        query.find( 
+        query.first( 
         { 
             success:function(object)
             {
