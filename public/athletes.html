@@ -62,13 +62,14 @@
         console.log("athleteDeleted");
       }
       
-      function keyNamesSaved(keyNames)
+      function keyNamesReceived(keyNames)
       {
-        console.log("keyNames saved" + keyNames.toString());
+        console.log("keyNames keyNamesReceived " + keyNames.toString());
       }
       
+      Athletes.getKeyNames("gpcqm1", keyNamesReceived);
       
-      Athletes.setKeyNames("gpcqm1", ["firstName", "lastName"], keyNamesSaved);
+      // Athletes.setKeyNames("gpcqm1", ["firstName", "lastName"], keyNamesSaved);
       
       // Athletes.deleteAthlete("R3nQqgE4Lq", athleteDeleted);
       // Athletes.saveAthlete("R3nQqgE4Lq", {lastName:"pouiuiu", team:"Oui"}, athleteSaved);

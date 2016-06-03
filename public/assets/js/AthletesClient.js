@@ -20,7 +20,6 @@ Athletes =
         { 
             success:function(object)
             {
-                console.log(object);
                 object.set('keyNames', keyNames);
                 object.save(null, 
                     {
@@ -33,12 +32,29 @@ Athletes =
                         {
                             err != null ? err(error) : Athletes.errorDefault(error);
                         }
-                    })
-                
+                    });
             },
             error:function(object, error)
             {
                 
+            }
+        });        
+    },
+    getKeyNames:function(keySetID, keyNamesReceived, err)
+    {
+        var Keys = Parse.Object.extend("Keys");
+        var query = new Parse.Query(Keys);
+        query.equalTo("keySetID", keySetID);
+        query.first( 
+        { 
+            success:function(object)
+            {
+                Athletes.resultModel = keys.get('keyNames');
+                keyNamesReceived(Athletes.resultModel);
+            },
+            error:function(object, error)
+            {
+                err != null ? err(error) : Athletes.errorDefault(error);
             }
         });        
     },    
@@ -46,11 +62,17 @@ Athletes =
     {   
         var Athlete = Parse.Object.extend("Athlete");
         var query = new Parse.Query(Athlete);
+        var k = Athletes.resultModel;
         query.get(id, 
         { 
             success:function(athlete)
             {
-                successCB(athlete);
+                var e =  { };
+                for (var j=0; j<k.length; ++j)
+                {
+                    e[k[j]] = athlete.get(k[j]);
+                };
+                successCB(e);
             },
             error:function(object, error)
             {
@@ -62,7 +84,7 @@ Athletes =
     {
         var Athlete = Parse.Object.extend("Athlete");
         var query = new Parse.Query(Athlete);
-        var k = Athletes.keys;
+        var k = Athletes.resultModel;
         query.find( 
         { 
             success:function(object)
@@ -78,7 +100,7 @@ Athletes =
                     };
                     a.push(e); 
                 }
-                successCB(mapResults(a));
+                successCB(a);
             },
             error:function(object, error)
             {
@@ -106,7 +128,7 @@ Athletes =
                     athlete.save(null, {
                         success:function(athlete)
                         {
-                            var k = Athletes.keys;
+                            var k = Athletes.resultModel;
                             var e =  { };
                             for (var j=0; j<k.length; ++j)
                             {
