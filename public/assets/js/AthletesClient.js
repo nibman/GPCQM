@@ -7,9 +7,9 @@ Athletes =
             "vectorPowerMeter", "quarqPowerMeter", "speedCadence", "powerMeter", 
             "garminSpeedCadence", "team", "gps", "wheelCir"],
     
-    resultModel:["objectId", "firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter", 
-            "vectorPowerMeter", "quarqPowerMeter", "speedCadence", "powerMeter", 
-            "garminSpeedCadence", "team", "gps", "wheelCir"],
+    resultModel:["firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter", 
+            "powerMeter", "vectorPowerMeter", "quarqPowerMeter", "speedCadence",  
+            "garminSpeedCadence", "team", "gps"],
     
     setKeyNames:function(keySetID, keyNames, keyNamesSaved, err)
     {
