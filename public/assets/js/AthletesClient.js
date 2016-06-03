@@ -21,14 +21,13 @@ Athletes =
             success:function(object)
             {
                 console.log(object);
-                
-                // object.set('keyNames', keyNames);
+                object.set('keyNames', keyNames);
                 object.save(null, 
                     {
                         success:function(keys)
                         {
                             Athletes.resultModel = keys.get('keyNames');
-                            keyNamesSaved(AthletesresultModel);
+                            keyNamesSaved(Athletes.resultModel);
                         },
                         error:function(object, error)
                         {
