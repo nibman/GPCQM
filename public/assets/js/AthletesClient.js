@@ -20,9 +20,9 @@ Athletes =
         { 
             success:function(object)
             {
-                console.log(object.get('keyNames'));
+                console.log(object);
                 
-                object.set('keyNames', keyNames);
+                // object.set('keyNames', keyNames);
                 object.save(null, 
                     {
                         success:function(keys)
