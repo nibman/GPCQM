@@ -11,6 +11,8 @@ Athletes =
             "powerMeter", "vectorPowerMeter", "quarqPowerMeter", "speedCadence",  
             "garminSpeedCadence", "team", "gps"],
     
+    returnType:"Array",  // Object
+    
     setKeyNames:function(keySetID, keyNames, keyNamesSaved, err)
     {
         var Keys = Parse.Object.extend("Keys");
@@ -67,13 +69,25 @@ Athletes =
         { 
             success:function(athlete)
             {
-                var e =  { };
-                for (var j=0; j<k.length; ++j)
+                if (Athletes.returnType != "Array")
                 {
-                    e[k[j]] = athlete.get(k[j]);
-                };
-                
-                e['objectId'] = athlete.get('objectId');  
+                    var e =  { };
+                    for (var j=0; j<k.length; ++j)
+                    {
+                        e[k[j]] = athlete.get(k[j]);
+                    };
+                    
+                    e['objectId'] = athlete.get('objectId');  
+                }
+                else
+                {
+                    var e = [];
+                    for (var j=0; j<k.length; ++j)
+                    {
+                        e.push(athlete.get(k[j]));
+                    };
+                    
+                }
                 successCB(e);
             },
             error:function(object, error)
@@ -92,17 +106,34 @@ Athletes =
             success:function(object)
             {
                 var a = [];
-        
-                for (var i=0; i<object.length; ++i)
+                if (Athletes.returnType != "Array")
                 {
-                    var e =  { };
-                    for (var j=0; j<k.length; ++j)
+                    for (var i=0; i<object.length; ++i)
                     {
-                        e[k[j]] = object[i].get(k[j]);
-                    };
-                    e['objectId'] = object[i].get('objectId');
-                    a.push(e); 
-                }
+                        var e =  { };
+                        for (var j=0; j<k.length; ++j)
+                        {
+                            e[k[j]] = object[i].get(k[j]);
+                        };
+                        e['objectId'] = object[i].get('objectId');
+                        a.push(e); 
+                    }
+                }  
+                else
+                {
+                    for (var i=0; i<object.length; ++i)
+                    {
+                        var e = [];
+                        for (var j=0; j<k.length; ++j)
+                        {
+                            e.push(object[i].get(k[j]));
+                        }
+                        e.push(object[i].get('objectId'));
+                        a.push(e);
+                    }
+                        
+                }  
+               
                 successCB(a);
             },
             error:function(object, error)
@@ -132,12 +163,26 @@ Athletes =
                         success:function(athlete)
                         {
                             var k = Athletes.resultModel;
-                            var e =  { };
-                            for (var j=0; j<k.length; ++j)
+                            if (Athletes.returnType != "Array")
                             {
-                                e[k[j]] = athlete.get(k[j]);
-                            };
-                            successCB(e);
+                                var e =  { };
+                                for (var j=0; j<k.length; ++j)
+                                {
+                                    e[k[j]] = athlete.get(k[j]);
+                                };
+                                e['objectId'] = athlete.get('objectId');
+                            }
+                            else
+                            {
+                                var e = [];
+                                for (var j=0; j<k.length; ++j)
+                                {
+                                    e.push(athlete.get(k[j]));
+                                };
+                                e.push(athlete.get('objectId'));
+                            }
+                            
+                             successCB(e);
                         },
                         error:function(object, error)
                         {
