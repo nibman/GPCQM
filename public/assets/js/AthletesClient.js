@@ -47,7 +47,7 @@ Athletes =
         query.equalTo("keySetID", keySetID);
         query.first( 
         { 
-            success:function(object)
+            success:function(keys)
             {
                 Athletes.resultModel = keys.get('keyNames');
                 keyNamesReceived(Athletes.resultModel);
