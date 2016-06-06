@@ -119,9 +119,13 @@ Athletes =
                         for (var j=0; j<k.length; ++j)
                         {
                             if (e[k[j]] != "objectId")
+                            {
                                 e[k[j]] = object[i].get(k[j]);
+                            }
                             else
+                            {
                                e['objectId'] = object[i].id; 
+                            }
                         };
                         a.push(e); 
                     }
@@ -133,6 +137,7 @@ Athletes =
                         var e = [];
                         for (var j=0; j<k.length; ++j)
                         {
+                            console.log(e[k[j]]);
                             if (e[k[j]] != "objectId")
                             {
                                 e.push(object[i].get(k[j]));
