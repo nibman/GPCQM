@@ -74,18 +74,24 @@ Athletes =
                     var e =  { };
                     for (var j=0; j<k.length; ++j)
                     {
-                        e[k[j]] = athlete.get(k[j]);
+                        if (e[k[j]] != "objectId")
+                            e[k[j]] = athlete.get(k[j]);
+                        else
+                           e['objectId'] = athlete.id;
                     };
-                    e['objectId'] = athlete.get('objectId');  
+                     
                 }
                 else
                 {
                     var e = [];
                     for (var j=0; j<k.length; ++j)
                     {
-                        e.push(athlete.get(k[j]));
+                        if (e[k[j]] != "objectId")
+                            e.push(athlete.get(k[j]));
+                        else
+                         e.push(athlete.id);    
                     };
-                    e.push(athlete.get('objectId'));  
+                     
                 }
                 successCB(e);
             },
@@ -112,11 +118,11 @@ Athletes =
                         var e =  { };
                         for (var j=0; j<k.length; ++j)
                         {
-                            e[k[j]] = object[i].get(k[j]);
+                            if (e[k[j]] != "objectId")
+                                e[k[j]] = object[i].get(k[j]);
+                            else
+                               e['objectId'] = athlete.id; 
                         };
-                        
-                        console.log(object[i].id);
-                        e['objectId'] = object[i].id;
                         a.push(e); 
                     }
                 }  
@@ -127,10 +133,11 @@ Athletes =
                         var e = [];
                         for (var j=0; j<k.length; ++j)
                         {
-                            e.push(object[i].get(k[j]));
+                            if (e[k[j]] != "objectId")
+                                e.push(object[i].get(k[j]));
+                            else
+                              e.push(object[i].id);  
                         }
-                        console.log(object[i].id);
-                        e.push(object[i].id);
                         a.push(e);
                     }
                         
