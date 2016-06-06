@@ -245,7 +245,6 @@ Athletes =
             { 
                 success:function(athlete)
                 {
-                    
                     athlete.destroy({
                         success:function(athlete)
                         {

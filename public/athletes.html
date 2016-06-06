@@ -47,13 +47,14 @@
       function keyNamesReceived(keyNames)
       {
         console.log("keyNames keyNamesReceived" + keyNames.toString());
+        Athletes.getAllAthletes(athletesReceived);   
       }
       
       Athletes.setKeyNames("gpcqm1", ["firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter",
             "powerMeter", "vectorPowerMeter", "quarqPowerMeter", "speedCadence",  
             "garminSpeedCadence", "team", "gps","objectId"], keyNamesReceived);
       
-      Athletes.getAllAthletes(athletesReceived);   
+      
          
      // Athletes.deleteAthlete("R3nQqgE4Lq", athleteDeleted);
      // Athletes.saveAthlete("R3nQqgE4Lq", {lastName:"pouiuiu", team:"Oui"}, athleteSaved);
