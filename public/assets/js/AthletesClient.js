@@ -76,7 +76,6 @@ Athletes =
                     {
                         e[k[j]] = athlete.get(k[j]);
                     };
-                    
                     e['objectId'] = athlete.get('objectId');  
                 }
                 else
@@ -86,7 +85,7 @@ Athletes =
                     {
                         e.push(athlete.get(k[j]));
                     };
-                    
+                    e.push(athlete.get('objectId'));  
                 }
                 successCB(e);
             },
