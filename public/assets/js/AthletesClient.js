@@ -139,7 +139,8 @@ Athletes =
                             } 
                             else
                             {
-                                e.push(object[i].id);  
+                                console.log(object[i].id);
+                                e.push(object[i].id);
                             }  
                         }
                         a.push(e);
