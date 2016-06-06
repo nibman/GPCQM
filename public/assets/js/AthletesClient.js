@@ -114,6 +114,7 @@ Athletes =
                         {
                             e[k[j]] = object[i].get(k[j]);
                         };
+                        console.log(object[i].get('objectId'));
                         e['objectId'] = object[i].get('objectId');
                         a.push(e); 
                     }
@@ -127,6 +128,7 @@ Athletes =
                         {
                             e.push(object[i].get(k[j]));
                         }
+                        console.log(object[i].get('objectId'));
                         e.push(object[i].get('objectId'));
                         a.push(e);
                     }
