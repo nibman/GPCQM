@@ -138,14 +138,12 @@ Athletes =
                         var e = [];
                         for (var j=0; j<k.length; ++j)
                         {
-                            console.log(e[k[j]]);
                             if (k[j] != "objectId")
                             {
                                 e.push(object[i].get(k[j]));
                             } 
                             else
                             {
-                                console.log(object[i].id);
                                 e.push(object[i].id);
                             }  
                         }
