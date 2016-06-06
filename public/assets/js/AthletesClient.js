@@ -9,7 +9,7 @@ Athletes =
     
     resultModel:["firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter", 
             "powerMeter", "vectorPowerMeter", "quarqPowerMeter", "speedCadence",  
-            "garminSpeedCadence", "team", "gps"],
+            "garminSpeedCadence", "team", "gps", "objectId"],
     
     returnType:"Array",  // Object
     
