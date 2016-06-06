@@ -115,8 +115,8 @@ Athletes =
                             e[k[j]] = object[i].get(k[j]);
                         };
                         
-                        console.log(object[i].get('id'));
-                        e['objectId'] = object[i].get('objectId');
+                        console.log(object[i].id);
+                        e['objectId'] = object[i].id;
                         a.push(e); 
                     }
                 }  
@@ -129,8 +129,8 @@ Athletes =
                         {
                             e.push(object[i].get(k[j]));
                         }
-                        console.log(object[i].get('id'));
-                        e.push(object[i].get('objectId'));
+                        console.log(object[i].id);
+                        e.push(object[i].id);
                         a.push(e);
                     }
                         
@@ -172,7 +172,7 @@ Athletes =
                                 {
                                     e[k[j]] = athlete.get(k[j]);
                                 };
-                                e['objectId'] = athlete.get('objectId');
+                                e['objectId'] = athlete.id;
                             }
                             else
                             {
@@ -181,7 +181,7 @@ Athletes =
                                 {
                                     e.push(athlete.get(k[j]));
                                 };
-                                e.push(athlete.get('objectId'));
+                                e.push(athlete.id);
                             }
                             
                              successCB(e);
