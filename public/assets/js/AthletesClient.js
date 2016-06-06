@@ -121,7 +121,7 @@ Athletes =
                             if (e[k[j]] != "objectId")
                                 e[k[j]] = object[i].get(k[j]);
                             else
-                               e['objectId'] = athlete.id; 
+                               e['objectId'] = object[i].id; 
                         };
                         a.push(e); 
                     }
@@ -134,15 +134,17 @@ Athletes =
                         for (var j=0; j<k.length; ++j)
                         {
                             if (e[k[j]] != "objectId")
+                            {
                                 e.push(object[i].get(k[j]));
+                            } 
                             else
-                              e.push(object[i].id);  
+                            {
+                                e.push(object[i].id);  
+                            }  
                         }
                         a.push(e);
-                    }
-                        
-                }  
-               
+                    }  
+                }
                 successCB(a);
             },
             error:function(object, error)
