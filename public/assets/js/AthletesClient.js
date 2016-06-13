@@ -231,7 +231,7 @@ Athletes =
             {
                 successCB(a);
             },
-            error:function(a, err)
+            error:function(a, error)
             {
                 err != null ? err(error) : Athletes.errorDefault(error);
             } 
