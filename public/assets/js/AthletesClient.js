@@ -225,7 +225,7 @@ Athletes =
         {
             if (e != "objectId")
             {
-                athlete.set(e, athleteObj[e]);
+                a.set(e, athleteObj[e]);
             }
         }
         
