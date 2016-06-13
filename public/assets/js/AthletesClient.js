@@ -221,9 +221,12 @@ Athletes =
     {
         var Athlete = Parse.Object.extend("Athlete");
         var a = new Athlete();
-        for (var e in athleteObj)
+        for(var e in athleteObj)
         {
-            a.set(e, athleteObj[e]);
+            if (e != "objectId")
+            {
+                athlete.set(e, athleteObj[e]);
+            }
         }
         
         a.save(null, {
