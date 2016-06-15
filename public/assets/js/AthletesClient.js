@@ -1,5 +1,4 @@
-Parse.initialize("gpcqm");
-Parse.serverURL = 'http://gpcqm.herokuapp.com/parse'
+
 
 Athletes = 
  {
@@ -8,8 +7,7 @@ Athletes =
             "garminSpeedCadence", "team", "gps", "wheelCir"],
     
     resultModel:["firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter", 
-            "powerMeter", "vectorPowerMeter", "quarqPowerMeter", "speedCadence",  
-            "garminSpeedCadence", "team", "gps", "objectId"],
+            "powerMeter", "speedCadence", "team", "gps", "objectId"],
     
     returnType:"Array",  // Object
     
@@ -75,7 +73,7 @@ Athletes =
                     for (var j=0; j<k.length; ++j)
                     {
                         if (e[k[j]] != "objectId")
-                            e[k[j]] = athlete.get(k[j]);
+                            e[k[j]] = sanitize(athlete.get(k[j]));
                         else
                            e['objectId'] = athlete.id;
                     };
@@ -87,9 +85,9 @@ Athletes =
                     for (var j=0; j<k.length; ++j)
                     {
                         if (e[k[j]] != "objectId")
-                            e.push(athlete.get(k[j]));
+                            e.push(sanitize(athlete.get(k[j])));
                         else
-                         e.push(athlete.id);    
+                         e.push(sanitize(athlete.id));    
                     };
                      
                 }
@@ -121,7 +119,7 @@ Athletes =
                         {
                             if (k[j] != "objectId")
                             {
-                                e[k[j]] = object[i].get(k[j]);
+                                e[k[j]] = object[i].get(k[j]); 
                             }
                             else
                             {
@@ -184,7 +182,7 @@ Athletes =
                                 var e =  { };
                                 for (var j=0; j<k.length; ++j)
                                 {
-                                    e[k[j]] = athlete.get(k[j]);
+                                    e[k[j]] = sanitize(athlete.get(k[j]));
                                 };
                                 e['objectId'] = athlete.id;
                             }
@@ -193,7 +191,7 @@ Athletes =
                                 var e = [];
                                 for (var j=0; j<k.length; ++j)
                                 {
-                                    e.push(athlete.get(k[j]));
+                                    e.push(sanitize(athlete.get(k[j])));
                                 };
                                 e.push(athlete.id);
                             }
@@ -272,5 +270,14 @@ Athletes =
     mapResults:function(res)
     {
         
+    },
+    sanitize:function(e)
+    {
+        if (e === null || e == null || e == undefined || e === undefined)
+        {
+            return "";
+        }
+        
+        return e;
     }
 };
