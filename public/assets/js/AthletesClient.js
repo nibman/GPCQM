@@ -275,6 +275,9 @@ Athletes =
     },
     sanitize:function(e)
     {
+        if (typeof e != 'undefined')
+            return e;
+        
         if (e === null || e == null || e == undefined || e === undefined)
         {
             return "";
