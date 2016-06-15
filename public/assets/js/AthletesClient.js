@@ -1,4 +1,6 @@
 
+Parse.initialize("gpcqm");
+Parse.serverURL = 'http://gpcqm.herokuapp.com/parse'
 
 Athletes = 
  {
