@@ -140,7 +140,7 @@ Athletes =
                         {
                             if (k[j] != "objectId")
                             {
-                                e.push(sanitize(object[i].get(k[j]));
+                                e.push(sanitize(object[i].get(k[j])));
                             } 
                             else
                             {
