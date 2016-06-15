@@ -47,8 +47,10 @@
       function keyNamesReceived(keyNames)
       {
         console.log("keyNames keyNamesReceived" + keyNames.toString());
-        Athletes.getAllAthletes(athletesReceived);   
+         
       }
+      
+      Athletes.getAllAthletes(athletesReceived);  
       
       // Athletes.setKeyNames("gpcqm1", ["firstName", "lastName", "athleteID", "hrm", "srmPowerMeter",
           //  "powerMeter", "vectorPowerMeter", "quarqPowerMeter", "speedCadence",  
@@ -61,7 +63,7 @@
      // Athletes.getKeyNames("gpcqm1", keyNamesReceived);
      
      
-     Athletes.createAthlete({firstName:"well", lastName:"that", hrm:"122"}, athleteSaved, error);
+     // Athletes.createAthlete({firstName:"well", lastName:"that", hrm:"122"}, athleteSaved, error);
      
       
       
