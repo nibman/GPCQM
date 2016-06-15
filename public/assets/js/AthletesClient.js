@@ -75,7 +75,7 @@ Athletes =
                     for (var j=0; j<k.length; ++j)
                     {
                         if (e[k[j]] != "objectId")
-                            e[k[j]] = sanitize(athlete.get(k[j]));
+                            e[k[j]] = Athletes.sanitize(athlete.get(k[j]));
                         else
                            e['objectId'] = athlete.id;
                     };
@@ -87,9 +87,9 @@ Athletes =
                     for (var j=0; j<k.length; ++j)
                     {
                         if (e[k[j]] != "objectId")
-                            e.push(sanitize(athlete.get(k[j])));
+                            e.push(Athletes.sanitize(athlete.get(k[j])));
                         else
-                         e.push(sanitize(athlete.id));    
+                         e.push(athlete.id);    
                     };
                      
                 }
@@ -121,7 +121,7 @@ Athletes =
                         {
                             if (k[j] != "objectId")
                             {
-                                e[k[j]] = sanitize(object[i].get(k[j])); 
+                                e[k[j]] = Athletes.sanitize(object[i].get(k[j])); 
                             }
                             else
                             {
@@ -140,7 +140,7 @@ Athletes =
                         {
                             if (k[j] != "objectId")
                             {
-                                e.push(sanitize(object[i].get(k[j])));
+                                e.push(Athletes.sanitize(object[i].get(k[j])));
                             } 
                             else
                             {
@@ -184,7 +184,7 @@ Athletes =
                                 var e =  { };
                                 for (var j=0; j<k.length; ++j)
                                 {
-                                    e[k[j]] = sanitize(athlete.get(k[j]));
+                                    e[k[j]] = Athletes.sanitize(athlete.get(k[j]));
                                 };
                                 e['objectId'] = athlete.id;
                             }
@@ -193,7 +193,7 @@ Athletes =
                                 var e = [];
                                 for (var j=0; j<k.length; ++j)
                                 {
-                                    e.push(sanitize(athlete.get(k[j])));
+                                    e.push(Athletes.sanitize(athlete.get(k[j])));
                                 };
                                 e.push(athlete.id);
                             }
