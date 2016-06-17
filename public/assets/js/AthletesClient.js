@@ -4,11 +4,11 @@ Parse.serverURL = 'http://gpcqm.herokuapp.com/parse'
 
 Athletes = 
  {
-    keys:["objectId", "firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter", 
+    keys:["objectId", "firstName", "lastName", "athleteId", "dossard", "hrm", "srmPowerMeter", 
             "vectorPowerMeter", "quarqPowerMeter", "speedCadence", "powerMeter", 
             "garminSpeedCadence", "team", "gps", "wheelCir"],
     
-    resultModel:["firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter", 
+    resultModel:["firstName", "lastName", "athleteId", "dossard", "hrm", "srmPowerMeter", 
             "powerMeter", "speedCadence", "team", "gps", "objectId"],
     
     returnType:"Array",  // Object
@@ -275,9 +275,6 @@ Athletes =
     },
     sanitize:function(e)
     {
-        console.log(e);
-        console.log(typeof e);
-        
         if (typeof e != 'undefined')
             return e;
         
