@@ -1,7 +1,7 @@
 {
-  "name": "parse-server-example",
-  "version": "1.4.0",
-  "description": "An example Parse API server using the parse-server module",
+  "name": "serdy.io cycling data stream applications",
+  "version": "0.1.0",
+  "description": "We collect data and stream it thru our world class cloud.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -12,7 +12,27 @@
     "express": "~4.11.x",
     "kerberos": "~0.0.x",
     "parse": "~1.8.0",
-    "parse-server": "~2.2.2"
+    "parse-server": "~2.2.2",
+    "browser-sync": "^2.12.10",
+    "del": "^2.1.0",
+    "express": "~4.9.x",
+    "gulp": "^3.9.1",
+    "gulp-absurd": "0.0.2",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.9",
+    "gulp-concat": "2.6.0",
+    "gulp-htmlclean": "^2.7.6",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-strip-css-comments": "^1.2.0",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.5",
+    "util": "^0.10.3"
   },
   "scripts": {
     "start": "node index.js"
