@@ -1,5 +1,5 @@
 {
-  "name": "Serdy IO",
+  "name": "serdyio",
   "version": "0.1.0",
   "description": "We collect data and stream it thru our world class cloud.",
   "main": "index.js",
