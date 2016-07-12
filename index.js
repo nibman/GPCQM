@@ -38,7 +38,7 @@ app.use(mountPath, api);
 app.get('/', function(req, res) 
 {
   // var re = req.toString();
-  res.status(200).send(req);
+  res.status(200).send("Hello...");
   
   /*
   var currentUser = Parse.User.current();
