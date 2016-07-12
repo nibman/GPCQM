@@ -62,6 +62,10 @@ app.get('/docs', function(req, res)
   res.redirect("/public/bioEntry/site/index.html");
 });
 
+app.get('/maps', function(req, res) 
+{
+  res.redirect("/public/maps/index.html");
+});
 
 
 // There will be a test page available on the /test path of your server url
