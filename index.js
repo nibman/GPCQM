@@ -52,6 +52,10 @@ app.get('/', function(req, res)
   }*/
   
 });
+app.get('/:id', function(req, res)
+{
+  res.send("I am Foo with id " + red.params.id);
+});
 
 app.get('/riders', function(req, res)
 { 
