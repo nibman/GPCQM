@@ -35,11 +35,19 @@ var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
-app.get('/', function(req, res) 
+app.get(':id/:op?', function(req, res) 
 {
   // var re = req.toString();
-  res.status(200).send("Hello...");
-  
+  // res.status(200).send("Hello...");
+    if(req.params.op)
+    {
+        res.send("I am Foo with id " + req.params.id + " operation " + req.params.op);
+    }
+    else
+    {
+        res.send("I am Foo" + req.params.id);
+    }
+    
   /*
   var currentUser = Parse.User.current();
   if(currentUser)
@@ -51,10 +59,6 @@ app.get('/', function(req, res)
     res.sendFile(path.join(__dirname, '/public/login.html'));
   }*/
   
-});
-app.get('/:id', function(req, res)
-{
-  res.send("I am Foo with id " + red.params.id);
 });
 
 app.get('/riders', function(req, res)
