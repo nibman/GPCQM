@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+	  <meta charset="utf-8">
+	  <title>Biometrics project - Groupe Serdy</title>
+	  <meta name="description" content="HTML template for biometrics project - Groupe Serdy">
+	  <meta name="author" content="Jonathan Harvey">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" type="text/css" href="./assets/css/styles.min.css">
+	  <!--[if lt IE 9]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	  <![endif]-->
+	</head>
+	<body>
+		<div class="remodal-bg">
+			<div id="main-wrapper">
+				<div class="spinner">
+					<div class="cube1"></div>
+					<div class="cube2"></div>
+				</div>
+				<div class="container">
+					<div id="wrapper-table" class="hidden">
+						<table id="dynamic-table">
+							<thead>
+							</thead>
+							<tbody>
+							<!-- Dynamic content injected by Javascript - see: /docroot/biometrics/assets/javascripts/s3-table.js -->
+							</tbody>
+						</table>
+						<div id="wrapper-button">
+							<button id="btn-add" class="button green">Add</button>
+							<button class="button" disabled>Edit</button>
+							<button class="button red" disabled>Delete</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Remodal plugin - see: /docroot/biometrics/assets/javascripts/s4-remodal.js -->
+		<div id="modal" data-remodal-id="modal">
+			<button data-remodal-action="close" class="remodal-close"></button>
+			<form id="frmBiometric" name="frmBiometric" onSubmit="return checkform()">
+				<div class="element-group">
+					<label for="firstName">First Name</label>
+					<input class="names" type="text" name="firstName" id="firstName" required>
+				</div>
+				<div class="element-group">
+					<label for="lastName">Last Name</label>
+					<input class="names" type="text" name="lastName" id="lastName" required>
+				</div>
+				<div class="element-group">
+					<label for="hrm">hrm</label>
+					<input class="short" maxlength="4" type="text" name="hrm" id="hrm">
+				</div>
+				<div class="element-group">
+					<label for="srmPM">srmPM</label>
+					<input class="short" maxlength="4" type="text" name="srmPM" id="srmPM">
+				</div>
+				<div class="element-group">
+					<label for="pm">pm</label>
+					<input class="short" maxlength="4" type="text" name="pm" id="pm">
+				</div>
+				<div class="element-group">
+					<label for="sc">sc</label>
+					<input class="short" maxlength="4" type="text" name="sc" id="sc">
+				</div>
+				<div class="element-group">
+					<label for="gps">gps</label>
+					<input class="short" maxlength="4" type="text" name="gps" id="gps">
+				</div>
+				<div class="element-group">
+					<label for="athleteId">athleteId</label>
+					<input class="short" maxlength="4" type="text" name="athleteId" id="athleteId">
+				</div>
+				<div class="element-group">
+					<label for="dossard">dossard</label>
+					<input class="dossard" maxlength="5" type="text" name="dossard" id="dossard">
+				</div>
+				<div class="element-group">
+					<label for="team">team</label>
+					<input class="names" type="text" name="team" id="team">
+				</div>
+				<label id="message">Please fill at least " First Name " and " Last Name " to submit the form.</label>
+			</form>
+				<button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+				<button data-remodal-action="confirm" class="remodal-confirm">Save</button>
+				<div class="spinner smaller hidden">
+					<div class="cube3"></div>
+					<div class="cube4"></div>
+				</div>
+		</div>
+		<!-- Remodal plugin - see: /docroot/biometrics/assets/javascripts/s4-remodal.js: END -->
+	  <script src="./assets/javascripts/scripts.min.js"></script>
+	</body>
+</html>

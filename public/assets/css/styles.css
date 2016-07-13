@@ -1,0 +1,827 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+/*
++ * Mobile First approach to break points
++ *
++ * http://responsivedesign.is/strategy/page-layout/defining-breakpoints
++ * TL;DR
++ * Instead of being concerned with device breakpoints the best practice is to
++ * design for your smallest viewport first.  As you expand that view there will
++ * come a point at which the design looks terrible.
++ *
++ * This is where you add a break point.
++ */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font: 16px/1 sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul {
+  margin: 0;
+  padding: 0; }
+
+main,
+li {
+  display: block; }
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: inherit; }
+
+strong {
+  font-weight: bold; }
+
+a,
+button {
+  color: inherit;
+  transition: .3s; }
+
+a {
+  text-decoration: none; }
+
+button {
+  overflow: visible;
+  border: 0;
+  font: inherit;
+  -webkit-font-smoothing: inherit;
+  letter-spacing: inherit;
+  background: none;
+  cursor: pointer; }
+
+::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+:focus {
+  outline: 0; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0; }
+
+/* FormHack v1.2.0 (formhack.io) */
+/* Global Reset Styles ------------------ */
+input,
+textarea,
+select,
+option,
+optgroup,
+button,
+legend,
+fieldset {
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  color: #282828;
+  vertical-align: top;
+  display: block;
+  margin: 5px 0; }
+
+datalist {
+  font-family: inherit;
+  font-size: 14px; }
+
+label {
+  display: block;
+  margin: 5px 0; }
+
+/* Input & Textarea ------------------ */
+/* Fields with standard width */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #c8c8c8; }
+
+/* Fields with standard height */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list] {
+  height: 40px;
+  -webkit-appearance: none; }
+
+/* Other */
+textarea {
+  -webkit-appearance: none;
+  overflow: auto; }
+
+input[type="range"] {
+  height: 40px;
+  width: 100%;
+  max-width: 400px; }
+
+input[type="file"] {
+  min-height: 40px; }
+
+input[type="search"] {
+  height: 40px;
+  -webkit-appearance: none; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  vertical-align: middle; }
+
+/* Select ------------------ */
+select {
+  height: 40px; }
+
+select[multiple] {
+  height: auto;
+  min-height: 40px;
+  padding: 0; }
+  select[multiple] option {
+    margin: 0;
+    padding: 8px; }
+
+/* Fieldset ------------------ */
+fieldset {
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: 1px solid #c8c8c8; }
+
+legend {
+  padding: 0 5px;
+  font-weight: 700; }
+
+/* Buttons, Input Type Submit/Reset ------------------ */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="image"] {
+  height: 40px;
+  width: auto;
+  max-width: 200px;
+  background-color: gainsboro;
+  padding: 8px;
+  cursor: pointer;
+  color: #282828;
+  font-weight: 700;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 5px;
+  border: 1px solid #c8c8c8; }
+
+input[type="image"] {
+  text-align: center;
+  padding: 8px; }
+
+/* States ------------------ */
+input[disabled],
+textarea[disabled],
+select[disabled],
+option[disabled],
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed; }
+
+input:focus,
+textarea:focus,
+select:focus,
+option:focus {
+  background-color: gainsboro;
+  border-color: #c8c8c8; }
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: #c8c8c8 solid 2px; }
+
+button:hover:enabled.green,
+input[type="button"]:hover:enabled.green,
+input[type="submit"]:hover:enabled.green,
+input[type="reset"]:hover:enabled.green,
+button:focus.green,
+input[type="button"]:focus:enabled.green,
+input[type="submit"]:focus:enabled.green,
+input[type="reset"]:focus:enabled.green {
+  background-color: green;
+  border: 1px solid green; }
+
+button:hover:enabled.red,
+input[type="button"]:hover:enabled.red,
+input[type="submit"]:hover:enabled.red,
+input[type="reset"]:hover:enabled.red,
+button:focus.red,
+input[type="button"]:focus:enabled.red,
+input[type="submit"]:focus:enabled.red,
+input[type="reset"]:focus:enabled.red {
+  background-color: red;
+  border: 1px solid red; }
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: normal;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.42em;
+  color: #A7A1AE;
+  background-color: #1F2739; }
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1080px; }
+  .container:before {
+    display: table;
+    content: " "; }
+
+#main-wrapper {
+  display: table;
+  width: 100%; }
+
+#wrapper-spinner {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle; }
+
+/*
+Generic Styling, for Desktops/Laptops
+*/
+table {
+  width: 100%;
+  border-collapse: collapse; }
+
+/*
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block; }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; }
+  tr {
+    border: 1px solid #ccc; }
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%; }
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap; }
+  /*
+  Label the data
+  */
+  #dynamic-table {
+    color: #000; }
+    #dynamic-table td:nth-of-type(1):before {
+      content: "Athlete Id"; }
+    #dynamic-table td:nth-of-type(2):before {
+      content: "Dossard"; }
+    #dynamic-table td:nth-of-type(3):before {
+      content: "FirstName"; }
+    #dynamic-table td:nth-of-type(4):before {
+      content: "LastName"; }
+    #dynamic-table td:nth-of-type(5):before {
+      content: "Garmin Speed Cadence"; }
+    #dynamic-table td:nth-of-type(6):before {
+      content: "GPS"; }
+    #dynamic-table td:nth-of-type(7):before {
+      content: "HRM"; }
+    #dynamic-table td:nth-of-type(8):before {
+      content: "Object Id"; }
+    #dynamic-table td:nth-of-type(9):before {
+      content: "Power Meter"; }
+    #dynamic-table td:nth-of-type(10):before {
+      content: "Quarq Power Meter"; }
+    #dynamic-table td:nth-of-type(11):before {
+      content: "Speed Cadence"; }
+    #dynamic-table td:nth-of-type(12):before {
+      content: "Srm Power Meter"; }
+    #dynamic-table td:nth-of-type(13):before {
+      content: "Team"; }
+    #dynamic-table td:nth-of-type(14):before {
+      content: "Vector Power Meter"; }
+    #dynamic-table td:nth-of-type(15):before {
+      content: "Wheel Cir"; } }
+
+#wrapper-table {
+  transition: all 0.5s ease; }
+  #wrapper-table.hidden {
+    opacity: 0; }
+
+#dynamic-table {
+  display: table;
+  border-collapse: separate;
+  margin: 50px auto; }
+  #dynamic-table tr {
+    transition: all 0.3s ease; }
+    #dynamic-table tr:nth-child(odd) {
+      background-color: #323C50; }
+    #dynamic-table tr:nth-child(even) {
+      background-color: #2C3446; }
+    #dynamic-table tr.active {
+      background-color: #464A52;
+      box-shadow: 0 6px 6px -6px #0E1119; }
+  #dynamic-table th {
+    background-color: #1F2739; }
+    #dynamic-table th h1 {
+      font-weight: bold;
+      font-size: 1em;
+      text-align: left;
+      color: #185875; }
+  #dynamic-table td {
+    text-align: center;
+    font-weight: normal;
+    font-size: 1em;
+    min-width: 70px;
+    box-shadow: 0 2px 2px -2px #0E1119;
+    cursor: pointer; }
+    #dynamic-table td:first-child {
+      color: #7FB462; }
+    #dynamic-table td:not(.empty):hover {
+      background-color: #FFF842;
+      color: #403E10;
+      font-weight: bold;
+      box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+      -webkit-transform: translate3d(6px, -6px, 0);
+              transform: translate3d(6px, -6px, 0);
+      transition: all 0.4s; }
+  #dynamic-table td, #dynamic-table th {
+    padding: 10px; }
+  #dynamic-table .hideField {
+    display: none; }
+
+@media (max-width: 800px) {
+  .container td:nth-child(4),
+  .container th:nth-child(4) {
+    display: none; } }
+
+#wrapper-button button {
+  display: inline-block; }
+
+#frmBiometric {
+  text-align: left;
+  padding: 0 0 10px 0; }
+  #frmBiometric .element-group {
+    display: inline-block;
+    margin: 0 15px 0 0; }
+  #frmBiometric #message {
+    opacity: 0;
+    transition: all 0.5sec ease; }
+
+/*
+ *  Remodal - v1.0.7
+ *  Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+ *  http://vodkabears.github.io/remodal/
+ *
+ *  Made by Ilya Makarov
+ *  Under MIT License
+ */
+/* ==========================================================================
+   Remodal's necessary styles
+   ========================================================================== */
+/* Hide scroll bar */
+html.remodal-is-locked {
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none; }
+
+/* Anti FOUC */
+.remodal,
+[data-remodal-id] {
+  display: none; }
+
+/* Necessary styles of the overlay */
+.remodal-overlay {
+  position: fixed;
+  z-index: 9999;
+  top: -5000px;
+  right: -5000px;
+  bottom: -5000px;
+  left: -5000px;
+  display: none; }
+
+/* Necessary styles of the wrapper */
+.remodal-wrapper {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  overflow: auto;
+  text-align: center;
+  -webkit-overflow-scrolling: touch; }
+
+.remodal-wrapper:after {
+  display: inline-block;
+  height: 100%;
+  margin-left: -0.05em;
+  content: ""; }
+
+/* Fix iPad, iPhone glitches */
+.remodal-overlay,
+.remodal-wrapper {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+/* Necessary styles of the modal dialog */
+.remodal {
+  position: relative;
+  outline: none;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%; }
+
+.remodal-is-initialized {
+  /* Disable Anti-FOUC */
+  display: inline-block; }
+
+/*
+ *  Remodal - v1.0.7
+ *  Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+ *  http://vodkabears.github.io/remodal/
+ *
+ *  Made by Ilya Makarov
+ *  Under MIT License
+ */
+/* ==========================================================================
+   Remodal's default mobile first theme
+   ========================================================================== */
+/* Default theme styles for the background */
+.remodal-bg.remodal-is-opening,
+.remodal-bg.remodal-is-opened {
+  -webkit-filter: blur(3px);
+  filter: blur(3px); }
+
+/* Default theme styles of the overlay */
+.remodal-overlay {
+  background: rgba(43, 46, 56, 0.9); }
+
+.remodal-overlay.remodal-is-opening,
+.remodal-overlay.remodal-is-closing {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.remodal-overlay.remodal-is-opening {
+  -webkit-animation-name: remodal-overlay-opening-keyframes;
+  animation-name: remodal-overlay-opening-keyframes; }
+
+.remodal-overlay.remodal-is-closing {
+  -webkit-animation-name: remodal-overlay-closing-keyframes;
+  animation-name: remodal-overlay-closing-keyframes; }
+
+/* Default theme styles of the wrapper */
+.remodal-wrapper {
+  padding: 10px 10px 0; }
+
+/* Default theme styles of the modal dialog */
+.remodal {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 35px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  color: #2b2e38;
+  background: #fff; }
+
+.remodal.remodal-is-opening,
+.remodal.remodal-is-closing {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.remodal.remodal-is-opening {
+  -webkit-animation-name: remodal-opening-keyframes;
+  animation-name: remodal-opening-keyframes; }
+
+.remodal.remodal-is-closing {
+  -webkit-animation-name: remodal-closing-keyframes;
+  animation-name: remodal-closing-keyframes; }
+
+/* Vertical align of the modal dialog */
+.remodal,
+.remodal-wrapper:after {
+  vertical-align: middle; }
+
+/* Close button */
+.remodal-close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  overflow: visible;
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s;
+  text-decoration: none;
+  color: #95979c;
+  border: 0;
+  outline: 0;
+  background: transparent; }
+
+.remodal-close:hover,
+.remodal-close:focus {
+  color: #2b2e38; }
+
+.remodal-close:before {
+  font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
+  font-size: 25px;
+  line-height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 35px;
+  content: "\00d7";
+  text-align: center; }
+
+/* Dialog buttons */
+.remodal-confirm,
+.remodal-cancel {
+  font: inherit;
+  display: inline-block;
+  overflow: visible;
+  min-width: 110px;
+  margin: 0;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  border: 0;
+  outline: 0; }
+
+.remodal-confirm {
+  color: #fff;
+  background: #81c784; }
+
+.remodal-confirm:hover,
+.remodal-confirm:focus {
+  background: #66bb6a; }
+
+.remodal-cancel {
+  color: #fff;
+  background: #e57373; }
+
+.remodal-cancel:hover,
+.remodal-cancel:focus {
+  background: #ef5350; }
+
+/* Remove inner padding and border in Firefox 4+ for the button tag. */
+.remodal-confirm::-moz-focus-inner,
+.remodal-cancel::-moz-focus-inner,
+.remodal-close::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+/* Keyframes
+   ========================================================================== */
+@-webkit-keyframes remodal-opening-keyframes {
+  from {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0; }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1; } }
+
+@keyframes remodal-opening-keyframes {
+  from {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0; }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1; } }
+
+@-webkit-keyframes remodal-closing-keyframes {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0; } }
+
+@keyframes remodal-closing-keyframes {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0; } }
+
+@-webkit-keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+/* Media queries
+   ========================================================================== */
+@media only screen and (min-width: 641px) {
+  .remodal {
+    max-width: 1175px; } }
+
+/* IE8
+   ========================================================================== */
+.lt-ie9 .remodal-overlay {
+  background: #2b2e38; }
+
+.lt-ie9 .remodal {
+  width: 700px; }
+
+#modal .short {
+  width: 55px; }
+
+#modal .dossard {
+  width: 62px; }
+
+.spinner {
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+  .spinner.hidden {
+    opacity: 0; }
+  .spinner.smaller {
+    margin: auto;
+    top: auto;
+    left: auto;
+    bottom: 30px;
+    right: auto;
+    display: inline-block;
+    margin-left: 15px; }
+
+.cube1, .cube2, .cube3, .cube4 {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.cube1, .cube2 {
+  width: 15px;
+  height: 15px;
+  background-color: #323c50;
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+          animation: sk-cubemove 1.8s infinite ease-in-out; }
+
+.cube3, .cube4 {
+  width: 5px;
+  height: 5px;
+  background-color: #81c784;
+  -webkit-animation: sk-cubemove-short 1.8s infinite ease-in-out;
+          animation: sk-cubemove-short 1.8s infinite ease-in-out; }
+
+.cube2, .cube4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s; }
+
+@-webkit-keyframes sk-cubemove {
+  25% {
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5); }
+  50% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg); }
+  75% {
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5); }
+  100% {
+    -webkit-transform: rotate(-360deg); } }
+
+@keyframes sk-cubemove {
+  25% {
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+            transform: translateX(42px) rotate(-90deg) scale(0.5); }
+  50% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+            transform: translateX(42px) translateY(42px) rotate(-179deg); }
+  50.1% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+            transform: translateX(42px) translateY(42px) rotate(-180deg); }
+  75% {
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+            transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5); }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg); } }
+
+@-webkit-keyframes sk-cubemove-short {
+  25% {
+    -webkit-transform: translateX(22px) rotate(-90deg) scale(0.5); }
+  50% {
+    -webkit-transform: translateX(22px) translateY(22px) rotate(-180deg); }
+  75% {
+    -webkit-transform: translateX(0px) translateY(22px) rotate(-270deg) scale(0.5); }
+  100% {
+    -webkit-transform: rotate(-360deg); } }
+
+@keyframes sk-cubemove-short {
+  25% {
+    -webkit-transform: translateX(22px) rotate(-90deg) scale(0.5);
+            transform: translateX(22px) rotate(-90deg) scale(0.5); }
+  50% {
+    -webkit-transform: translateX(22px) translateY(22px) rotate(-179deg);
+            transform: translateX(22px) translateY(22px) rotate(-179deg); }
+  50.1% {
+    -webkit-transform: translateX(22px) translateY(22px) rotate(-180deg);
+            transform: translateX(22px) translateY(22px) rotate(-180deg); }
+  75% {
+    -webkit-transform: translateX(0px) translateY(22px) rotate(-270deg) scale(0.5);
+            transform: translateX(0px) translateY(22px) rotate(-270deg) scale(0.5); }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg); } }
