@@ -9000,7 +9000,7 @@
 });
 
 Parse.initialize("gpcqm");
-Parse.serverURL = 'http://gpcqm.herokuapp.com/parse'
+Parse.serverURL = 'http://serdy.io/parse'
 
 Athletes = 
  {
