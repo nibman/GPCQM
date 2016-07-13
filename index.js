@@ -48,7 +48,7 @@ app.get('/docs', function(req, res)
   res.sendFile(path.join(__dirname, "/public/bioEntry/site/index.html"));
 });
 
-app.get('./assets/:path?', function(req, res) 
+app.get('/assets/:path?', function(req, res) 
 {
   res.sendFile(path.join(__dirname, "/public/bioEntry/site/assets/"+req.params.path));
 });
