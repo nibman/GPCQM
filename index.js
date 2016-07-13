@@ -40,6 +40,7 @@ app.get('/:id/:op?', function(req, res)
   switch(req.params.id)
   {
     case "maps":
+    console.log("maps");
     res.render("/public/maps/index.html");
     break;
   }
