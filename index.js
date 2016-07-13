@@ -33,30 +33,24 @@ app.use('/public', express.static(path.join(__dirname, '/public')));
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
-// Parse Server plays nicely with the rest of your web routes
 app.get('/:id/:op?', function(req, res) 
 {
   switch(req.params.id)
   {
     case "maps":
-    res.writeHead(301,
-      {Location: 'http://serdyio.herokuapp.com/public/maps/index.html/'}
-    );
-    res.end();
-
-  //  res.render("/public/maps/index.html");
+    res.redirect("/public/maps/index.html");
     break;
+
+    case "riders":
+    res.redirect("/public/riders/index.html");
+    break;
+
+    case "docs":
+    res.redirect("/public/bioEntry/site/index.html");
+    break;
+
   }
-  // var re = req.toString();
-  // res.status(200).send("Hello...");
-    if(req.params.op)
-    {
-        res.send("I am Foo with id " + req.params.id + " operation " + req.params.op);
-    }
-    else
-    {
-        res.send("I am Foo" + req.params.id);
-    }
+  
     
   /*
   var currentUser = Parse.User.current();
@@ -69,21 +63,6 @@ app.get('/:id/:op?', function(req, res)
     res.sendFile(path.join(__dirname, '/public/login.html'));
   }*/
   
-});
-
-app.get('/riders', function(req, res)
-{ 
-  res.render("/public/riders/index.html")
-});
-
-app.get('/docs', function(req, res) 
-{
-  res.render("/public/bioEntry/site/index.html");
-});
-
-app.get('/maps', function(req, res) 
-{
-  res.render("/public/maps/index.html");
 });
 
 
