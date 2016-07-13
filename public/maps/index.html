@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>GPCQM Montreal</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
@@ -22,8 +22,10 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 45.504145, lng: -73.601786},
-          zoom: 12
+          zoom: 14, 
+          mapTypeId: google.maps.MapTypeId.SATELLITE
         });
+        map.setTilt(45);
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfP-H2Vm9-dwAM5LSHbBsPpjlLXykxO60	
