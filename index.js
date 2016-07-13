@@ -33,21 +33,54 @@ app.use('/public', express.static(path.join(__dirname, '/public')));
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
-app.get('/:id/:op?', function(req, res) 
+app.get('/maps', function(req, res) 
+  {
+    res.sendFile(path.join(__dirname, "/public/maps/index.html"));
+  });
+
+app.get('/maps', function(req, res) 
+  {
+  res.sendFile(path.join(__dirname, "/public/riders/index.html"));
+  });
+
+app.get('/docs', function(req, res) 
 {
+  res.sendFile(path.join(__dirname, "/public/bioEntry/site/index.html"));
+});
+
+app.get('./assets/:path', function(req, res) 
+{
+  res.sendFile(path.join(__dirname, "/public/bioEntry/site/"+req.params.path));
+});
+
   switch(req.params.id)
   {
     case "maps":
-    res.sendFile(path.join(__dirname, "/public/maps/index.html"));
+    
     
     break;
 
     case "riders":
-    res.sendFile(path.join(__dirname, "/public/riders/index.html"));
+    
     break;
 
     case "docs":
-      res.sendFile(path.join(__dirname, "/public/bioEntry/site/index.html"));
+      console.log();
+      if (req.params.op != null)
+      {
+        switch(req.params.op)
+        {
+
+          case "assets":
+          res.sendFile(path.join(__dirname, "/public/bioEntry/site/assets/"));
+        }
+        
+      }
+      else
+      {
+        res.sendFile(path.join(__dirname, "/public/bioEntry/site/index.html"));
+      }
+      
      break;
 
   }
