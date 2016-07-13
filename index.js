@@ -39,6 +39,7 @@ app.get('/:id/:op?', function(req, res)
   {
     case "maps":
     res.sendFile(path.join(__dirname, "/public/maps/index.html"));
+    
     break;
 
     case "riders":
@@ -46,8 +47,8 @@ app.get('/:id/:op?', function(req, res)
     break;
 
     case "docs":
-    res.sendFile(path.join(__dirname, "/public/bioEntry/site/index.html"));
-    break;
+      res.sendFile(path.join(__dirname, "/public/bioEntry/site/index.html"));
+     break;
 
   }
   
