@@ -38,7 +38,7 @@ app.get('/maps', function(req, res)
     res.sendFile(path.join(__dirname, "/public/maps/index.html"));
   });
 
-app.get('/maps', function(req, res) 
+app.get('/riders', function(req, res) 
   {
   res.sendFile(path.join(__dirname, "/public/riders/index.html"));
   });
@@ -48,42 +48,10 @@ app.get('/docs', function(req, res)
   res.sendFile(path.join(__dirname, "/public/bioEntry/site/index.html"));
 });
 
-app.get('./assets/:path', function(req, res) 
+app.get('./assets/:path?', function(req, res) 
 {
-  res.sendFile(path.join(__dirname, "/public/bioEntry/site/"+req.params.path));
+  res.sendFile(path.join(__dirname, "/public/bioEntry/site/assets/"+req.params.path));
 });
-
-  switch(req.params.id)
-  {
-    case "maps":
-    
-    
-    break;
-
-    case "riders":
-    
-    break;
-
-    case "docs":
-      console.log();
-      if (req.params.op != null)
-      {
-        switch(req.params.op)
-        {
-
-          case "assets":
-          res.sendFile(path.join(__dirname, "/public/bioEntry/site/assets/"));
-        }
-        
-      }
-      else
-      {
-        res.sendFile(path.join(__dirname, "/public/bioEntry/site/index.html"));
-      }
-      
-     break;
-
-  }
   
     
   /*
