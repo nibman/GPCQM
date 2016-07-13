@@ -29,7 +29,6 @@ var app = express();
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
-app.use('/public/maps', express.static(path.join(__dirname, '/public/maps')));
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
@@ -40,8 +39,12 @@ app.get('/:id/:op?', function(req, res)
   switch(req.params.id)
   {
     case "maps":
-    console.log("maps");
-    res.render("/public/maps/index.html");
+    res.writeHead(301,
+      {Location: 'http://serdyio.herokuapp.com/public/maps/index.html/'}
+    );
+    res.end();
+
+  //  res.render("/public/maps/index.html");
     break;
   }
   // var re = req.toString();
