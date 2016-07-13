@@ -38,15 +38,15 @@ app.get('/:id/:op?', function(req, res)
   switch(req.params.id)
   {
     case "maps":
-    res.redirect("/public/maps/index.html");
+    res.sendFile(path.join(__dirname("/public/maps/index.html"));
     break;
 
     case "riders":
-    res.redirect("/public/riders/index.html");
+    res.sendFile(path.join(__dirname("/public/riders/index.html"));
     break;
 
     case "docs":
-    res.redirect("/public/bioEntry/site/index.html");
+    res.sendFile(path.join(__dirname("/public/bioEntry/site/index.html"));
     break;
 
   }
