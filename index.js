@@ -64,8 +64,7 @@ app.get('./assets/:path?', function(req, res)
   {
     res.sendFile(path.join(__dirname, '/public/login.html'));
   }*/
-  
-});
+
 
 
 // There will be a test page available on the /test path of your server url
