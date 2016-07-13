@@ -63,17 +63,17 @@ app.get('/:id/:op?', function(req, res)
 
 app.get('/riders', function(req, res)
 { 
-  res.redirect("/public/riders/index.html")
+  res.render("/public/riders/index.html")
 });
 
 app.get('/docs', function(req, res) 
 {
-  res.redirect("/public/bioEntry/site/index.html");
+  res.render("/public/bioEntry/site/index.html");
 });
 
 app.get('/maps', function(req, res) 
 {
-  res.redirect("/public/maps/index.html");
+  res.render("/public/maps/index.html");
 });
 
 
