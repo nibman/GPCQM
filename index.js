@@ -37,6 +37,12 @@ app.use(mountPath, api);
 // Parse Server plays nicely with the rest of your web routes
 app.get('/:id/:op?', function(req, res) 
 {
+  switch(req.params.id)
+  {
+    case "maps":
+    res.render("/public/maps/index.html");
+    break;
+  }
   // var re = req.toString();
   // res.status(200).send("Hello...");
     if(req.params.op)
