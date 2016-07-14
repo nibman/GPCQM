@@ -21,7 +21,9 @@
 
   <script>
     
-    
+    var points = [[-73.585700, 45.515011], [-73.585099, 45.514469], [-73.584369, 45.514469], [-73.583897, 45.514146], [-73.581319, 45.512911]];
+    var pointIndex = 0;
+
     var viewer = new Cesium.Viewer('cesiumContainer', {
         timeline : false, 
         animation : false, 
@@ -79,11 +81,31 @@
     });
 
     //Since some of the pins are created asynchronously, wait for them all to load before zooming/
+    
     Cesium.when.all([moto1, moto2, moto3, moto4], function(pins){
         viewer.zoomTo(pins);
-    });
+        startTimer();  
+  });
 
+  startTimer = function()
+  {
+    setInterval(updatePins, 1000);
+  } 
 
+  updatePins = function()
+  {
+      moto1.setPosition(Cesium.Cartesian3.fromDegrees(points[pointIndex][0], points[pointIndex][1]);
+      if (pointIndex >= points.length)
+      {
+        pointIndex ++;
+      }
+      else
+      {
+        pointIndex = 0;
+      }
+  }   
   </script>
 </body>
 </html>
+ 
+
