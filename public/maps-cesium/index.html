@@ -57,7 +57,7 @@
     var hospitalPin = Cesium.when(pinBuilder.fromMakiIconId('hospital', Cesium.Color.RED, 48), function(canvas) {
         return viewer.entities.add({
             name : 'Hospital',
-            position : Cesium.Cartesian3.fromDegrees(-73.578811, 45.510826, ),
+            position : Cesium.Cartesian3.fromDegrees(-73.578811, 45.510826),
             billboard : {
                 image : canvas.toDataURL(),
                 verticalOrigin : Cesium.VerticalOrigin.BOTTOM
