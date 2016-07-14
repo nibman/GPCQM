@@ -18,8 +18,20 @@
 </head>
 <body>
   <div id="cesiumContainer"></div>
+
   <script>
-    var viewer = new Cesium.Viewer('cesiumContainer', {timeline : false, animation : false});
+    
+    
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+        timeline : false, 
+        animation : false, 
+        homeButton : false, 
+        infoBox : false, 
+        sceneModePicker : false, 
+        selectionIndicator : false,
+        navigationHelpButton : false, 
+        navigationInstructionsInitiallyVisible : false
+      });
 
     var pinBuilder = new Cesium.PinBuilder();
 
