@@ -31,18 +31,24 @@ var app = express();
 app.use('/public', express.static(path.join(__dirname, '/public')));
 app.use('/assets', express.static(path.join(__dirname, '/public/assets')));
 app.use('/Build', express.static(path.join(__dirname, '/public/assets/Build')));
+
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
-app.get('/maps-old', function(req, res) 
+ app.get('/mapsA', function(req, res) 
+  {
+    res.sendFile(path.join(__dirname, "/public/maps-cesium/index.html"));
+  });
+
+  app.get('/mapsB', function(req, res) 
   {
     res.sendFile(path.join(__dirname, "/public/maps-google/index.html"));
   });
 
-  app.get('/maps', function(req, res) 
+  app.get('/mapsC', function(req, res) 
   {
-    res.sendFile(path.join(__dirname, "/public/maps/index.html"));
+    res.sendFile(path.join(__dirname, "/public/maps-leaflet/index.html"));
   });
 
 app.get('/riders', function(req, res) 
