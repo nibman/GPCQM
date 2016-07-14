@@ -99,7 +99,7 @@
     console.log(points[pointIndex][1]);
       moto1.position = Cesium.Cartesian3.fromDegrees(points[pointIndex][0], points[pointIndex][1]);
 
-      if (pointIndex >= points.length)
+      if (pointIndex >= points.length-1)
       {
         pointIndex = 0;
       }
