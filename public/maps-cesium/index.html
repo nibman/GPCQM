@@ -34,7 +34,7 @@
 
     var questionPin = viewer.entities.add({
         name : 'Question mark',
-        position : Cesium.Cartesian3.fromDegrees(-73.586178, 45.515220),
+        position : Cesium.Cartesian3.fromDegrees(45.515220, -73.586178),
         billboard : {
             image : pinBuilder.fromText('?', Cesium.Color.BLACK, 48).toDataURL(),
             verticalOrigin : Cesium.VerticalOrigin.BOTTOM
@@ -45,7 +45,7 @@
     var groceryPin = Cesium.when(pinBuilder.fromUrl(url, Cesium.Color.GREEN, 48), function(canvas) {
         return viewer.entities.add({
             name : 'Grocery store',
-            position : Cesium.Cartesian3.fromDegrees(45.513671, -73.582841),
+            position : Cesium.Cartesian3.fromDegrees(-73.582841, 45.513671),
             billboard : {
                 image : canvas.toDataURL(),
                 verticalOrigin : Cesium.VerticalOrigin.BOTTOM
@@ -57,7 +57,7 @@
     var hospitalPin = Cesium.when(pinBuilder.fromMakiIconId('hospital', Cesium.Color.RED, 48), function(canvas) {
         return viewer.entities.add({
             name : 'Hospital',
-            position : Cesium.Cartesian3.fromDegrees(45.510826, -73.578811),
+            position : Cesium.Cartesian3.fromDegrees(-73.578811, 45.510826),
             billboard : {
                 image : canvas.toDataURL(),
                 verticalOrigin : Cesium.VerticalOrigin.BOTTOM
