@@ -89,7 +89,8 @@
 
   startTimer = function()
   {
-    setInterval(updatePins, 1000);
+    var self = this;
+    setInterval(function() { self.updatePins(); }, 1000);
   } 
 
   updatePins = function()
