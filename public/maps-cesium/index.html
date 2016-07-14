@@ -35,8 +35,8 @@
 
     var pinBuilder = new Cesium.PinBuilder();
 
-    var bluePin = viewer.entities.add({
-        name : 'Blank blue pin',
+    var moto1 = viewer.entities.add({
+        name : 'moto 1',
         position : Cesium.Cartesian3.fromDegrees(-73.586183, 45.515219),
         billboard : {
             image : pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 48).toDataURL(),
@@ -44,8 +44,8 @@
         }
     });
 
-    var questionPin = viewer.entities.add({
-        name : 'Question mark',
+    var moto2 = viewer.entities.add({
+        name : 'moto 2',
         position : Cesium.Cartesian3.fromDegrees(-73.594112, 45.515850),
         billboard : {
             image : pinBuilder.fromText('?', Cesium.Color.BLACK, 48).toDataURL(),
@@ -53,10 +53,10 @@
         }
     });
 
-    var url = Cesium.buildModuleUrl('Assets/Textures/maki/grocery.png');
-    var groceryPin = Cesium.when(pinBuilder.fromUrl(url, Cesium.Color.GREEN, 48), function(canvas) {
+    var url = Cesium.buildModuleUrl('Assets/Textures/maki/car.png');
+    var moto3 = Cesium.when(pinBuilder.fromUrl(url, Cesium.Color.GREEN, 96), function(canvas) {
         return viewer.entities.add({
-            name : 'Grocery store',
+            name : 'moto 3',
             position : Cesium.Cartesian3.fromDegrees(-73.582841, 45.513671),
             billboard : {
                 image : canvas.toDataURL(),
@@ -66,9 +66,9 @@
     });
 
     //Create a red pin representing a hospital from the maki icon set.
-    var hospitalPin = Cesium.when(pinBuilder.fromMakiIconId('hospital', Cesium.Color.RED, 48), function(canvas) {
+    var moto4 = Cesium.when(pinBuilder.fromMakiIconId('car', Cesium.Color.RED, 48), function(canvas) {
         return viewer.entities.add({
-            name : 'Hospital',
+            name : 'moto 4',
             position : Cesium.Cartesian3.fromDegrees(-73.578811, 45.510826),
             billboard : {
                 image : canvas.toDataURL(),
@@ -78,7 +78,7 @@
     });
 
     //Since some of the pins are created asynchronously, wait for them all to load before zooming/
-    Cesium.when.all([bluePin, questionPin, groceryPin, hospitalPin], function(pins){
+    Cesium.when.all([moto1, moto2, moto3, moto4], function(pins){
         viewer.zoomTo(pins);
     });
 
