@@ -30,11 +30,17 @@ var app = express();
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
 app.use('/assets', express.static(path.join(__dirname, '/public/assets')));
+
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
-app.get('/maps', function(req, res) 
+app.get('/maps-old', function(req, res) 
+  {
+    res.sendFile(path.join(__dirname, "/public/maps-google/index.html"));
+  });
+
+  app.get('/maps', function(req, res) 
   {
     res.sendFile(path.join(__dirname, "/public/maps/index.html"));
   });
