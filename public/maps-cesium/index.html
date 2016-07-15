@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <title>Hello World!</title>
   <script src="./assets/Build/Cesium/Cesium.js"></script>
+  <script src="./assets/javascript/tweenmax/TweenMax.min.js"></script>  
   <style>
       @import url(../Build/Cesium/Widgets/widgets.css);
       html, body, #cesiumContainer {
@@ -95,18 +96,17 @@
 
   updatePins = function()
   {
-    console.log(points[pointIndex][0]);
-    console.log(points[pointIndex][1]);
-      moto1.position = Cesium.Cartesian3.fromDegrees(points[pointIndex][0], points[pointIndex][1]);
-
-      if (pointIndex >= points.length-1)
-      {
-        pointIndex = 0;
-      }
-      else
-      {
-        pointIndex ++;
-      }
+    var p = Cesium.Cartesian3.fromDegrees(points[pointIndex][0], points[pointIndex][1]); 
+    TweenMax.to(moto1.position, 1, {x:p.x, y:p.y, z:p.z}); 
+    
+    if (pointIndex >= points.length-1)
+    {
+      pointIndex = 0;
+    }
+    else
+    {
+      pointIndex ++;
+    }
   }   
   </script>
 </body>
