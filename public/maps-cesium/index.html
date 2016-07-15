@@ -96,10 +96,13 @@
 
   var a;
   var p;
-  
+  var x;
+  var y;
+  var z;
+
   updatePins = function()
   {
-    a = moto1.position;
+    a = moto1.position.clone();
     p = Cesium.Cartesian3.fromDegrees(points[pointIndex][0], points[pointIndex][1]); 
     
     TweenMax.to(a, 1, {x:p.x, y:p.y, z:p.z, onUpdate:updatePositions}); 
@@ -116,8 +119,10 @@
 
   updatePositions = function()
   {
-    console.log(a.x + " " + a.y + " "+a.z);
-      moto1.positions = Cesium.Cartesian3.fromElements(a.x, a.y, a.z);
+    var b = Cesium.Cartesian3.fromElements(a.x, a.y, a.z);
+    console.log(b);
+    
+    moto1.position = b;
   }
 
   </script>
