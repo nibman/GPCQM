@@ -102,7 +102,7 @@
     a = moto1.position;
     p = Cesium.Cartesian3.fromDegrees(points[pointIndex][0], points[pointIndex][1]); 
     
-    TweenMax.to(a, 1, {x:p.x, y:p.y, z:p.z}, onUpdate:updatePositions); 
+    TweenMax.to(a, 1, {x:p.x, y:p.y, z:p.z, onUpdate:updatePositions}); 
     
     if (pointIndex >= points.length-1)
     {
