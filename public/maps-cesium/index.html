@@ -31,7 +31,7 @@
         animation : false, 
         homeButton : false, 
         infoBox : false, 
-        sceneModePicker : false, 
+        sceneModePicker : true, 
         selectionIndicator : false,
         navigationHelpButton : false, 
         navigationInstructionsInitiallyVisible : false, 
@@ -99,15 +99,14 @@
   {
    
     moto1.position = Cesium.Cartesian3.fromDegrees(points[pointIndex][0], points[pointIndex][1]);
-
-      if (pointIndex >= points.length-1)
-      {
-        pointIndex = 0;
-      }
-      else
-      {
-        pointIndex ++;
-      }
+    if (pointIndex >= points.length-1)
+    {
+      pointIndex = 0;
+    }
+    else
+    {
+      pointIndex ++;
+    }
   }   
   </script>
 </body>
