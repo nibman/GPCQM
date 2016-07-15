@@ -94,10 +94,15 @@
     setInterval(function() { self.updatePins(); }, 1000);
   } 
 
+  var a;
+  var p;
+  
   updatePins = function()
   {
-    var p = Cesium.Cartesian3.fromDegrees(points[pointIndex][0], points[pointIndex][1]); 
-    TweenMax.to(moto1.position, 1, {x:p.x, y:p.y, z:p.z}); 
+    a = moto1.position;
+    p = Cesium.Cartesian3.fromDegrees(points[pointIndex][0], points[pointIndex][1]); 
+    
+    TweenMax.to(a, 1, {x:p.x, y:p.y, z:p.z}, onUpdate:updatePositions); 
     
     if (pointIndex >= points.length-1)
     {
@@ -107,7 +112,13 @@
     {
       pointIndex ++;
     }
-  }   
+  }  
+
+  updatePositions = function()
+  {
+      moto1.positions = p;
+  }
+
   </script>
 </body>
 </html>
