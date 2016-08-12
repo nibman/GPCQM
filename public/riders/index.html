@@ -83,7 +83,7 @@
 				</div>
 				<div class="element-group">
 					<label for="country">Country</label>
-					<input class="names" type="text" name="country" id="country">
+                                        <select class="names" type="text" name="country" id="country"></select>
 				</div>
 				<label id="message">Please fill at least " First Name " and " Last Name " to submit the form.</label>
 			</form>
@@ -95,6 +95,17 @@
 				</div>
 		</div>
 		<!-- Remodal plugin - see: /docroot/biometrics/assets/javascripts/s4-remodal.js: END -->
-	  <script src="./assets/javascripts/scripts.min.js"></script>
+                <script src="./assets/javascripts/scripts.min.js"></script>
+                <script src="./assets/javascripts/countryList.js"></script>
+                <script>
+                    selectList = document.getElementById('country');
+
+                    for (var i = 0; i < countryList.length; i++) {
+                        var option = document.createElement("option");
+                        option.value = countryList[i];
+                        option.text = countryList[i];
+                        selectList.appendChild(option);
+                    }
+                </script>
 	</body>
 </html>
