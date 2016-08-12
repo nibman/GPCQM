@@ -7,6 +7,7 @@
 	  <meta name="author" content="Jonathan Harvey">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" type="text/css" href="./assets/css/styles.min.css">
+
 	  <!--[if lt IE 9]>
 	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	  <![endif]-->
@@ -80,6 +81,20 @@
 					<label for="team">team</label>
 					<input class="names" type="text" name="team" id="team">
 				</div>
+				<div class="element-group">
+					<label for="dob">Birth day</label>
+					<input class="names" type="date" name="dob" id="datepicker">
+				</div>
+                                <br>
+				<div class="element-group">
+					<label for="country">country</label>
+                                        <select class="names" type="text" name="country" id="country"></select>
+				</div>
+                                <br>
+				<div class="element-group">
+					<label for="picture">picture</label>
+					<input class="names" type="file" name="picture" id="picture">
+				</div>
 				<label id="message">Please fill at least " First Name " and " Last Name " to submit the form.</label>
 			</form>
 				<button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
@@ -91,5 +106,16 @@
 		</div>
 		<!-- Remodal plugin - see: /docroot/biometrics/assets/javascripts/s4-remodal.js: END -->
 	  <script src="./assets/javascripts/scripts.min.js"></script>
+
+          <script>
+              $.getJSON("./assets/json/countries-FR.json", function(json){
+                        $('#country').empty();
+                        $('#country').append($('<option>').text("Select"));
+                        $.each(json, function(i, obj){
+                                $('#country').append($('<option>').text(obj).attr('value', i));
+                        });
+                });
+
+          </script>
 	</body>
 </html>

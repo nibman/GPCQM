@@ -10,6 +10,7 @@
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  */
+
 ! function(e) {
     if ("object" == typeof exports && "undefined" != typeof module) module.exports = e();
     else if ("function" == typeof define && define.amd) define([], e);
@@ -9006,11 +9007,11 @@ Athletes =
  {
     keys:["objectId", "firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter", 
             "vectorPowerMeter", "quarqPowerMeter", "speedCadence", "powerMeter", 
-            "garminSpeedCadence", "team", "gps", "wheelCir"],
+            "garminSpeedCadence", "team", "gps", "wheelCir", "country", "dob"],
     
     resultModel:["firstName", "lastName", "athleteID", "dossard", "hrm", "srmPowerMeter", 
             "powerMeter", "vectorPowerMeter", "quarqPowerMeter", "speedCadence",  
-            "garminSpeedCadence", "team", "gps", "objectId"],
+            "garminSpeedCadence", "team", "gps", "objectId", "country", "dob"],
     
     returnType:"Array",  // Object
     
@@ -9280,7 +9281,7 @@ var dynamicTableBody = dynamicTable.getElementsByTagName('tbody')[0];
 var dynamicTableHead = dynamicTable.getElementsByTagName('thead')[0];
 var wrapperTable = document.getElementById('wrapper-table');
 var spinner = document.getElementById('spinner');
-var hideFields = ["athleteID", "dossard", "team", "objectId"];
+var hideFields = []; // ["athleteID", "dossard", "team", "objectId"];
 var hideFieldsPosition = new Array();
 
 function errorReceived(err)
