@@ -51,9 +51,14 @@ app.use(mountPath, api);
     res.sendFile(path.join(__dirname, "/public/maps-leaflet/index.html"));
   });
 
-app.get('/riders', function(req, res) 
+  app.get('/riders', function(req, res)
   {
   res.sendFile(path.join(__dirname, "/public/riders/index.html"));
+  });
+
+  app.get('/teams', function(req, res)
+  {
+  res.sendFile(path.join(__dirname, "/public/teams/teams.html"));
   });
 
 app.get('/docs', function(req, res) 
