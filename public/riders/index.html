@@ -31,8 +31,8 @@
 						</table>
 						<div id="wrapper-button">
 							<button id="btn-add" class="button green">Add</button>
-							<button class="button" disabled>Edit</button>
-							<button class="button red" disabled>Delete</button>
+							<button id="btn-edit" class="button">Edit</button>
+							<button id="btn-delete" class="button red" disabled>Delete</button>
 						</div>
 					</div>
 				</div>
@@ -86,6 +86,10 @@
 				<div class="element-group">
 					<label for="country">Country</label>
                                         <select class="names" type="text" name="country" id="country"></select>
+				</div>
+				<div class="element-group">
+					<label for="showData">Show biometric</label>
+					<input class="names" maxlength="5" type="checkbox" name="showData" id="showData">
 				</div>
 				<label id="message">Please fill at least " First Name " and " Last Name " to submit the form.</label>
 			</form>
