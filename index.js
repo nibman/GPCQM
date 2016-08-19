@@ -72,7 +72,13 @@ app.get('/docs', function(req, res)
   
 app.get('/list-riders', function(req, res)
 {
-  db.collection('Athlete').find({}, function(err, data) { res.send(data) });
+  console.log(db);
+
+  db.collection('Athlete').find({}, function(err, data) 
+    {   
+        console.log(err);
+        res.send(data) 
+      });
 });
   
     
