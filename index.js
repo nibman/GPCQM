@@ -70,7 +70,7 @@ app.get('/docs', function(req, res)
 });
 
   
-app.get('list-riders', function(req, res)
+app.get('/list-riders', function(req, res)
 {
   res.send("list-riders touches");
 });
