@@ -72,7 +72,7 @@ app.get('/docs', function(req, res)
   
 app.get('/list-riders', function(req, res)
 {
-  database.collection('Athlete').find({}, function(err, data) { res.send(data) });
+  db.collection('Athlete').find({}, function(err, data) { res.send(data) });
 });
   
     
