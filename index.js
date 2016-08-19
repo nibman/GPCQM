@@ -3,6 +3,7 @@
 
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
+var mongodb = require('mongodb');
 var path = require('path');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
@@ -31,6 +32,8 @@ var app = express();
 app.use('/public', express.static(path.join(__dirname, '/public')));
 app.use('/assets', express.static(path.join(__dirname, '/public/assets')));
 app.use('/Build', express.static(path.join(__dirname, '/public/assets/Build')));
+
+
 
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
@@ -67,7 +70,10 @@ app.get('/docs', function(req, res)
 });
 
   
-
+app.get('list-riders', function(req, res)
+{
+  res.send("list-riders touches");
+});
   
     
   /*
@@ -94,6 +100,16 @@ var httpServer = require('http').createServer(app);
 httpServer.listen(port, function() {
     console.log('serdy.io running on port ' + port + '.');
 });
+
+mongodb.MongoClient.connect(databaseUri, function(err, database)
+  {
+    if(err)
+    {
+      console.log(err);
+      process.exit(1);
+    } 
+    db = database;
+  });
 
 // This will enable the Live Query real-time server
 ParseServer.createLiveQueryServer(httpServer);
