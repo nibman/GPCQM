@@ -78,8 +78,8 @@ app.get('/list-riders', function(req, res)
     {   
         console.log("**********");
         console.log(" err " +err);
-        console.log(" data " +data);
-        res.status(200).json(data); 
+        console.log(" data " +JSON.stringify(data));
+        res.send(JSON.stringify(data)); 
       });
 });
   
