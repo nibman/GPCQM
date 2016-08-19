@@ -5,17 +5,17 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var mongodb = require('mongodb');
 var path = require('path');
-
-var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
+var db;
+var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI || "mongodb://heroku_q2hshcg6:9ftraq93ovoa6vj0v450jv93be@ds011943.mlab.com:11943/heroku_q2hshcg6";
 
 if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
 var api = new ParseServer({
-  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+  databaseURI: databaseUri || 'mongodb://heroku_q2hshcg6:9ftraq93ovoa6vj0v450jv93be@ds011943.mlab.com:11943/heroku_q2hshcg6',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  appId: process.env.APP_ID || 'myAppId',
+  appId: process.env.APP_ID || 'serdyio',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   liveQuery: {
@@ -72,12 +72,10 @@ app.get('/docs', function(req, res)
   
 app.get('/list-riders', function(req, res)
 {
-  db.collection('Athlete').find({}, function(err, data) 
+  db.collection("Athlete").find({}).toArray(function(err, data) 
     {   
-        console.log("**********");
-        console.log(" err " +err);
-        console.log(" data " +data);
-        res.send("allo"); 
+        var d = JSON.stringify(data);
+        res.status(200).json(d); 
       });
 });
   
