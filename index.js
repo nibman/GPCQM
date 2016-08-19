@@ -76,7 +76,9 @@ app.get('/list-riders', function(req, res)
 
   db.collection('Athlete').find({}, function(err, data) 
     {   
-        console.log(data);
+        console.log("**********");
+        console.log(" err " +err);
+        console.log(" data " +data);
         // res.status(200).json(data); 
       });
 });
