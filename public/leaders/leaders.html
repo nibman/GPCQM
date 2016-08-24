@@ -15,7 +15,7 @@
     <table border="1" class="gridtable">
       <tr>
         <th>Ordre</th>
-        <th>Numéro dossard  - nom</th>
+        <th>Numéro dossard  - Nom, prénom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
       </tr>
       <tr>
         <td>#1</td>
@@ -117,10 +117,9 @@
               console.log("sending signal");
           },
           success: function(data) {
-            var leaders = data;
+            var leaders = JSON.parse(data);
             leaders.forEach(function(el, index, array){
-              //console.log(el, index);
-              $('.selectLeader').append($("<option />").val(el.id).text(el.dossard+' : '+el.name));
+              $('.selectLeader').append($("<option />").val(el.athleteId).text(el.dossard+' : '+el.lastName+' - '+ el.firstName));
               $(".selectLeader").select2({ width: '100%' });
             });
 
