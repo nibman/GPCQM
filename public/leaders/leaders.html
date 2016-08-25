@@ -119,7 +119,7 @@
           success: function(data) {
             var leaders = JSON.parse(data);
             leaders.forEach(function(el, index, array){
-              $('.selectLeader').append($("<option />").val(el.athleteId).text(el.dossard+' : '+el.lastName+' - '+ el.firstName));
+              $('.selectLeader').append($("<option />").val(el.dossard).text(el.dossard+' : '+el.lastName+' - '+ el.firstName));
               $(".selectLeader").select2({ width: '100%' });
             });
 
