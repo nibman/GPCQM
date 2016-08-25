@@ -39,17 +39,17 @@ app.use('/Build', express.static(path.join(__dirname, '/public/assets/Build')));
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
- app.get('/mapsA', function(req, res) 
+ app.get('/mapsA', function(req, res)
   {
     res.sendFile(path.join(__dirname, "/public/maps-cesium/index.html"));
   });
 
-  app.get('/mapsB', function(req, res) 
+  app.get('/mapsB', function(req, res)
   {
     res.sendFile(path.join(__dirname, "/public/maps-google/index.html"));
   });
 
-  app.get('/mapsC', function(req, res) 
+  app.get('/mapsC', function(req, res)
   {
     res.sendFile(path.join(__dirname, "/public/maps-leaflet/index.html"));
   });
@@ -64,27 +64,32 @@ app.use(mountPath, api);
   res.sendFile(path.join(__dirname, "/public/leaders/leaders.html"));
   });
 
+  app.get('/tag', function(req, res)
+  {
+  res.sendFile(path.join(__dirname, "/public/leaders/tag.html"));
+  });
+
   app.get('/teams', function(req, res)
   {
   res.sendFile(path.join(__dirname, "/public/teams/teams.html"));
   });
 
-app.get('/docs', function(req, res) 
+app.get('/docs', function(req, res)
 {
   res.sendFile(path.join(__dirname, "/public/bioEntry/site/index.html"));
 });
 
-  
+
 app.get('/list-riders', function(req, res)
 {
-  db.collection("Athlete").find({}).toArray(function(err, data) 
-    {   
+  db.collection("Athlete").find({}).toArray(function(err, data)
+    {
         var d = JSON.stringify(data);
-        res.status(200).json(d); 
+        res.status(200).json(d);
       });
 });
-  
-    
+
+
   /*
   var currentUser = Parse.User.current();
   if(currentUser)
@@ -116,7 +121,7 @@ mongodb.MongoClient.connect(databaseUri, function(err, database)
     {
       console.log(err);
       process.exit(1);
-    } 
+    }
     db = database;
   });
 
