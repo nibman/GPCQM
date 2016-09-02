@@ -82,6 +82,7 @@ app.get('/docs', function(req, res)
 
 app.get('/list-riders', function(req, res)
 {
+  console.log(eq.query.velonin);
   if (req.query.velonin && req.query.velonin == "true")
   {
     db.collection("Athlete").find({}).toArray(function(err, data) 
