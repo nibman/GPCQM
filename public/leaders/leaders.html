@@ -99,7 +99,7 @@
         </td>
       </tr>
       <tr>
-        <td colspan="6"><input class="saveSettings" type="button" value="Send"></td>
+        <td colspan="6"><input class="saveSettings" type="button" value="Send"><span id="confirm"></span></td>
       </tr>
     </table>
 
@@ -191,6 +191,8 @@
                   };
 
                   var msg = {'mapcontrols':data, 'time':new Date().toString()};
+                  $('#confirm').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sending ... ');
+                  setTimeout(function(){$('#confirm').html('')}, 2000);
                   dataStream.publish({
       	            channel   : 'race-leaders',
       	            message   : msg,
