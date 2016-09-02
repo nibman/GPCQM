@@ -85,6 +85,7 @@ app.get('/list-riders', function(req, res)
   console.log(req.query.velonin);
   if (req.query.velonin && req.query.velonin == "true")
   {
+    console.log("get all riders");
     db.collection("Athlete").find({}).toArray(function(err, data) 
       {   
           var d = JSON.stringify(data);
@@ -93,6 +94,7 @@ app.get('/list-riders', function(req, res)
   }
   else
   {
+    
     db.collection("Athlete").find({ "isVelon": false }).toArray(function(err, data) 
       {   
           var d = JSON.stringify(data);
