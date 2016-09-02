@@ -1,6 +1,7 @@
 body { margin:0; padding:0; }
 #map { position:absolute; top:0; bottom:0; width:50%; height:100% }
 .right {float: right}
+.left {float: left}
 <!-- CSS goes in the document HEAD or added to your external stylesheet -->
 <style type="text/css">
 table.gridtable {

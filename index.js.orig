@@ -82,6 +82,7 @@ app.get('/docs', function(req, res)
 
 app.get('/list-riders', function(req, res)
 {
+<<<<<<< HEAD
   if (req.query.velonin && req.query.velonin == "true")
   {
     db.collection("Athlete").find({}).toArray(function(err, data) 
@@ -104,11 +105,20 @@ app.get('/list-riders', function(req, res)
 {
   db.collection("Athlete").find({}).toArray(function(err, data) 
     {   
+=======
+  db.collection("Athlete").find({}).toArray(function(err, data)
+    {
+>>>>>>> 178e60be81bfb39793042fed74694d47fbdcf5ea
         var d = JSON.stringify(data);
         res.status(200).json(d);
       });
 });
+<<<<<<< HEAD
     
+=======
+
+
+>>>>>>> 178e60be81bfb39793042fed74694d47fbdcf5ea
   /*
   var currentUser = Parse.User.current();
   if(currentUser)
