@@ -100,7 +100,7 @@ app.get('/list-riders', function(req, res)
   }
   else
   {
-    db.collection("Athlete").find({ "isVelon": "false" }).toArray(function(err, data) 
+    db.collection("Athlete").find({ "isVelon": false }).toArray(function(err, data) 
       {   
           var d = JSON.stringify(data);
           res.status(200).json(d); 
