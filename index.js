@@ -79,13 +79,19 @@ app.get('/docs', function(req, res)
   res.sendFile(path.join(__dirname, "/public/bioEntry/site/index.html"));
 });
 
+app.get('/velon-riders', function(req, res)
+{
+  db.collection("Athlete").find({ "isVelon": "true" }).toArray(function(err, data) 
+      {   
+          var d = JSON.stringify(data);
+          res.status(200).json(d); 
+      });
+});
 
 app.get('/list-riders', function(req, res)
 {
-  console.log(req.query.velonin);
   if (req.query.velonin && req.query.velonin == "true")
   {
-    console.log("get all riders");
     db.collection("Athlete").find({}).toArray(function(err, data) 
       {   
           var d = JSON.stringify(data);
@@ -94,8 +100,7 @@ app.get('/list-riders', function(req, res)
   }
   else
   {
-    
-    db.collection("Athlete").find({ "isVelon": false }).toArray(function(err, data) 
+    db.collection("Athlete").find({ "isVelon": "false" }).toArray(function(err, data) 
       {   
           var d = JSON.stringify(data);
           res.status(200).json(d); 
