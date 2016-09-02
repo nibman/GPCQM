@@ -81,7 +81,7 @@ app.get('/docs', function(req, res)
 
 app.get('/velon-riders', function(req, res)
 {
-  db.collection("Athlete").find({ "isVelon": "true" }).toArray(function(err, data) 
+  db.collection("Athlete").find({ "isVelon": true }).toArray(function(err, data) 
       {   
           var d = JSON.stringify(data);
           res.status(200).json(d); 
