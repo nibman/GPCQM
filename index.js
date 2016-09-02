@@ -64,6 +64,11 @@ app.use(mountPath, api);
   res.sendFile(path.join(__dirname, "/public/leaders/leaders.html"));
   });
 
+  app.get('/sortbio', function(req, res)
+  {
+  res.sendFile(path.join(__dirname, "/public/leaders/sort.html"));
+  });
+
   app.get('/tag', function(req, res)
   {
   res.sendFile(path.join(__dirname, "/public/leaders/tag.html"));
@@ -81,10 +86,10 @@ app.get('/docs', function(req, res)
 
 app.get('/velon-riders', function(req, res)
 {
-  db.collection("Athlete").find({ "isVelon": true }).toArray(function(err, data) 
-      {   
+  db.collection("Athlete").find({ "isVelon": true }).toArray(function(err, data)
+      {
           var d = JSON.stringify(data);
-          res.status(200).json(d); 
+          res.status(200).json(d);
       });
 });
 
@@ -92,31 +97,31 @@ app.get('/list-riders', function(req, res)
 {
   if (req.query.velonin && req.query.velonin == "true")
   {
-    db.collection("Athlete").find({}).toArray(function(err, data) 
-      {   
+    db.collection("Athlete").find({}).toArray(function(err, data)
+      {
           var d = JSON.stringify(data);
-          res.status(200).json(d); 
+          res.status(200).json(d);
       });
   }
   else
   {
-    db.collection("Athlete").find({ "isVelon": false }).toArray(function(err, data) 
-      {   
+    db.collection("Athlete").find({ "isVelon": false }).toArray(function(err, data)
+      {
           var d = JSON.stringify(data);
-          res.status(200).json(d); 
+          res.status(200).json(d);
       });
   }
 });
-  
+
 app.get('/list-riders', function(req, res)
 {
-  db.collection("Athlete").find({}).toArray(function(err, data) 
-    {   
+  db.collection("Athlete").find({}).toArray(function(err, data)
+    {
         var d = JSON.stringify(data);
         res.status(200).json(d);
       });
 });
-    
+
   /*
   var currentUser = Parse.User.current();
   if(currentUser)
