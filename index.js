@@ -109,13 +109,13 @@ app.get('/list-riders', function(req, res)
       {
           var d = JSON.stringify(data);
           var newData=[];
-          for(i = 0; i < d.length; i++){
-              if(d[i].gps || d[i].hrm || d[i].sc || d[i].pm || d[i].sp){
-                newData.push(d[i]);
+          for(i = 0; i < data.length; i++){
+              if(data[i].gps || data[i].hrm || data[i].sc || data[i].pm || data[i].sp){
+                newData.push(data[i]);
               }
 
           }
-          res.status(200).json(newData);
+          res.status(200).json(JSON.stringify(newData));
       });
   }
 });
