@@ -105,10 +105,17 @@ app.get('/list-riders', function(req, res)
   }
   else
   {
-    db.collection("Athlete").find({ "isVelon": false }).toArray(function(err, data)
+    db.collection("Athlete").find({ "isVelon": false}).toArray(function(err, data)
       {
           var d = JSON.stringify(data);
-          res.status(200).json(d);
+          var newData=[];
+          for(i = 0; i < d.length; i++){
+              if(d[i].gps || d[i].hrm || d[i].sc || d[i].pm || d[i].sp){
+                newData.push(d[i]);
+              }
+
+          }
+          res.status(200).json(newData);
       });
   }
 });
