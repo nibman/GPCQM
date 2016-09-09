@@ -113,7 +113,7 @@ app.get('/list-riders', function(req, res)
   }
 });
 
-app.get('/list-riders', function(req, res)
+app.get('/list-AllRiders', function(req, res)
 {
   db.collection("Athlete").find({}).toArray(function(err, data)
     {
