@@ -75,20 +75,8 @@ $("#sort tbody").sortable({
         publish_key : "pub-c-5b51718e-6722-4f1d-ae7c-0bd5faf5c809",
         subscribe_key : "sub-c-a0d8a5b6-1bae-11e6-8bc8-0619f8945a4f"
 			});
-      function messageReceived(e)
-  		{
-  			console.log("messageReceived");
-  			if (e.mapControls)
-  			{
 
-  			}
-  			console.log(e);
-  		}
-  		dataStream.subscribe({
-  			channel: "race-events-channel",
-
-  			message: function(e) { messageReceived(e); }
-  		});
+  	
       $('.saveSettings').click(function()
           {
             var listId=[];
