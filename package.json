@@ -4,7 +4,7 @@
   "description": "We collect data and stream it thru our world class cloud.",
   "main": "index.js",
   "scripts": {
-    "start":"index.js"
+    "start":"./index.js"
   },
   "private": true,
   "author": "Jonathan Harvey",
