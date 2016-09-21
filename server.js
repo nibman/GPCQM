@@ -40,3 +40,10 @@ app.get('/victoriaville', function(req, res) {
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
+
+
+var port = process.env.PORT || 1337;
+var httpServer = require('http').createServer(app);
+httpServer.listen(port, function() {
+    console.log('serdy.io running on port ' + port + '.');
+});
