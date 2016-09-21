@@ -1,0 +1,365 @@
+/*-------------------------------------------------------------------
+	BASE LAYOUT ZONES
+-------------------------------------------------------------------*/
+.layout-wrapper{
+	margin:0 auto;
+	padding:15px 0 0 0;
+	position: relative;
+	text-align:left;
+	width:$layout_width;
+	@include border-box();
+
+	@include responsive(1240px){
+		padding:0 $gutter_width;
+		width:100%;
+
+		&.layout-wrapper-ui{
+			margin:0 $gutter_width;
+			padding:0;
+			width:auto;
+		}
+	}
+
+	// @include responsive($mobile){
+	// 	padding:0 30px;
+	// }
+}
+
+.layout-wrapper-ui{
+
+	@include responsive($layout_width){
+		margin:0 $gutter_width;
+		padding:0;
+		position: relative;
+		text-align:left;
+		width:auto;
+	}
+}
+
+#layout-header {
+	margin:0 0 40px;
+
+	@include responsive($tablet){
+		margin:0 0 $gutter_width;
+	}
+
+	.layout-wrapper{
+		padding-top:15px;
+		text-align:center;
+	}
+}
+
+#layout-content {
+	&.layout-article{
+		margin:0 0 $gutter_width*2;
+	}
+}
+
+#layout-footer {
+	background: $gallery;
+	margin:0;
+	padding:40px 0 20px;
+	@include responsive($tablet){
+		background: none;
+		padding:0;
+	}
+	.inside-wrapper {
+		@include responsive($tablet){
+			background:$gallery;
+			padding: 30px 15px 30px;
+		}
+	}
+	.btn-circle{
+		background:$boulder;
+
+		&:hover{
+			background:$black;
+		}
+	}
+
+	.footer-milk-family{
+		padding-top:36px;
+
+		@include responsive($tablet){
+			margin:0 0 $gutter_width 0;
+			padding:0;
+			width:50%;
+		}
+
+		@include responsive(645px){
+			float:none;
+		}
+
+		@include responsive($mobile){
+			width:100%;
+		}
+
+		img{
+			margin:0 12px 20px 0;
+		}
+
+		a{
+			display:block;
+			font-weight:600;
+			text-decoration:none;
+			@include font-size(13);
+
+			&:hover{
+				color:$black;
+			}
+
+			span{
+				display:block;
+				margin:0 0 8px;
+				text-transform:uppercase;
+				@include font-size(14);
+			}
+		}
+	}
+
+	.footer-credits{
+		@include font-size(16);
+
+		@include responsive($tablet){
+			margin:0;
+			width:50%;
+		}
+
+		@include responsive($tablet){
+			float:none;
+			width:100%;
+		}
+
+		@include responsive($mobile){
+			@include font-size(12);
+		}
+
+		ul{
+			float:right;
+			padding-bottom:26px;
+
+			@include responsive(645px){
+				float:none;
+			}
+
+			li{
+				padding-left:5px;
+				&:first-child{padding-left:0;}
+			}
+		}
+
+		p{
+			float:right;
+			padding-bottom:$gutter_width/2;
+
+			@include responsive(704px){
+				float:none;
+				text-align:center;
+			}
+		}
+	}
+}
+
+
+/*-------------------------------------------------------------------
+	GRID SYSTEM
+-------------------------------------------------------------------*/
+
+$sizes:(xs,sm,md,lg);
+$breakpoints:(0px,$mobile,$tablet,$breakpoint-l,$breakpoint-infinite);
+
+// Classic row
+.row {
+	$gutter:$gutter_width / $layout_width * 100%; // Fluid gutter width
+	position:relative;
+
+	@include row {
+		padding-bottom:$gutter;
+
+		[class*="col"] {
+			margin-left:$gutter;
+
+			@include responsive($mobile){
+				margin:0 0 $gutter_width 0;
+			}
+		}
+
+		@for $x from 0 to length($sizes) {
+			@include responsive(nth($breakpoints, $x+2), nth($breakpoints, $x+1)){
+				.col-#{nth($sizes, $x+1)}-first{
+					clear:both;
+					margin-left:0;
+				}
+				.visible-#{nth($sizes, $x+1)}{display:block;}
+				.hidden-#{nth($sizes, $x+1)}{display:none;}
+			}
+
+			@include responsiveMin(nth($breakpoints, $x+1)){
+				@for $i from 1 through $columns {
+					.col-#{nth($sizes, $x+1)}-#{$i} {
+						width:(100% - (($columns / $i - 1) * $gutter)) / ($columns / $i);
+					}
+				}
+			}
+		}
+	}
+}
+
+// Row without gutters
+.row-full {
+	$gutter:0%; // Fixed gutter width
+
+	@include row {
+		padding-bottom:$gutter;
+
+		[class*="col"] {
+			margin-left:$gutter;
+		}
+
+		@for $x from 0 to length($sizes) {
+			@include responsive(nth($breakpoints, $x+2), nth($breakpoints, $x+1)){
+				.col-#{nth($sizes, $x+1)}-first{
+					clear:both;
+					margin-left:0;
+				}
+				.visible-#{nth($sizes, $x+1)}{display:block;}
+				.hidden-#{nth($sizes, $x+1)}{display:none;}
+			}
+
+			@include responsiveMin(nth($breakpoints, $x+1)){
+				@for $i from 1 through $columns {
+					.col-#{nth($sizes, $x+1)}-#{$i} {
+						width:(100% - (($columns / $i - 1) * $gutter)) / ($columns / $i);
+					}
+				}
+			}
+		}
+	}
+}
+
+[class*="col"].hide, .row [class*="col"].hide { display:none; }
+[class*="col"].pull-right, .row [class*="col"].pull-right { float:right; }
+
+/*-------------------------------------------------------------------
+	BASE LAYOUT CLASSES
+-------------------------------------------------------------------*/
+.l-align {text-align:left;}
+.c-align {text-align:center;}
+.r-align {text-align:right;}
+.pull-right {float:right;}
+.pull-left {float:left;}
+
+.clear {
+	clear:both;
+	display:block;
+}
+
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {clear:both;}
+.cf { zoom:1;}
+
+
+/*-------------------------------------------------------------------
+	SPECIFIC LAYOUTS
+-------------------------------------------------------------------*/
+.layout-article{
+	$gutter:$article_gutter_width / $layout_width * 100%; // Fluid gutter width
+	@extend .cf;
+
+	.layout-article-main-content{
+		display:block;
+		float:left;
+		min-height: 30px;
+		width:(100% - ((12 / 8 - 1) * $gutter)) / (12 / 8);
+		@include border-box();
+
+		@include responsive($tablet){
+			float:none;
+			margin:0 0 $gutter_width;
+			width:100%;
+		}
+	}
+
+	.layout-article-aside{
+		float:right;
+		margin-left:$gutter;
+		min-height:30px;
+		padding:20px 0 40px;
+		width:(100% - ((12 / 4 - 1) * $gutter)) / (12 / 4);
+		.layout-article-aside-title{
+			color:$grey;
+			font-family:$museo-700;
+			margin:0 10px;
+			text-transform:uppercase;
+			@include font-size(14);
+		}
+		@include responsive($tablet){
+			float:none;
+			margin:0 0 $gutter_width;
+			width:100%;
+		}
+
+		.aside-section{
+			border-top:1px solid $border-grey;
+			padding:$gutter_width 0 0 0;
+
+			&:first-child{
+				border-top:0;
+				padding-top:0;
+			}
+
+			&.aside-section-author{
+				font-family:$museo-700;
+				text-transform:uppercase;
+				@include font-size(12);
+
+				a{
+					color:$acapulco;
+					@include font-size(12);
+				}
+			}
+
+			a{
+				&.aside-section-sublink{
+					font-family:$crimson;
+					text-transform:none;
+					@include font-size(16);
+				}
+			}
+		}
+	}
+}
+
+.layout-toplayer{
+	@include font-size(20);
+
+	@include responsive($mobile){
+		@include font-size(16);
+	}
+
+	.layout-wrapper{
+		width:600px;
+
+		@include responsive($mobile){
+			padding:0;
+			width:100%;
+		}
+	}
+
+	h2{
+		@include font-size(20);
+
+		@include responsive($mobile){
+			@include font-size(16);
+		}
+	}
+
+	.toplayer-response{
+		display:none;
+	}
+}

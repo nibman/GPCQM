@@ -1,0 +1,24 @@
+.label {
+	display: inline-block;
+	font-family: $museo-700;
+	line-height:100%;
+	padding: 10px;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	@include font-size(11);
+	
+	&:hover{
+		text-decoration: none !important;
+	}
+}
+
+.label-tags {
+	background: $harp;
+	color: $acapulco;
+	@include transition(background-color);
+	
+	&:hover{
+		background:darken(saturate($harp, 20%), 5%);
+		color: $acapulco;
+	}
+}

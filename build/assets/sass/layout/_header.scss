@@ -1,0 +1,52 @@
+.page-header{
+	text-align:center;
+
+	.page-header-content{
+		margin:0 auto;
+	}
+}
+
+.page-header-contest{
+	margin:0 auto;
+	min-height:540px;
+	padding:75px 0 0 0;
+	@include border-box();
+
+	h1{
+		font-family:$museo-900;
+		line-height:1;
+		text-transform:uppercase;
+		@include font-size(25);
+
+		@include responsive($mobile){
+			@include font-size(16);
+		}
+
+		span{
+			display:block;
+			line-height:1.5;
+			@include font-size(60);
+
+			@include responsive($tablet){
+				@include font-size(50);
+			}
+
+			@include responsive($mobile){
+				@include font-size(30);
+			}
+		}
+	}
+
+	a{
+		display:block;
+		font-family:$museo-700;
+		margin:0 auto;
+		text-decoration:none;
+		text-transform:uppercase;
+		@include font-size(16);
+
+		.circle{
+			margin:10px auto 0;
+		}
+	}
+}

@@ -1,0 +1,58 @@
+.profil {
+
+}
+
+.profil-chef {
+	padding:20px 0;
+	@include clearfix();
+	img {
+		border-radius:109px;
+		float:left;
+		height:218px;
+		width:218px;
+		margin:0 20px 20px 0;
+	}
+	.profil-chef-info {
+		float:left;
+		h2 {
+			@include font-size(14);
+			padding-bottom:7px;
+		}
+		.profil-chef-name {
+			font-family:$museo-900;
+			padding:10px 0 0;
+			text-transform:uppercase;
+			color:$black;
+			@include font-size(25);
+			span {
+				color:$grey;
+				display:block;
+				font-family:$museo-700;
+				padding:5px 0 40px;
+				@include font-size(14);
+
+			}
+		}
+		.article-default-hat {
+			padding:0 0 7px;
+		}
+		p, a {
+			padding:0 0 7px;
+			line-height:20px;
+		}
+		a {
+			@include font-size(20);
+			&.trigger-accordeon {
+				line-height: 24px;
+				@include font-size(18);
+			}
+		}
+		& + .content-accordeon {
+			display: none;
+			float: left;
+			line-height: 24px;
+			margin: 12px 0 0 0;
+			@include font-size(18);
+		}
+	}
+}

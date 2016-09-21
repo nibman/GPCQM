@@ -1,0 +1,362 @@
+.icon{
+	background-repeat:no-repeat;
+	vertical-align:middle;
+	@include display(inline-block);
+}
+
+.icon-padded-right{
+	margin-right:8px;
+}
+
+.icon-padded-left{
+	margin-left:8px;
+}
+
+// From left to right, top to bottom
+.icon-facebook{
+	@include sprite(-2px, -2px);
+	height:21px;
+	width:9px;
+}
+
+.icon-twitter{
+	@include sprite(-18px, -2px);
+	height:21px;
+	width:26px;
+}
+
+.icon-rss{
+	@include sprite(-52px, -2px);
+	height:21px;
+	width:18px;
+}
+
+.icon-calendar{
+	@include sprite(-80px, -2px);
+	height:19px;
+	width:19px;
+}
+
+.icon-bloggers{
+	@include sprite(-110px, -2px);
+	height:20px;
+	width:19px;
+}
+
+.icon-rss-circle{
+	@include sprite(-138px, -2px);
+	height:24px;
+	width:24px;
+}
+
+.icon-mobile-nav{
+	@include sprite(-172px, -2px);
+	height:19px;
+	width:21px;
+}
+
+.icon-mobile-nav-opened{
+	@include sprite(-202px, -2px);
+	height:19px;
+	width:21px;
+}
+
+.icon-search{
+	@include sprite(-377px, -2px);
+	height:16px;
+	width:21px;
+}
+
+.icon-laptop{
+	@include sprite(-2px, -34px);
+	height:17px;
+	width:25px;
+}
+
+.icon-email{
+	@include sprite(-37px, -34px);
+	height:13px;
+	width:20px;
+}
+
+.icon-print{
+	@include sprite(-67px, -34px);
+	height:19px;
+	width:19px;
+}
+
+.icon-favorite{
+	@include sprite(-97px, -34px);
+	height:13px;
+	width:15px;
+}
+
+.icon-freezer{
+	@include sprite(-121px, -34px);
+	height:22px;
+	width:18px;
+	vertical-align:bottom;
+}
+
+.icon-fridge{
+	@include sprite(-151px, -34px);
+	height:22px;
+	width:14px;
+	vertical-align:bottom;
+}
+
+.icon-preparation{
+	@include sprite(-175px, -34px);
+	height:22px;
+	width:20px;
+	vertical-align:bottom;
+}
+
+.icon-cooking{
+	@include sprite(-204px, -34px);
+	height:22px;
+	width:20px;
+	vertical-align:bottom;
+}
+
+.icon-arrow-left{
+	@include sprite(-233px, -34px);
+	height:15px;
+	width:8px;
+}
+
+.icon-arrow-right{
+	@include sprite(-252px, -34px);
+	height:15px;
+	width:8px;
+}
+
+.icon-category{
+	@include sprite(-270px, -34px);
+	height:20px;
+	width:20px;
+}
+
+.icon-shop{
+	@include sprite(-307px, -34px);
+	height:20px;
+	width:25px;
+}
+
+.icon-az{
+	@include sprite(-342px, -34px);
+	height:20px;
+	width:18px;
+}
+
+.icon-marker{
+	@include sprite(-372px, -34px);
+	height:20px;
+	width:14px;
+}
+
+.icon-snowflake{
+	@include sprite(-2px, -60px);
+	height:66px;
+	width:65px;
+}
+
+.icon-wine{
+	@include sprite(-78px, -60px);
+	height:45px;
+	width:31px;
+}
+
+.icon-beer{
+	@include sprite(-122px, -60px);
+	height:54px;
+	width:26px;
+}
+
+.icon-cider{
+	@include sprite(-162px, -60px);
+	height:50px;
+	width:18px;
+}
+
+.icon-porto{
+	@include sprite(-195px, -60px);
+	height:34px;
+	width:21px;
+}
+
+.icon-arrow-down-grey{
+	@include sprite(-228px, -60px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-down{
+	@include sprite(-228px, -70px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-down-directory{
+	@include sprite(-228px, -79px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-down-blog{
+	@include sprite(-228px, -89px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-down-recipes{
+	@include sprite(-228px, -99px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-down-tips{
+	@include sprite(-228px, -109px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-down-black{
+	@include sprite(-228px, -118px);
+	height:4px;
+	width:7px;
+}
+
+.icon-close{
+	@include sprite(-293px, -60px);
+	width: 13px;
+	height: 12px;
+	vertical-align:inherit;
+}
+
+.icon-shop-grey{
+	@include sprite(-244px, -60px);
+	height:20px;
+	width:25px;
+}
+
+.icon-arrow-up-grey{
+	@include sprite(-277px, -60px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-up{
+	@include sprite(-277px, -70px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-up-directory{
+	@include sprite(-277px, -79px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-up-blog{
+	@include sprite(-277px, -89px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-up-recipes{
+	@include sprite(-277px, -89px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-up-tips{
+	@include sprite(-277px, -109px);
+	height:4px;
+	width:7px;
+}
+
+.icon-arrow-up-black{
+	@include sprite(-277px, -118px);
+	height:4px;
+	width:7px;
+}
+
+.icon-category-blog{
+	@include sprite(-2px, -130px);
+	height:20px;
+	width:20px;
+}
+
+.icon-category-tips{
+	@include sprite(-28px, -130px);
+	height:20px;
+	width:20px;
+}
+
+.icon-category-recipes{
+	@include sprite(-55px, -130px);
+	height:20px;
+	width:20px;
+}
+
+.icon-category-directory{
+	@include sprite(-84px, -130px);
+	height:20px;
+	width:20px;
+}
+
+.icon-calendar-blog{
+	@include sprite(-112px, -131px);
+	height:19px;
+	width:19px;
+}
+
+.icon-bloggers-blog{
+	@include sprite(-142px, -130px);
+	height:20px;
+	width:19px;
+}
+
+.icon-shop-directory{
+	@include sprite(-173px, -130px);
+	height:20px;
+	width:25px;
+}
+
+.icon-az-directory{
+	@include sprite(-208px, -130px);
+	height:16px;
+	width:18px;
+}
+
+.icon-marker-directory{
+	@include sprite(-238px, -130px);
+	height:20px;
+	width:14px;
+}
+
+.icon-play{
+	@include sprite(-313px, -60px);
+	vertical-align:top;
+	height:19px;
+	width:18px;
+}
+.icon-play-sm{
+	@include sprite(-338px, -60px);
+	height:17px;
+	width:15px;
+}
+
+
+/*-------------------------------------------------------------------
+	Hors du sprite
+-------------------------------------------------------------------*/
+.icon-arrow-down-contest{
+	height:14px;
+	width:23px;
+
+	@include retina{
+		background-size:23px 14px;
+	}
+}

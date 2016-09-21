@@ -1,0 +1,116 @@
+.box {
+	margin:0 0 $gutter_width;
+	padding:$gutter_width;
+	@include border-box();
+	
+	.title-underlined:first-child{margin-bottom:0;}
+	
+	> *:last-child{padding-bottom:0; margin-bottom:0;}
+}
+ 
+.box-tips{
+	background:$polar;
+	padding:40px 20px;
+	margin-top:40px;
+	@include font-size(16);
+	p, span{
+		@include font-size(20);
+		line-height:150%;
+	}
+	.box-tips-subtitle{
+		font-family:$museo-700;
+		text-transform:uppercase;
+		padding-top:20px;
+		@include font-size(15);
+	}
+	.title-underlined{
+		padding-top:0;
+	}
+	.list-about-cheese{
+		a{
+			@include font-size(20);
+		}
+		li{
+			@include font-size(20);
+			line-height:110%;
+		}
+	}
+}
+ 
+
+.box-full {
+	margin:0 0 $gutter_width*2;
+	padding: 20px 0;
+	
+	&.box-full-recipes {
+		background: $big-stone;
+	}
+	
+	&.box-full-like { 
+		background: $aqua-haze;
+	}
+	
+	&.box-full-ingredients {
+		background: $scotch-mist;
+		font-family:$museo-900;
+		ul {margin-bottom: $gutter_width/2;}
+		li, h3 {padding:0 $gutter_width*2;}
+		h3 {
+			@include font-size(14);
+			margin-bottom: $gutter_width;
+		}
+	} 
+	&.box-full-steps {
+		line-height:130%;
+		h3 {
+			font-weight: 600;
+			@include font-size(16);
+		}
+		a {
+			color: $acapulco;
+		}
+	}
+	
+	&.box-full-contest{
+		line-height:1.3;
+		margin:0;
+		@include font-size(20);
+		
+		.box-title{
+			font-family:$museo-900;
+			text-transform:uppercase;
+			@include font-size(25);
+		}
+		
+		.box-subtitle{
+			font-family:$museo-900;
+			text-transform:uppercase;
+			@include font-size(16);
+		}
+	}
+}
+
+.box-hint {
+	background: $persimmon;			
+	padding: $gutter_width/2;
+	margin-bottom: $gutter-width*2;
+	p {
+		padding: $gutter-width/3 0;
+		color: $white;
+		font-family: $museo-500;
+		@include font-size(14);
+		margin-left:66px;
+		strong {
+			font-family: $museo-900;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+		text-indent:-66px;
+		
+	}	
+}
+
+.box-toplayer{
+	padding:0;
+}
+

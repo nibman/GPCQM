@@ -1,0 +1,105 @@
+<!-- footer.nunjucks -->
+
+<footer id="layout-footer" class="box">
+  <div class="layout-wrapper">
+  <div class="inside-wrapper">
+    <div class="nav-footer-wrapper cf">
+      <nav class="nav nav-primary">
+        <ul>
+          <li>
+            <a href="https://www.fromagesdici.com/repertoire" class="nav-item-directory">Répertoire</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/recettes" class="nav-item-recipes">Recettes</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/trucs" class="nav-item-tips">P'tits trucs</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/tout-sur-les-fromages" class="nav-item-about">Tout sur les fromages</a>
+          </li>
+          <li>
+              <a href="https://www.fromagesdici.com/blogue" class="nav-item-blog no-ajaxy">Blogue</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/concours" class="nav-item-contest">Concours</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="nav nav-toolbar">
+        <ul>
+          <li>
+            <a href="https://www.fromagesdici.com/nous-joindre" class="fancybox-iframe no-ajaxy">Nous joindre</a>
+          </li>
+          <li class="nav-item-last">
+            <span class="bullet">•</span>
+            <a href="https://www.fromagesdici.com/abonnement" class="fancybox-iframe no-ajaxy">Infolettre</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="footer-milk-family cf col-md-4 col-sm-6">
+          <img src="/assets/images/famille-lait.gif" alt="Famille du lait" class="pull-left">
+          <a href="http://www.lafamilledulait.com/" target="_blank">
+            <span>La famille du lait</span> Le Lait, les Fromages d'ici, la Crème, le Lait au chocolat et le Beurre. Tout ce que vous voulez savoir à propos de nos produits.</a>
+      </div>
+      <div class="col-md-2 hidden-sm hidden-xs"></div>
+      <div class="footer-credits col-md-6 col-sm-6">
+        <ul class="list-floated cf">
+          <li>
+            <a href="https://www.facebook.com/fromagesdici" class="btn btn-circle" target="_blank">
+              <div class="btn-circle-inner">
+                <i class="icon icon-facebook"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/fromagesdici" class="btn btn-circle" target="_blank">
+              <div class="btn-circle-inner">
+                <i class="icon icon-twitter"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/blogue/feed" class="btn btn-circle">
+              <div class="btn-circle-inner">
+                <i class="icon icon-rss"></i>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div class="cf"></div>
+        <p>© Les Producteurs de lait du Québec</p>
+        <div class="cf"></div>
+        <nav class="nav nav-credits">
+          <ul>
+            <li>
+              <a href="#referencesHolder" class="has-tipsy" original-title="">Références</a>
+              <div id="referencesHolder" class="is-hidden">
+                <p>Les textes de ce site ont été rédigés à partir des sources suivantes :</p>
+                <p><strong>Sites</strong></p>
+                <ul>
+                  <li><a href="http://www.plaisirslaitiers.ca" target="_blank">http://www.plaisirslaitiers.ca</a></li>
+                  <li><a href="http://www.servicevie.com" target="_blank">http://www.servicevie.com</a></li>
+                  <li><a href="http://www.routedesfromages.com" target="_blank">http://www.routedesfromages.com</a></li>
+                  <li><a href="http://www.saveursdumonde.net" target="_blank">http://www.saveursdumonde.net</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#creditsHolder" class="has-tipsy" original-title="">Crédits photos</a>
+              <div id="creditsHolder" class="is-hidden">
+                <p>Les photographies de ce site Internet ont été prises par les photographes suivants : <strong>Sylvain Giguère</strong>, <strong>Claude Mathieu</strong>, <strong>Ghislain Martineau</strong>, <strong>Catherine Côté</strong> et <strong>Mathieu Dupuis</strong></p>
+              </div>
+            </li>
+            <li>
+              <a href="/conditions">Conditions d'utilisation</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  </div>
+</footer>

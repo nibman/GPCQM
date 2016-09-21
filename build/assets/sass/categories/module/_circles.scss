@@ -1,0 +1,68 @@
+.circle{
+	display:table;
+	line-height:100%;
+	text-align:center;
+	@include border-box();
+	
+	.circle-inner{
+		display:table-cell;
+		vertical-align:middle;
+	}
+}
+
+// Sizes
+.circle-sm{
+	height:50px;
+	width:50px;
+	@include border-radius(25px);
+}
+
+.circle-md{
+	height:90px;
+	width:90px;
+	@include border-radius(45px);
+	
+	@include responsive($mobile){
+		height:80px;
+		width:80px;
+		@include border-radius(40px);
+	}
+}
+
+.circle-lg {
+	height: 170px;
+	width: 170px;
+	@include border-radius(50%);
+}
+
+// Colors
+.circle-blue{
+	background:$ship-cove;
+	color:$white;
+}
+.circle-white{
+	background:$white;
+}
+
+// Alcools
+.circle-vin-blanc, .circle-cidre {
+	background: $citrine-white;
+	@include transition(background);
+	&:hover {
+		background: darken($citrine-white, 10%);
+	}
+}
+.circle-vin-rouge, .circle-porto {
+	background: $guardsman-red;
+	@include transition(background);
+	&:hover {
+		background: lighten($guardsman-red, 10%);
+	}
+}
+.circle-biere {
+	background: $energy-yellow;
+	@include transition(background);
+	&:hover {
+		background: darken($energy-yellow, 10%);
+	}
+}

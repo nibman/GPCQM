@@ -1,0 +1,88 @@
+/*-------------------------------------------------------------------
+	Variables
+-------------------------------------------------------------------*/
+// Colors
+$white:#FFFFFF;
+$black:#000000;
+
+// Specific sections colors
+$about:#ffd47a;
+$blog:#85bec1;
+$contest:#a2e2c2;
+$directory:#9bc6d5;
+$recipes:#b2e2f0;
+$tips:#ffbb72;
+
+// Pellets
+$barley-corn: #a89966;
+$melanie: #e8c4dc;
+$golden-grass: #de9627;
+$flush-mahogany: #c63439;
+$mulberry-wood: #660534;
+$tahuna-sands: #ecefc1;
+$candlelight: #fbe328;
+$pigeon-post: #b8c0df;
+$jet-stream: #acd2cc;
+$sail: #a0d9f6;
+
+// Wines
+$citrine-white: #fbf9e4;
+$guardsman-red: #bf0009;
+$energy-yellow: #f7d45c;
+
+// Grey (light -> dark)
+$gallery:#eeeeee;
+$westar: #e0e0d7;
+$border-grey:#c7c6be;
+$mist-grey:#c0c0b4;
+$gray-nickel: #bfbfb8;
+$delta: #a5a5a3;
+$grey:#808080;
+$boulder:#7a7a7a;
+$kokoda: #6b6a5a;
+$mineshaft:#333333;
+
+// Blue (light -> dark)
+$polar:#eef9fb;
+$ship-cove:#7496b5;
+$lochinvar:#289894;
+$big-stone: #182239;
+$aqua-haze:#eaf2f4;
+
+// Green (light -> dark)
+$harp: #e9f4ef;
+$acapulco:#7cb197;
+$granite-green: #8f8e7d;
+
+// Yellow (light -> dark)
+$scotch-mist: #fffbdf;
+$luxor-gold: #ab8e31;
+
+// Orange (light -> dark)
+$persimmon: #ff6c4b;
+
+$error:#e7300c;
+
+// Layout
+$columns:12; // Number of columns
+$layout_width:1200px;
+$gutter_width:10px;
+$article_gutter_width:30px;
+
+// Media queries breakpoints
+$breakpoint-infinite:12000px;
+$breakpoint-l:1100px;
+$breakpoint-m:940px;
+$tablet : 768px;
+$mobile : 500px;
+
+// Fonts
+$base_font_size:16px;
+$arial:Arial, Helvetica, sans-serif;
+$museo-100:'MuseoSans100Regular', Arial, Helvetica, sans-serif;
+$museo-500:'MuseoSans500Regular', Arial, Helvetica, sans-serif;
+$museo-700:'MuseoSans700Regular', Arial, Helvetica, sans-serif;
+$museo-900:'MuseoSans900Regular', Arial, Helvetica, sans-serif;
+$crimson:"Crimson Text","Times New Roman",Times,serif;
+
+$cache-buster:"?1.0";

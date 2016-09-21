@@ -1,0 +1,51 @@
+.video-holder{
+	margin:0 0 $gutter_width;
+	position:relative;
+	
+	.video-btn{
+		display:block;
+		position: absolute;
+		
+		&.video-btn-play{
+			bottom: 20px;
+			display:table;
+			right: 20px;
+			.icon-play {
+				margin: 0 auto;
+			}
+		}
+		
+		&.video-btn-stop{
+			background:$black;
+			padding:$gutter_width/2;
+			right:$gutter_width/2;
+			top:$gutter_width/2;;
+			z-index:20;
+			@include border-radius(5px);
+		}
+	}
+}
+
+.video-holder-swap{
+	margin:0;
+	
+	&.is-playing{
+		.video-btn-stop{
+			display:inline-block;
+		}
+	}
+	
+	.video-btn-stop{
+		display:none;
+	}
+	
+	.video-content{
+		bottom:0;
+		left:0;
+		position:absolute;
+		right:0;
+		top:0;
+		visibility:hidden;
+		z-index:-10;
+	}
+}

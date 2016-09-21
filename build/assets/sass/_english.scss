@@ -1,0 +1,22 @@
+body.en{
+	@include responsiveMin($tablet){
+		.nav-primary-wrapper .nav-primary{
+			margin-left:0;
+			margin-right:17px;
+
+			.nav-item-logo-holder{
+				a{
+					background-image:url(/assets/images/logo-menu-en@2x.png);
+					width:74px;
+				}
+			}
+		}
+	}
+
+	.nav-home{
+		@include responsive($tablet){
+			background-image:url(/assets/images/logo-menu-en@2x.png);
+			width:52px;
+		}
+	}
+}

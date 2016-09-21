@@ -1,0 +1,46 @@
+<!-- recette-nav.nunjucks -->
+
+<div class="nav-secondary-wrapper" id="nav-recipes">
+  <div class="layout-wrapper">
+    <nav class="nav nav-secondary cf">
+      <a class="back-to-home mobile" href="/">Retour à la tournée</a>
+      <a href="#" class="nav-submenu-opener">
+        Filtrer<i class="icon icon-arrow-down icon-padded-left"></i>
+        <i class="icon icon-arrow-up icon-padded-left"></i>
+      </a>
+      <div class="nav-submenu-wrapper">
+        <div class="nav-submenu-table-wrapper">
+          <ul class="cf">
+            <li class="nav-submenu-trigger">
+              <a href="#">
+                <i class="icon icon-calendar icon-padded-right"></i>
+                autres villes visitées<i class="icon icon-arrow-down icon-padded-left"></i>
+                <i class="icon icon-arrow-up icon-padded-left"></i>
+              </a>
+
+                <nav class="nav-submenu nav-scrollable">
+                    <ul>
+                        <li><a href="/trois-rivieres">Trois-Rivières</a></li>
+
+                        <li><strong>Lac-Brome</strong></li>
+
+                        <li><strong>Baie-St-Paul</strong></li>
+
+                        <li><strong>Montréal</strong></li>
+
+                        <li><strong>Louiseville</strong></li>
+
+                        <li><strong>St-Félix-De-Valois</strong></li>
+
+                        <li><strong>Victoriaville</strong></li>
+
+                    </ul>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a class="back-to-home" href="/">Retour à la tournée</a>
+    </nav>
+  </div>
+</div>

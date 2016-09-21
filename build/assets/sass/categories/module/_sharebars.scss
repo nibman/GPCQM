@@ -1,0 +1,41 @@
+.sharebar{
+	border-bottom:1px solid $border-grey;
+	border-top:1px solid $border-grey;
+	margin:25px 0 $gutter_width;
+	padding:15px;	
+	a{
+		color:$grey;
+		font-family:$museo-700;
+		text-decoration:none;
+		text-transform:uppercase;
+		@include font-size(11);
+	}
+	li.sharebar-item-social {
+		margin-right: $gutter_width;
+		width:320px;
+		a {
+			margin-left: 5px;
+			&:first-child { 
+				margin-left: 0;
+			}
+		}
+	}
+	@include responsive($tablet){
+		ul {
+			li.sharebar-item-print, li.sharebar-item-send, li.sharebar-item-fullscreen {
+				span {display: none;}
+			}
+		}
+	}
+	@include responsive($mobile){
+		ul {
+			li.sharebar-item-send {
+				padding-left: 0;
+				span {display: inline;}
+			}
+			li.sharebar-item-social, li.sharebar-item-print, li.sharebar-item-fullscreen {
+				display: none;
+			}
+		}
+	}
+}

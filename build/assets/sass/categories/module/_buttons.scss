@@ -1,0 +1,91 @@
+.btn{
+	border:0;
+	line-height:100% !important;
+	padding:5px 13px;
+	text-decoration:none;
+	@include display('inline-block');
+	@include transition(background-color);
+	
+	&:hover{
+		text-decoration:none !important;
+	}
+}
+
+.btn-circle{
+		background:$black;
+		display:table;
+		height:42px;
+		margin: 0 auto;
+		padding:0;
+		text-transform:uppercase;
+		width:42px;
+		vertical-align:middle;
+		@include border-radius(21px);
+		
+		.btn-circle-inner{
+			display:table-cell;
+			line-height:100%;
+			text-align:center;
+			vertical-align:middle;
+		}
+	}
+	
+.btn-primary{
+	background:$black;
+	color:$white !important;
+	font-family:$museo-700;
+	padding:7px $gutter_width;
+	text-transform:uppercase;
+	@include font-size(16);
+	
+	@include responsive($mobile){
+		@include font-size(12);
+	}
+	
+	&:hover{
+		background:$boulder;
+		color:$white;
+	}
+}
+
+.btn-preview{
+	background:$white;
+	color:$lochinvar;
+	line-height:1;
+	font-family:$museo-700;
+	padding:14px 13px 13px;
+	text-transform:uppercase;
+	@include font-size(12);
+	
+	&:hover{
+		background:$lochinvar;
+		color:$white;
+	}
+
+	&.btn-preview-inverted {
+		background: $lochinvar;
+		color: $white;
+		&:hover {
+			background: $white;
+			color: $lochinvar;
+		}
+	}
+}
+
+.btn-md{
+	padding:17px 0;
+	width:250px;
+}
+
+.btn-full{
+	padding:17px 0;
+	width:98%;
+}
+
+.btn-next-page{
+	display:none;
+}
+
+.infinite-scroll.is-paused{
+	.btn-next-page{display:inline-block;}
+}

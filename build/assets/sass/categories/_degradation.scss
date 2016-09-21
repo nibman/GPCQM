@@ -1,0 +1,222 @@
+/*-------------------------------------------------------------------
+	IE 9 styles first, inherited by ie8 and ie7
+-------------------------------------------------------------------*/
+html.ie9{
+
+}
+
+/*-------------------------------------------------------------------
+	IE 8 styles first, inherited by ie7
+-------------------------------------------------------------------*/
+html.ie8{
+	overflow-x:auto;
+	$layout_width: $breakpoint-m;
+
+	body {
+		overflow-x:auto;
+		min-width:960px;
+	}
+	body.layout-toplayer {
+		overflow-x:auto;
+		min-width:0;
+		.layout-wrapper{
+			width:auto;
+		}
+	}
+	.slider-holder.slider-holder-centered{
+		max-width:940px !important;
+	}
+	.slider.slider-full{
+		max-width:940px !important;
+	}
+	.layout-wrapper{
+		width:$layout_width;
+	}
+	.article-pellet img{
+		max-height:99px;
+	}
+	.slider .slick-dots li button{
+		background-color:transparent;
+		background: url("/assets/images/fallbacks/circle-slide.png") no-repeat 0 0;
+	}
+	.slider .slick-dots li button:hover{
+		background-color:transparent;
+		background: url("/assets/images/fallbacks/circle-slide-hover.png") no-repeat 0 0;
+	}
+	.slider .slick-dots li.slick-active button{
+		background-color:transparent;
+		background: url("/assets/images/fallbacks/circle-slide-selected.png") no-repeat 0 0;
+	}
+	.slider .slick-prev, .slider .slick-next{
+		background-color:transparent;
+		background: url("/assets/images/fallbacks/circle-prev-next.png") no-repeat 0 0;
+	}
+	.slider .slick-prev:hover, .slider .slick-next:hover {
+		background-color:transparent;
+		background:url("/assets/images/fallbacks/circle-prev-next-hover.png") no-repeat 0 0;
+	}
+	.slider .slick-prev.slick-disabled, .slider .slick-next.slick-disabled{
+		background-color:transparent;
+		background: url("/assets/images/fallbacks/circle-prev-next-disable.png") no-repeat 0 0;
+	}
+	.slider .slick-prev.slick-disabled:hover, .slider .slick-next.slick-disabled:hover{
+		background-color:transparent;
+		background: url("/assets/images/fallbacks/circle-prev-next-disable.png") no-repeat 0 0;
+	}
+	$sizes:(xs,sm,md,lg);
+	$breakpoints:(0px,$mobile,$tablet,$breakpoint-l,$breakpoint-infinite);
+
+	// Classic row
+	.row {
+		$gutter:$gutter_width / $layout_width * 100%; // Fluid gutter width
+		position:relative;
+
+		@include row {
+			padding-bottom:$gutter;
+
+			[class*="col"] {
+				margin-left:$gutter;
+			}
+
+			.col-md-first{
+				clear:both;
+				margin-left:0;
+			}
+			.visible-md{display:block;}
+			.hidden-md{display:none;}
+
+			@for $i from 1 through $columns {
+				.col-md-#{$i} {
+					width:(100% - (($columns / $i - 1) * $gutter)) / ($columns / $i);
+				}
+			}
+		}
+	}
+
+	// Row without gutters
+	.row-full {
+		$gutter:0%; // Fixed gutter width
+
+		@include row {
+			padding-bottom:$gutter;
+
+			[class*="col"] {
+				margin-left:$gutter;
+			}
+
+			.col-md-first{
+				clear:both;
+				margin-left:0;
+			}
+			.visible-md{display:block;}
+			.hidden-md{display:none;}
+
+			@for $i from 1 through $columns {
+				.col-md-#{$i} {
+					width:(100% - (($columns / $i - 1) * $gutter)) / ($columns / $i);
+				}
+			}
+		}
+	}
+
+	// Fluidable
+	$columnWidth: 	100%/$columns;
+	.fluidable-wrapper {
+		max-width: $breakpoint-m - ($gutter_width * 2);
+		margin:0 auto;
+
+
+		@for $x from 1 to $columns {
+			.col-md-#{$x} {
+				width: $columnWidth * $x;
+				float: left;
+			}
+		}
+
+
+		// Offset
+
+		@for $x from 0 to $columns {
+			.col-md-offset-#{$x} {
+				margin-left: $columnWidth * $x;
+			}
+		}
+
+
+		// Pull
+
+		@for $x from 0 to $columns {
+			.col-md-pull-#{$x} {
+				right: $columnWidth * $x;
+			}
+		}
+
+
+		// Push
+
+		@for $x from 0 to $columns {
+			.col-md-pull-#{$x} {
+				left: $columnWidth * $x;
+			}
+		}
+	}
+
+	// Circles
+	.circle.circle-sm.circle-white {
+		background: url("/assets/images/fallbacks/circle-sm-white.png") no-repeat 0 0 transparent;
+	}
+	// Circles Alcools
+	.cheese-alcools {
+		.circle-vin-blanc, .circle-cidre {
+			background: url("/assets/images/fallbacks/circle-vin-blanc.png") no-repeat 0 0 transparent;
+			&:hover {
+				background: url("/assets/images/fallbacks/circle-vin-blanc-hover.png") no-repeat 0 0 transparent;
+			}
+		}
+		.circle-vin-rouge, .circle-porto {
+			background: url("/assets/images/fallbacks/circle-vin-rouge.png") no-repeat 0 0 transparent;
+			&:hover {
+				background: url("/assets/images/fallbacks/circle-vin-rouge-hover.png") no-repeat 0 0 transparent;
+			}
+		}
+		.circle-biere {
+			background: url("/assets/images/fallbacks/circle-biere.png") no-repeat 0 0 transparent;
+			&:hover {
+				background: url("/assets/images/fallbacks/circle-biere-hover.png") no-repeat 0 0 transparent;
+			}
+		}
+	}
+
+	// Circles Footer
+	#layout-footer {
+		.btn-circle {
+			background: url("/assets/images/fallbacks/circle-footer.png") no-repeat 0 0 transparent;
+			&:hover {
+				background: url("/assets/images/fallbacks/circle-footer-hover.png") no-repeat 0 0 transparent;
+			}
+		}
+	}
+
+	//vertical align cheese_slug
+	#fromages-slug {
+
+		.acts-as-table{
+			.acts-as-cell{
+				float:left;
+			}
+		}
+	}
+
+	.masonry-list{
+		.masonry-item{
+			width:33%;
+		}
+	}
+}
+
+/*-------------------------------------------------------------------
+	IE 7 and lower styles only
+-------------------------------------------------------------------*/
+html.ie7{
+
+}

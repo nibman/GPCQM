@@ -1,0 +1,319 @@
+.banner{
+	display:block;
+	margin:0 0 ($gutter_width*2);
+	position:relative;
+	width:100%;
+	@include border-box();
+
+	.banner-title{
+		color:$white;
+		display:inline-block;
+		line-height:100%;
+		padding:0;
+		@include text-shadow(0, 2px, 5px, rgba($black, 0.2));
+	}
+
+	.banner-background{
+		background-position:center center;
+		background-repeat:no-repeat;
+		bottom:0;
+		left:0;
+		position:absolute;
+		right:0;
+		top:0;
+		z-index:-1;
+		@include background-cover();
+	}
+
+	.btn-preview{
+		margin:$gutter_width 0 0 0;
+	}
+}
+
+.banner-centered{
+	display:table;
+	text-align:center;
+
+	.banner-centered-content{
+		display:table-cell;
+		vertical-align:middle;
+	}
+
+	.banner-bottom-content{
+		display:table-cell;
+		vertical-align:bottom;
+	}
+}
+
+.banner-header{
+	height:383px;
+	@include responsive($mobile){
+		height:200px;
+	}
+
+	&.banner-header-about{
+		.banner-background{
+			background-image:url(/assets/images/tout-sur-les-fromages/index-main.jpg);
+		}
+	}
+
+	.banner-title{
+		color:#b4826f;
+		font-family:$museo-900;
+		text-shadow:none;
+		@include font-size(75);
+
+		@include responsive($mobile){
+			@include font-size(45);
+		}
+
+		span{
+			display:block;
+			line-height:100%;
+			@include font-size(50);
+
+			@include responsive($mobile){
+				@include font-size(20);
+			}
+		}
+	}
+
+}
+
+.banner-cover{
+	height:413px;
+
+	@media only screen and (min-width: 768px) {
+		height:440px;
+	}
+	&.banner-cover-home {
+		h2{color:#0794aa;}
+		.banner-background {
+			background-image:url(/assets/images/banner-main.jpg);
+			@include responsive($mobile) {
+				background-image:url(/assets/images/banner-main-mobile.jpg);
+			}
+		}
+		.background-circle {
+			background: url(/assets/images/banner-circle-small.png) no-repeat center 0;
+			width: 100%;
+			height: 100%;
+			@media only screen and (min-width: 768px) {
+				background: url(/assets/images/banner-circle.png) no-repeat center 0;
+			}
+		}
+	}
+	&.banner-cover-recette {
+		h2{color:#0794aa;}
+		.banner-background {
+		  background: url(/assets/images/camion-final-blanc.png) 0 20px no-repeat #f8e2b7;
+		  background-size: cover;
+			@include responsive($breakpoint-l) {
+				background-position: -200px 20px;
+			}
+			@include responsive($tablet) {
+				background-position: -300px 20px;
+			}
+			@include responsive($mobile) {
+				background-position: -420px 20px;
+			}
+		}
+		.background-circle {
+			background: url(/assets/images/banner-circle-small.png) no-repeat 0 0;
+		  width: 274px;
+		  height: 196px;
+		  background-size: cover;
+		  margin: 0 0 0 70px;
+		  @include responsive($tablet) {
+			  width: 226px;
+			  height: 161px;
+			  margin: 0 0 0 15px;
+		  }
+		  @include responsive($mobile) {
+			  width: 226px;
+			  height: 161px;
+			  margin: 0 auto;
+		  }
+		}
+	}
+
+	.banner-title {
+		display: none;
+		font-family:$museo-900;
+		text-transform:uppercase;
+		text-shadow:none;
+		@include font-size(50);
+
+		@include responsive($mobile){
+			@include font-size(36);
+		}
+
+		span{
+			display:block;
+			font-family:$museo-700;
+			line-height:1;
+			margin:30px 0 5px 0;
+			@include font-size(30);
+
+			@include responsive($tablet){
+				@include font-size(24);
+			}
+
+			@include responsive($mobile){
+				@include font-size(20);
+			}
+		}
+	}
+}
+
+.banner-single{
+	height:100%;
+	padding:$gutter_width*3 $gutter_width $gutter_width;
+	text-align:center;
+
+	@include responsive($breakpoint-l){
+		padding:$gutter_width*2 $gutter_width $gutter_width;
+	}
+
+	.banner-title{
+		font-family:$museo-900;
+		line-height:1.2;
+		@include font-size(20);
+
+		@include responsive($mobile){
+			@include font-size(16);
+		}
+	}
+
+	.btn-preview-holder{
+		bottom:$gutter_width*2;
+		left:0;
+		position:absolute;
+		text-align:center;
+		width:100%;
+	}
+}
+
+.banner-double{
+	height:100%;
+	padding:$gutter_width*3 $gutter_width $gutter_width;
+	text-align:center;
+
+	@include responsive($breakpoint-l){
+		padding:$gutter_width*2 $gutter_width $gutter_width;
+	}
+
+	.btn-preview-holder{
+		bottom:$gutter_width*2;
+		left:0;
+		position:absolute;
+		text-align:center;
+		width:100%;
+	}
+
+	p{
+		color:$white;
+		font-family:$museo-700;
+		text-transform:uppercase;
+		@include font-size(14)
+	}
+}
+
+
+
+/*.banner-lg{
+	height:220px;
+
+	.banner-title{
+		font-family:$museo-900;
+		text-transform:uppercase;
+		@include font-size(45);
+
+		@include responsive($mobile){
+			@include font-size(40);
+		}
+	}
+}
+
+.banner-md{
+	height:220px;
+
+	.banner-title{
+		font-family:$museo-900;
+		text-transform:uppercase;
+		@include font-size(40);
+
+		@include responsive($mobile){
+			@include font-size(35);
+		}
+
+		span{
+			display:block;
+			font-family:$museo-700;
+			line-height:100%;
+			margin-top:5px;
+			@include font-size(20);
+
+			@include responsive($mobile){
+				@include font-size(16);
+			}
+		}
+	}
+}
+
+.banner-sm{
+	height:220px;
+
+	.banner-title{
+		font-family:$museo-900;
+		text-transform:uppercase;
+		@include font-size(20);
+
+		@include responsive($mobile){
+			@include font-size(16);
+		}
+	}
+}
+
+.banner-contest{
+	height:460px;
+	padding-bottom:50px;
+
+	.banner-category{
+		border-bottom:1px solid $white;
+		color:$white;
+		display:inline-block;
+		font-family:$museo-900;
+		margin:0 0 $gutter_width/2;
+		padding:0 0 $gutter_width/2;
+		text-transform:uppercase;
+		@include font-size(30);
+		@include text-shadow(0, 2px, 5px, rgba($black, 0.2));
+
+		@include responsive($mobile){
+			@include font-size(25);
+		}
+	}
+
+	.banner-title{
+		font-family:$museo-900;
+		text-transform:uppercase;
+		@include font-size(55);
+
+		@include responsive($mobile){
+			@include font-size(40);
+		}
+
+		span{
+			display:block;
+			font-family:$museo-700;
+			line-height:100%;
+			margin-top:5px;
+			@include font-size(30);
+
+			@include responsive($mobile){
+				@include font-size(25);
+			}
+		}
+	}
+}*/

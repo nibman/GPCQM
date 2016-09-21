@@ -1,0 +1,17 @@
+.alert{
+	display:none;
+
+	&.alert-active{
+		display:block;
+	}
+
+	&.alert-error {
+		color:$error;
+		@include font-size(16);
+	}
+
+	&.alert-success {
+
+	}
+
+}

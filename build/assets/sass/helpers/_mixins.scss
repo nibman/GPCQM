@@ -1,0 +1,514 @@
+/*-------------------------------------------------------------------
+	Mixins
+-------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------
+	Media queries
+-------------------------------------------------------------------*/
+@mixin responsive($max, $min:0){
+	@if $min != 0{
+		@media only screen and (min-width : $min+1) and (max-width : $max) {
+			@content;
+		}
+	}
+	@else{
+		@media only screen and (max-width : $max) {
+			@content;
+		}
+	}
+}
+
+@mixin responsiveMin($min){
+	@media only screen and (min-width : $min+1) {
+		@content;
+	}
+}
+
+@mixin retina {
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 1.25),
+	only screen and ( min--moz-device-pixel-ratio: 1.25),
+	only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+	only screen and ( min-device-pixel-ratio: 1.25),
+	only screen and ( min-resolution: 200dpi),
+	only screen and ( min-resolution: 1.25dppx) {
+		@content;
+	}
+}
+
+@mixin orientation($orientation:portrait){
+	@media screen and (orientation:$orientation) {
+		@content;
+	}
+}
+
+
+/*-------------------------------------------------------------------
+	Utilities
+-------------------------------------------------------------------*/
+@mixin clearfix() {
+	&:after { content: ""; display: block; clear: both; } & { zoom: 1; }
+}
+
+// Override `display` for adding `inline-block` IE hack
+// Converted to SASS inspired by: https://github.com/heliom/stylus-utils/blob/master/mixins.styl
+@mixin display($value) {
+	@if $value == 'inline-block' {
+		display: inline-block; *display: inline; *zoom: 1;
+	}
+	@else {
+		display: $value;
+	}
+}
+
+@mixin filler {
+	@include ie-before();
+
+	&:before, .before {
+		content:'';
+		display:block;
+		height:100%;
+		position:absolute;
+		top:0;
+		z-index:-1;
+		@content;
+	}
+}
+
+@mixin font-face($family, $file, $weight : normal, $style : normal) {
+	font-family: $family;
+    src: url(#{$file}.eot);
+    src: url(#{$file}.eot?#iefix) format('embedded-opentype'),
+         url(#{$file}.woff) format('woff'),
+         url(#{$file}.ttf) format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin font-size($fs) {
+  @if unitless($fs) and $fs != 0 {
+    $fsrem: $fs / 10;
+    font-size: #{$fs}px;
+    font-size: #{$fsrem}rem;
+  }
+  @else {
+    font-size: $fs;
+  }
+}
+
+@mixin ghost(){
+	&:before{
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		margin-right: -0.25em; /* Adjusts for spacing */
+		@include ie-before();
+	}
+}
+
+@mixin rgba($color, $opacity) {
+	background-color:$color;
+	background-color:rgba($color, $opacity);
+}
+
+@mixin sprite($x:0, $y:0, $size:400px) {
+	background-image:url(/assets/images/sprite.png#{$cache-buster});
+	background-repeat:no-repeat;
+	background-position:$x $y;
+
+	@include retina{
+		background-image:url(/assets/images/sprite@2x.png#{$cache-buster});
+		background-repeat:no-repeat;
+		background-position:$x $y;
+		background-size:$size;
+	}
+}
+
+/*-------------------------------------------------------------------
+	Browser prefixes
+-------------------------------------------------------------------*/
+@mixin backface-visibility($visibility){
+	-webkit-backface-visibility:$visibility;
+	-moz-backface-visibility:$visibility;
+	-ms-backface-visibility:$visibility;
+	-o-backface-visibility:$visibility;
+	backface-visibility:$visibility;
+}
+
+@mixin background-cover(){
+	background-size:cover;
+	-ms-behavior:url(/css/behaviors/backgroundsize.min.htc);
+}
+
+@mixin border-box() {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+@mixin border-radius($radius : 3px) {
+	-webkit-border-radius: $radius; /* Saf3-4, iOS 1-3.2, Android =1.6 */
+		-moz-border-radius: $radius; /* FF1-3.6 */
+	border-radius: $radius; /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+
+	/* useful if you don't want a bg color from leaking outside the border: */
+	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+
+@mixin border-radius-all($tl:3px, $tr:3px, $br:3px, $bl:3px) {
+	-webkit-border-radius: $tl $tr $br $bl; /* Saf3-4, iOS 1-3.2, Android =1.6 */
+	-moz-border-radius: $tl $tr $br $bl; /* FF1-3.6 */
+	border-radius: $tl $tr $br $bl; /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+
+	/* useful if you don't want a bg color from leaking outside the border: */
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+
+@mixin box-shadow($shadow1, $shadow2:false, $shadow3:false, $shadow4:false, $shadow5:false) {
+$params: $shadow1;
+ @if $shadow2 != false
+   { $params: $shadow1, $shadow2; }
+   @if $shadow3 != false
+     { $params: $shadow1, $shadow2, $shadow3; }
+     @if $shadow4 != false
+       { $params: $shadow1, $shadow2, $shadow3, $shadow4; }
+       @if $shadow5 != false
+         { $params: $shadow1, $shadow2, $shadow3, $shadow4, $shadow5; }
+
+ -webkit-box-shadow: $params;
+ -moz-box-shadow: $params;
+ box-shadow: $params;
+
+}
+
+@mixin gradient($from : #FFF, $to : #000) {
+	background-color: $from;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to)); /* Safari 4+, Chrome 1+ */
+	background-image: -webkit-linear-gradient($from, $to); /* Safari 5.1+, Chrome 10+ */
+	background-image: -moz-linear-gradient($from, $to); /* Firefox 3.6+ */
+	background-image: -o-linear-gradient($from, $to); /* Opera 11.10+ */
+	background-image: -ms-linear-gradient(top, $from, $to); /* IE10 */
+	background-image: linear-gradient(to bottom, $from, $to);
+}
+
+@mixin radial-gradient($from : #FFF, $to : #000, $opacity : 1, $start : 0%, $end : 100%){
+	background-color: $from;
+	background: -moz-radial-gradient(center, ellipse cover, $to $start, $from $end); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop($start,$to), color-stop($end,$from)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, $to $start,$from $end); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, $to $start,$from $end); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, $to $start,$from $end); /* IE10+ */
+	background: radial-gradient(ellipse at center, $to $start,$from $end); /* W3C */
+}
+
+@mixin diagonal-gradient($from : #FFF, $to : #000, $opacity : 1) {
+	@include background-color($from, $opacity); /* Old browsers */
+	background: -moz-linear-gradient(-45deg, rgba($from, $opacity)  0%, rgba($to, $opacity) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba($from, $opacity) ), color-stop(100%,rgba($to, $opacity))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg, rgba($from, $opacity)  0%,rgba($to, $opacity) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg, rgba($from, $opacity)  0%,rgba($to, $opacity) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg, rgba($from, $opacity)  0%,rgba($to, $opacity) 100%); /* IE10+ */
+	background: linear-gradient(135deg, rgba($from, $opacity)  0%,rgba($to, $opacity) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin inner-shadow($hor, $ver, $blur : 5px, $color : #000) {
+	-webkit-box-shadow:inset $hor $ver $blur $color; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+	-moz-box-shadow:inset $hor $ver $blur $color; /* FF3.5 - 3.6 */
+	box-shadow:inset $hor $ver $blur $color; /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+}
+
+@mixin opacity($alpha : 0.5) {
+	opacity: $alpha; /* Chrome 4+, FF2+, Saf3.1+, Opera 9+, IE9, iOS 3.2+, Android 2.1+ */
+	filter: alpha(opacity=$alpha * 100); /* IE6-IE8 */
+}
+
+@mixin placeholder() {
+	::-webkit-input-placeholder {
+		@content;
+	}
+
+	:-moz-placeholder { // Firefox 18-
+		@content;
+	}
+
+	::-moz-placeholder { // Firefox 19+
+		@content;
+	}
+
+	:-ms-input-placeholder {
+		@content;
+	}
+}
+
+@mixin perspective($amount:300px){
+	-webkit-perspective:$amount;  // Chrome 12+, Safari 4+
+	-moz-perspective:$amount;  // Firefox 10+
+	-ms-perspective:$amount;  // IE 10
+	perspective:$amount;
+}
+
+@mixin text-shadow($hor, $ver, $blur : 5px, $color : #000) {
+	text-shadow: $hor $ver $blur $color; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+}
+
+@mixin background-color($color, $opacity) {
+	background-color:$color;
+	background-color:rgba($color, $opacity);
+}
+
+/*-------------------------------------------------------------------
+	Transform
+-------------------------------------------------------------------*/
+
+$transform : (-webkit-transform, -moz-transform, -ms-transform, -o-transform, transform);
+
+@mixin scale($value : 2) {
+	-webkit-transform: scale($value);  /* Saf3.1+, Chrome */
+	-moz-transform: scale($value); /* FF3.5+ */
+	-ms-transform: scale($value); /* IE9 */
+	-o-transform: scale($value);  /* Opera 10.5 */
+	transform: scale($value);
+}
+@mixin scaleY($value : 2) {
+	-webkit-transform: scaleY($value);  /* Saf3.1+, Chrome */
+	-moz-transform: scaleY($value); /* FF3.5+ */
+	-ms-transform: scaleY($value); /* IE9 */
+	-o-transform: scaleY($value);  /* Opera 10.5 */
+	transform: scaleY($value);
+}
+@mixin translate($x: 10px, $y: 10px) {
+	-webkit-transform: translate($x,$y);  /* Saf3.1+, Chrome */
+	-moz-transform: translate($x,$y); /* FF3.5+ */
+	-ms-transform: translate($x,$y); /* IE9 */
+	-o-transform: translate($x,$y);  /* Opera 10.5 */
+	transform: translate($x,$y);
+	zoom: 1;
+}
+
+@mixin transform-style($style){
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+@mixin rotate($angle: 30) {
+	-webkit-transform: rotate(#{$angle}deg);  /* Saf3.1+, Chrome */
+	-moz-transform: rotate(#{$angle}deg);  /* FF3.5+ */
+	-ms-transform: rotate(#{$angle}deg);  /* IE9 */
+	-o-transform: rotate(#{$angle}deg);  /* Opera 10.5 */
+	transform: rotate(#{$angle}deg);
+	/* IE6-IE9
+		Can't implement rotate for IE, no COS functions available in SASS
+		Example : 7.5deg
+		filter: progid:DXImageTransform.Microsoft.Matrix(
+		M11=0.9914448613738104, M12=-0.13052619222005157,M21=0.13052619222005157, M22=0.9914448613738104, sizingMethod='auto expand');
+	*/
+	zoom: 1;
+}
+
+/*-------------------------------------------------------------------
+	Transition
+-------------------------------------------------------------------*/
+
+@mixin transition_transform($property : opacity, $duration : 0.5, $ease : cubic-bezier(0.190, 1.000, 0.220, 1.000)) {
+	-moz-transition-duration : #{$duration}s; /* FireFox */
+	-webkit-transition-duration : #{$duration}s; /* Safari / Chrome */
+	-o-transition-duration : #{$duration}s; /* Opera */
+	transition-duration : #{$duration}s; /* W3C */
+
+	-webkit-transition-property :  (-webkit-transform, $property); /* Safari / Chrome */
+	-moz-transition-property : (-moz-transform, $property); /* FireFox */
+	-o-transition-property : (-o-transform, $property); /* Opera */
+	transition-property : (transform, $property); /* W3C */
+
+	/* linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n); */
+	-webkit-transition-timing-function: $ease;
+	-moz-transition-timing-function: $ease;
+	-o-transition-timing-function: $ease;
+}
+
+@mixin transition($property : opacity, $duration : 0.5, $ease : cubic-bezier(0.250, 0.460, 0.450, 0.940)) {
+	@include transition-property($property);
+	@include transition-duration($duration);
+	@include transition-timing-function($ease);
+	// Webkit animation flicker fix;
+	-webkit-backface-visibility: hidden;
+}
+
+@mixin transition-duration($duration : 0.5) {
+	-moz-transition-duration : #{$duration}s; /* FireFox */
+	-webkit-transition-duration : #{$duration}s; /* Safari / Chrome */
+	-o-transition-duration : #{$duration}s; /* Opera */
+	transition-duration : #{$duration}s; /* W3C */
+}
+
+@mixin transition-property($property : opacity) {
+	-moz-transition-property : $property; /* FireFox */
+	-webkit-transition-property : $property; /* Safari / Chrome */
+	-o-transition-property : $property; /* Opera */
+	transition-property : $property; /* W3C */
+}
+
+
+@mixin transition-timing-function($ease : ease-out) {
+	/* linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n); */
+	-webkit-transition-timing-function: $ease;
+	-moz-transition-timing-function: $ease;
+	-o-transition-timing-function: $ease;
+	transition-timing-function: $ease;
+}
+
+@mixin transform-origin($x : 0px, $y : 0px){
+	-webkit-transform-origin: $x $y;
+	-moz-transform-origin: $x $y;
+	-ms-transform-origin: $x $y;
+	transform-origin: $x $y;
+}
+
+/*-------------------------------------------------------------------
+	Animation
+-------------------------------------------------------------------*/
+@mixin keyframe($animation_name) {
+	@-webkit-keyframes $animation_name {
+		@content;
+	}
+
+	@-moz-keyframes $animation_name {
+		@content;
+	}
+
+	@-o-keyframes $animation_name {
+		@content;
+	}
+
+	@keyframes $animation_name {
+		@content;
+	}
+}
+
+/*
+    Example usage:
+    @include animation(changecolour, 5s, 10s)
+ */
+@mixin animation($name, $duration, $delay : 0s, $fill_mode : both, $timing_function : cubic-bezier(0.190, 1.000, 0.220, 1.000)) {
+	@include animation-name($name);
+	@include animation-delay($delay);
+	@include animation-duration($duration);
+	@include animation-fill-mode($fill_mode);
+	@include animation-timing-function($timing_function);
+}
+
+@mixin animation-name($name) {
+	-webkit-animation-name: $name;
+	-moz-animation-name: $name;
+	-o-animation-name: $name;
+	animation-name: $name;
+}
+
+@mixin animation-delay($delay : 1s) {
+	-webkit-animation-delay: $delay;
+	-moz-animation-delay: $delay;
+	-o-animation-delay: $delay;
+	animation-delay: $delay;
+}
+
+@mixin animation-duration($duration : 1s) {
+	-webkit-animation-duration: $duration;
+	-moz-animation-duration: $duration;
+	-o-animation-duration: $duration;
+	animation-duration: $duration;
+}
+
+@mixin animation-fill-mode($mode : both) {
+	-webkit-animation-fill-mode: $mode;
+	-moz-animation-fill-mode: $mode;
+	-o-animation-fill-mode: $mode;
+	animation-fill-mode: $mode;
+}
+
+@mixin animation-timing-function($function : ease-out) {
+	-webkit-animation-timing-function: $function;
+	-moz-animation-timing-function: $function;
+	-o-animation-timing-function: $function;
+	animation-timing-function: $function;
+}
+
+/*-------------------------------------------------------------------
+	Grid
+-------------------------------------------------------------------*/
+
+@mixin columns($count : 3, $gap : 10px) {
+    -moz-column-count:$count;
+    -moz-column-gap:$gap;
+    -webkit-column-count:$count;
+    -webkit-column-gap:$gap;
+    column-count:$count;
+    column-gap:$gap;
+}
+
+@mixin row() {
+	width:100%;
+
+	&:after {
+		clear:both;
+	}
+
+	&:before, &:after {
+		content:"";
+		display:table;
+		line-height:0;
+	}
+
+	[class*="col"] {
+		display:block;
+		float:left;
+		min-height: 30px;
+		width:100%;
+		@include border-box();
+	}
+
+	[class*="col"]:first-child {
+		margin-left:0;
+	}
+
+	@content;
+}
+
+/*-------------------------------------------------------------------
+	IE fixes mixins
+-------------------------------------------------------------------*/
+
+// Adds :after pseudo-class capability to IE7
+// Use with .after class
+@mixin ie-after() {
+	zoom:expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("i")).className="after");
+}
+
+// Adds :before pseudo-class capability to IE7
+// Use with .before class
+@mixin ie-before() {
+	zoom:expression(this.runtimeStyle.zoom="1", this.insertBefore(document.createElement("i"), this.firstChild).className="before");
+}
+
+@mixin display-table($value) {
+	@if $value == 'table-cell' {
+		display: table-cell;
+		vertical-align: middle;
+		*clear: expression(
+			style.marginTop = "" + (offsetHeight < parentNode.offsetHeight ? parseInt((parentNode.offsetHeight - offsetHeight) / 2) + "px" : "0"),
+			style.clear = "none", 0
+			);
+		// assign to parent display: table;
+	}
+	@else {
+		display: $value;
+	}
+}
+// }}}

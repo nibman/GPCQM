@@ -1,0 +1,11 @@
+/*-------------------------------------------------------------------
+	BASE STATE CLASSES
+-------------------------------------------------------------------*/
+.is-hidden {display:none;}
+
+.acts-as-table{
+	display:table;
+	.acts-as-cell{
+		display:table-cell;
+	}
+}

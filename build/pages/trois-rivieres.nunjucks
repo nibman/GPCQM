@@ -1,0 +1,60 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+  <!-- Adds the navigation partial -->
+  {% include "partials/recette-nav.nunjucks" %}
+
+  <div class="layout-wrapper recipe layout-article">
+    <div class="banner banner-centered banner-cover banner-cover-recette">
+      <div class="banner-centered-content">
+        <h3 class="moreinfo-title"><span class="moreinfo-dash">Baluchon</span><span class="moreinfo-under">Le salon des vins<br/>de Trois-Rivières</span></h3>
+      </div>
+      <div class="banner-background"><div class="background-circle"></div></div>
+    </div>
+
+  <article class="article-default layout-article-main-content">
+      <div class="title-recipe">Recette</div>
+
+      <h2 class="main-title">Grilled cheese au Baluchon, au confit d’échalotes et aux canneberges</h2>
+      <br/>
+      <ul class='detail-list'>
+        <li>Préparation: 10 minutes</li>
+        <li>Cuisson: 20 minutes</li>
+        <li>Portion: 1 sandwich</li>
+      </ul>
+      <h3 class="sub-title">Ingrédients</h3>
+      <ul class='ingredients-list'>
+        <li>45 g (1,5 oz) d’échalotes françaises hachées finement</li>
+        <li>60 ml (1/4 tasse) de canneberges séchées</li>
+        <li>15 ml (1 c. à soupe) de beurre salé</li>
+        <li>1 branche de thym frais hachée finement</li>
+        <li>Sel et poivre du moulin, au go&ucirc;t</li>
+        <li>2 tranches de pain brioché d’environ 30 g (1 oz)</li>
+        <li>40 g (1,4 oz) de fromage <a href="https://www.fromagesdici.com/repertoire/le-baluchon" class="orange-cheese">Baluchon</a> en tranches fines</li>
+      </ul>
+      <h3 class="sub-title">Préparations</h3>
+      <ul class='prep-list'>
+        <li>Suer les échalotes et les canneberges dans le beurre à feux moyen jusqu’à légère caramélisation.</li>
+        <li>Ajouter le thym frais et assaisonner de sel et de poivre. Réserver.</li>
+        <li>Pour le montage, étendre la moitié de l’appareil d’échalotes sur une tranche de pain brioché. Ajouter le fromage et terminer avec l’autre moitié d’appareil d’échalotes. Refermer avec la deuxième tranche de pain.</li>
+        <li>Saisir à votre convenance sur un gril à panini ou au poêlon jusqu’à ce que le fromage soit bien fondu.</li>
+        <li>Couper et déguster.</li>
+      </ul>
+  </article>
+  <aside class="layout-article-aside">
+    <div class="video-container">
+        <iframe src="https://player.vimeo.com/video/183350982?title=0&amp;byline=0&amp;portrait=0\" width="1280" height="720" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+    </div>
+    <div class="cta-cheese">
+      <img src="/assets/images/baluchon.png" alt="Baluchon"/>
+      <a href="https://www.fromagesdici.com/repertoire/le-baluchon" class="cta-link">Voir la ficher du produit</a>
+    </div>
+    <div class="video-container">
+        <iframe src="https://player.vimeo.com/video/183332364?title=0&amp;byline=0&amp;portrait=0\" width="1280" height="720" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+    </div>
+  </aside>
+  </div>
+
+
+{% endblock %}

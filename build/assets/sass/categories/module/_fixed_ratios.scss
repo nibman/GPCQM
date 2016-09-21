@@ -1,0 +1,67 @@
+/*-------------------------------------------------------------------
+	Fixed ratio boxes
+-------------------------------------------------------------------*/
+
+.fixed-ratio {
+	display:block;
+	position:relative;
+	width:100%;
+
+	@include ie-after();
+	
+	.after,
+	&:after {
+		display:block;
+		content:'';
+	}
+	
+	.fixed-ratio-content {
+		display:block;
+		position:absolute;
+		top:0; bottom:0; right:0; left:0;
+		overflow:hidden;
+
+		img{width:100%; height:auto;}
+		iframe {width:100%; height:100%;}
+	}
+
+	// Ratio 4:3
+	&.fixed-ratio-screen {
+		.after,
+		&:after {
+			padding-top:75%;
+		}
+	}
+ 
+	// Ratio 16:9
+	&.fixed-ratio-widescreen {
+		.after,
+		&:after {
+			padding-top:56.25%;
+		}
+	}
+
+	// Ratio 1:1
+	&.fixed-ratio-square {
+		.after,
+		&:after {
+			padding-top:100%;
+		}
+	}
+	
+	// Ratio 300/235 (Home page single box)
+	&.fixed-ratio-single{
+		.after,
+		&:after {
+			padding-top:78%;
+		}
+	}
+	
+	// Ratio 300/484 (Home page double box)
+	&.fixed-ratio-double{
+		.after,
+		&:after {
+			padding-top:161.3%;
+		}
+	}
+}

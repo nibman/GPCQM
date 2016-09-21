@@ -1,0 +1,299 @@
+.article{
+	margin:0 0 $gutter_width;
+}
+
+.article-default{
+	padding:20px 0 40px;
+	
+	.article-default-intro{
+		display:block;
+		margin:0 0 30px;
+	}
+	
+	.article-default-title{
+		font-family:$museo-900;
+		padding:0 0 30px;
+		@include font-size(45);
+		
+		@include responsive($mobile){
+			@include font-size(26);
+		}
+	}
+	
+	.article-default-subtitle{
+		font-family:$museo-900;
+		padding:40px 0 30px;
+		@include font-size(25);
+	}
+	
+	.article-default-subtitle-subtitle{
+		font-family:$museo-900;
+		padding: 22px 0 25px;
+		@include font-size(16);
+	}
+	
+	.article-default-credit-title{
+		font-family:$museo-700;
+		text-transform:uppercase;
+		@include font-size(12);
+	}
+	
+	.article-default-section-title{
+		color:$black;
+		font-family:$museo-700;
+		text-transform:uppercase;
+		@include font-size(14);
+	}
+	
+	.title-underlined{
+		margin-bottom:0;
+	}
+	a{
+		color:$acapulco;
+		text-decoration:none;
+
+		&:hover{
+			text-decoration:underline;
+		}
+	}
+	
+	.btn-close-fullscreen{
+		display:none;
+	}
+	
+	p{
+		line-height:150%;
+		@include font-size(20);
+		padding-bottom:23px;
+		&.article-default-hat{
+			line-height:125%;
+			@include font-size(24);
+		}
+		
+	}
+	
+	h5{
+		color:$granite-green;
+		font-family:$museo-700;
+		text-align:center;
+		padding:25px 0 25px;
+		@include font-size(14);
+	}
+}
+
+.article-split {
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	
+	.btn-close-fullscreen{
+		display:none;
+	}
+	
+	.article-split-infos {
+		padding: 50px 0 0 0;
+		display: table-cell;
+		height: 100%;
+		vertical-align: middle;
+		@include responsive($mobile){
+			padding:0;
+		}
+		
+		hr {
+			margin: 20px 0;
+		}
+		
+		.labels-container {
+			margin: 40px 0 0 0;
+		}
+		
+		.article-split-infos-padded {
+			padding: 0 12px;
+			
+			@include responsive($mobile){
+				padding:0;
+			}
+			
+			a {
+				color: $acapulco;
+			}
+			h1 {
+				padding: 0;
+				@include font-size(60);
+				
+				@include responsive($breakpoint-l){@include font-size(50);}
+				@include responsive($mobile){@include font-size(40);}
+				
+				&.article-split-title-medium{
+					@include font-size(50);
+									
+					@include responsive($breakpoint-l){@include font-size(40);}
+					@include responsive($mobile){@include font-size(36);}
+				}
+				
+				&.article-split-title-large{
+					@include font-size(45);
+									
+					@include responsive($breakpoint-l){@include font-size(36);}
+					@include responsive($mobile){@include font-size(30);}
+				}
+				
+				& + .article-split-subtitle {
+					margin: 15px 0 5px 0;
+				}
+			}
+			.article-split-subtitle {
+				padding: 0;
+				text-transform: uppercase;
+				@include font-size(14);
+				
+				sup{
+					text-transform:lowercase;
+				}
+			}
+			.article-split-subtitle-medium {
+				color: $black;
+				margin: 0 0 5px 0;
+				padding: 0;
+				@include font-size(20);
+				&.subtitle-medium-portions {
+					color: $grey;
+					font-weight: 600;
+				}
+			}
+			span {
+				display: inline-block;
+				@include font-size(14);
+				& + span {
+					margin: 0 0 0 5px;
+				}
+			}
+		}
+	}
+	.article-split-main-content {
+		margin-top: 45px;
+		
+		@include responsive($mobile){
+			margin-top:$gutter_width;
+		}
+		
+		.article-split-description {
+			
+			padding-right:45px;
+			@include font-size(20);
+			@include border-box();
+			@include responsive($tablet){
+				padding-right:0;
+			}
+			p {
+				line-height: 120%;
+			}
+			h2 {
+				font-family: $museo-700;
+				margin: 12px 0 0 0;
+				@include font-size(16);
+			}
+		}
+		.article-split-aside {
+			i, div {
+				float: left;
+				@include responsive(1000px) {
+					float: none;
+				}
+			}
+			div {
+				margin: 0 0 0 10px;
+				width: 84%;
+				@include responsive(1000px) {
+					margin: 8px 0 0 0;
+					width: 100%;
+				}
+				a {
+					color: $acapulco;
+					display: inline-block;
+					margin: 0 0 5px 0;
+					text-transform: uppercase;
+					@include font-size(14);
+				}
+				.last-item {
+					margin: 20px 0 0 0;
+				}
+				p {
+					@include font-size(16);
+				}
+			}
+		}
+	}
+}
+
+.article-pellet-holder{
+	display:table;
+	margin:0 auto;
+	table-layout:fixed;
+}
+
+.article-pellet {
+	float:left;
+	padding:0 $gutter_width $gutter_width;
+	width:450px;
+	
+	@include responsive($breakpoint-l){
+		width:400px;
+	}
+	
+	@include responsive($mobile){
+		width:auto;
+	}
+	
+	@include responsive(920px){
+		float:none;
+		padding:0 0 $gutter_width;
+	}
+	
+	img{
+		float:right;
+		margin: 0 $gutter_width*2 0 $gutter_width*2;
+		max-width:177px;
+		
+		@include responsive($breakpoint-l){
+			max-width:145px;
+		}
+		
+		@include responsive($mobile){
+			float:none;
+			margin:0 auto;
+		}
+	}
+	.article-pellet-description {
+		@include font-size(13);
+		@include responsive($tablet) {
+			margin-top: 15px;
+			@include font-size(18);
+		}
+		
+		p {
+			max-width: 235px;
+			position:relative;
+			@include responsive($tablet) {
+				max-width: none;
+			}
+			a {
+				color: $acapulco;
+				@include font-size(11);
+			}
+		}
+		
+		.logo-saq{
+			bottom:0;
+			display:block;
+			height:15px;
+			position:absolute;
+			right:0;
+			width:83px;
+			@include sprite(-236px,-2px);
+		}
+	}
+}

@@ -1,0 +1,132 @@
+form{
+	fieldset{
+		border:0;
+		padding:0;
+	}
+	
+	.form-group{
+		margin:0 0 15px;
+		
+		input{
+			margin:0 0 5px;
+		}
+		
+		&.form-group-checkbox{
+			input{
+				float:left;
+				margin:5px $gutter_width/2 $gutter_width/2 0;
+			}
+		}
+		
+		&.error{
+			label{color:$error;}
+			input, select, textarea{border-color:$error;}
+			
+			&.notice-error-email{
+				.alert-error-email{
+					@extend .alert-active;
+				}
+			}
+		}
+	}
+}
+
+label{
+	display:block;
+	letter-spacing:1px;
+	margin:0 0 5px;
+	@include font-size(16);
+}
+
+input[type=text], input[type=email], input[type=password], input[type=telephone], select, textarea{
+	border:0;
+	color:#8f8e7d;
+	display:block;
+	font-family:$museo-500;
+	padding:$gutter_width/2 $gutter_width/2 8px $gutter_width/2;
+	-webkit-appearance:none; 
+	@include border-box();
+	@include border-radius(0);
+	@include font-size(11);
+	
+	@include placeholder(){
+		color:#8f8e7d;
+		font-family:$museo-500;
+		text-transform:uppercase;
+		@include font-size(11);
+	}
+}
+
+button{
+	background:none;
+	border:0;
+	padding:0;
+}
+
+// SPECIFIC FORMS
+.form-search{
+	padding-top:10px;
+	
+	.input-search-holder{
+		position:relative;
+		width:225px;
+		
+		button{
+			margin:-16px 0 0 0;
+			position:absolute;
+			right:10px;
+			top:50%;
+		}
+		
+		input{
+			border:1px solid $border-grey;
+			padding:9px 40px 7px $gutter_width/2;
+			width:225px;
+		}
+	}
+}
+
+// SPECIFIC INPUTS
+.input-xs{width:40px;}
+.input-sm{width:80px;}
+.input-md{width:250px;}
+.input-lg{width:350px;}
+.input-xl{width:450px;}
+.input-full{width:98%;}
+.input-hidden{visibility:hidden;position:absolute;}
+
+@include responsive($mobile){
+	.input-md, .input-lg, .input-xl{
+		width:100%;
+	}
+}
+
+.layout-toplayer{
+	.input-md{width:250px;}
+	.input-lg{width:350px;}
+	.input-xl{width:450px;}
+	
+	@include responsive(500px){
+		.input-xl{
+			width:100%;
+		}
+	}
+	
+	@include responsive(400px){
+		.input-md, .input-lg{
+			width:100%;
+		}
+	}
+}
+
+.form-bordered{
+	input[type=text],
+	input[type=email],
+	input[type=password],
+	input[type=telephone],
+	textarea,
+	select{
+		border:1px solid $border-grey;
+	}
+}
+

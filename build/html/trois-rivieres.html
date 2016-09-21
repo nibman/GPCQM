@@ -1,0 +1,296 @@
+<!-- layout.nunjucks -->
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fromages d'ici - Tournée des fromages d'ici</title>
+    <meta name="description" content="Les Producteurs de lait du Québec présentent les fromages de la province, ainsi que des recettes et conseils pour mieux les déguster.">
+    <meta name="author" content="Jonathan Harvey">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-itunes-app" content="app-id=853872385, affiliate-data=ct=smart_banner&pt=10360344" />
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.min.css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+<body id="accueil-index">
+
+  <!-- Adds the navigation partial -->
+  <!-- navigation.nunjucks -->
+
+<header id="layout-header">
+  <p class="is-hidden print-show r-align"><img src="//www.fromagesdici.com/img/logo-menu-fr@2x.png" width="73" height="59" alt="Fromages d'ici"></p>
+  <div class="layout-wrapper">
+    <div class="nav-toolbar-wrapper cf">
+      <nav class="nav nav-toolbar">
+        <ul>
+          <li>
+            <a href="http://www.fromagesdici.com/nous-joindre" class="fancybox-iframe no-ajaxy" id="contact-link">Nous joindre</a>
+          </li>
+          <li class="nav-item-last">
+            <span class="bullet">•</span>
+            <a href="https://www.fromagesdici.com/abonnement" class="fancybox-iframe no-ajaxy" id="newsletter-link">Infolettre</a>
+          </li>
+          <li class="is-hidden">
+            <span class="bullet">•</span>
+            <a href="https://www.fromagesdici.com/confirmer-infolettre" class="fancybox-iframe no-ajaxy" id="confirm-newsletter-link"></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <a href="/" class="nav nav-home">Logo Fromages d'ici</a>
+    <div class="nav-primary-wrapper">
+      <a href="#" class="nav-primary-trigger">
+        <i class="icon icon-mobile-nav"></i>
+        <i class="icon icon-mobile-nav-opened"></i>
+      </a>
+      <nav class="nav nav-primary">
+        <ul>
+          <li>
+            <a href="https://www.fromagesdici.com/repertoire" class="nav-item-directory">Répertoire</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/recettes" class="nav-item-recipes">Recettes</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/trucs" class="nav-item-tips">P'tits trucs</a>
+          </li>
+          <li class="nav-item-logo-holder">
+            <a href="/">Logo Fromages d'ici</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/tout-sur-les-fromages" class="nav-item-about ">Tout sur les fromages</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/blogue" class="nav-item-blog no-ajaxy ">Blogue</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/concours" class="nav-item-contest ">Concours</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+  <div id ="layout-content">
+      <!-- You write code for this content block in another file -->
+      
+  <!-- Adds the navigation partial -->
+  <!-- recette-nav.nunjucks -->
+
+<div class="nav-secondary-wrapper" id="nav-recipes">
+  <div class="layout-wrapper">
+    <nav class="nav nav-secondary cf">
+      <a class="back-to-home mobile" href="/">Retour à la tournée</a>
+      <a href="#" class="nav-submenu-opener">
+        Filtrer<i class="icon icon-arrow-down icon-padded-left"></i>
+        <i class="icon icon-arrow-up icon-padded-left"></i>
+      </a>
+      <div class="nav-submenu-wrapper">
+        <div class="nav-submenu-table-wrapper">
+          <ul class="cf">
+            <li class="nav-submenu-trigger">
+              <a href="#">
+                <i class="icon icon-calendar icon-padded-right"></i>
+                autres villes visitées<i class="icon icon-arrow-down icon-padded-left"></i>
+                <i class="icon icon-arrow-up icon-padded-left"></i>
+              </a>
+
+                <nav class="nav-submenu nav-scrollable">
+                    <ul>
+                        <li><a href="/trois-rivieres">Trois-Rivières</a></li>
+
+                        <li><strong>Lac-Brome</strong></li>
+
+                        <li><strong>Baie-St-Paul</strong></li>
+
+                        <li><strong>Montréal</strong></li>
+
+                        <li><strong>Louiseville</strong></li>
+
+                        <li><strong>St-Félix-De-Valois</strong></li>
+
+                        <li><strong>Victoriaville</strong></li>
+
+                    </ul>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a class="back-to-home" href="/">Retour à la tournée</a>
+    </nav>
+  </div>
+</div>
+
+
+  <div class="layout-wrapper recipe layout-article">
+    <div class="banner banner-centered banner-cover banner-cover-recette">
+      <div class="banner-centered-content">
+        <h3 class="moreinfo-title"><span class="moreinfo-dash">Baluchon</span><span class="moreinfo-under">Le salon des vins<br/>de Trois-Rivières</span></h3>
+      </div>
+      <div class="banner-background"><div class="background-circle"></div></div>
+    </div>
+
+  <article class="article-default layout-article-main-content">
+      <div class="title-recipe">Recette</div>
+
+      <h2 class="main-title">Grilled cheese au Baluchon, au confit d’échalotes et aux canneberges</h2>
+      <br/>
+      <ul class='detail-list'>
+        <li>Préparation: 10 minutes</li>
+        <li>Cuisson: 20 minutes</li>
+        <li>Portion: 1 sandwich</li>
+      </ul>
+      <h3 class="sub-title">Ingrédients</h3>
+      <ul class='ingredients-list'>
+        <li>45 g (1,5 oz) d’échalotes françaises hachées finement</li>
+        <li>60 ml (1/4 tasse) de canneberges séchées</li>
+        <li>15 ml (1 c. à soupe) de beurre salé</li>
+        <li>1 branche de thym frais hachée finement</li>
+        <li>Sel et poivre du moulin, au go&ucirc;t</li>
+        <li>2 tranches de pain brioché d’environ 30 g (1 oz)</li>
+        <li>40 g (1,4 oz) de fromage <a href="https://www.fromagesdici.com/repertoire/le-baluchon" class="orange-cheese">Baluchon</a> en tranches fines</li>
+      </ul>
+      <h3 class="sub-title">Préparations</h3>
+      <ul class='prep-list'>
+        <li>Suer les échalotes et les canneberges dans le beurre à feux moyen jusqu’à légère caramélisation.</li>
+        <li>Ajouter le thym frais et assaisonner de sel et de poivre. Réserver.</li>
+        <li>Pour le montage, étendre la moitié de l’appareil d’échalotes sur une tranche de pain brioché. Ajouter le fromage et terminer avec l’autre moitié d’appareil d’échalotes. Refermer avec la deuxième tranche de pain.</li>
+        <li>Saisir à votre convenance sur un gril à panini ou au poêlon jusqu’à ce que le fromage soit bien fondu.</li>
+        <li>Couper et déguster.</li>
+      </ul>
+  </article>
+  <aside class="layout-article-aside">
+    <div class="video-container">
+        <iframe src="https://player.vimeo.com/video/183350982?title=0&amp;byline=0&amp;portrait=0\" width="1280" height="720" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+    </div>
+    <div class="cta-cheese">
+      <img src="/assets/images/baluchon.png" alt="Baluchon"/>
+      <a href="https://www.fromagesdici.com/repertoire/le-baluchon" class="cta-link">Voir la ficher du produit</a>
+    </div>
+    <div class="video-container">
+        <iframe src="https://player.vimeo.com/video/183332364?title=0&amp;byline=0&amp;portrait=0\" width="1280" height="720" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+    </div>
+  </aside>
+  </div>
+
+
+
+  </div>
+
+  <!-- Adds the footer partial -->
+  <!-- footer.nunjucks -->
+
+<footer id="layout-footer" class="box">
+  <div class="layout-wrapper">
+  <div class="inside-wrapper">
+    <div class="nav-footer-wrapper cf">
+      <nav class="nav nav-primary">
+        <ul>
+          <li>
+            <a href="https://www.fromagesdici.com/repertoire" class="nav-item-directory">Répertoire</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/recettes" class="nav-item-recipes">Recettes</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/trucs" class="nav-item-tips">P'tits trucs</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/tout-sur-les-fromages" class="nav-item-about">Tout sur les fromages</a>
+          </li>
+          <li>
+              <a href="https://www.fromagesdici.com/blogue" class="nav-item-blog no-ajaxy">Blogue</a>
+          </li>
+          <li>
+            <a href="https://www.fromagesdici.com/concours" class="nav-item-contest">Concours</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="nav nav-toolbar">
+        <ul>
+          <li>
+            <a href="https://www.fromagesdici.com/nous-joindre" class="fancybox-iframe no-ajaxy">Nous joindre</a>
+          </li>
+          <li class="nav-item-last">
+            <span class="bullet">•</span>
+            <a href="https://www.fromagesdici.com/abonnement" class="fancybox-iframe no-ajaxy">Infolettre</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="footer-milk-family cf col-md-4 col-sm-6">
+          <img src="/assets/images/famille-lait.gif" alt="Famille du lait" class="pull-left">
+          <a href="http://www.lafamilledulait.com/" target="_blank">
+            <span>La famille du lait</span> Le Lait, les Fromages d'ici, la Crème, le Lait au chocolat et le Beurre. Tout ce que vous voulez savoir à propos de nos produits.</a>
+      </div>
+      <div class="col-md-2 hidden-sm hidden-xs"></div>
+      <div class="footer-credits col-md-6 col-sm-6">
+        <ul class="list-floated cf">
+          <li>
+            <a href="https://www.facebook.com/fromagesdici" class="btn btn-circle" target="_blank">
+              <div class="btn-circle-inner">
+                <i class="icon icon-facebook"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/fromagesdici" class="btn btn-circle" target="_blank">
+              <div class="btn-circle-inner">
+                <i class="icon icon-twitter"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/blogue/feed" class="btn btn-circle">
+              <div class="btn-circle-inner">
+                <i class="icon icon-rss"></i>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div class="cf"></div>
+        <p>© Les Producteurs de lait du Québec</p>
+        <div class="cf"></div>
+        <nav class="nav nav-credits">
+          <ul>
+            <li>
+              <a href="#referencesHolder" class="has-tipsy" original-title="">Références</a>
+              <div id="referencesHolder" class="is-hidden">
+                <p>Les textes de ce site ont été rédigés à partir des sources suivantes :</p>
+                <p><strong>Sites</strong></p>
+                <ul>
+                  <li><a href="http://www.plaisirslaitiers.ca" target="_blank">http://www.plaisirslaitiers.ca</a></li>
+                  <li><a href="http://www.servicevie.com" target="_blank">http://www.servicevie.com</a></li>
+                  <li><a href="http://www.routedesfromages.com" target="_blank">http://www.routedesfromages.com</a></li>
+                  <li><a href="http://www.saveursdumonde.net" target="_blank">http://www.saveursdumonde.net</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#creditsHolder" class="has-tipsy" original-title="">Crédits photos</a>
+              <div id="creditsHolder" class="is-hidden">
+                <p>Les photographies de ce site Internet ont été prises par les photographes suivants : <strong>Sylvain Giguère</strong>, <strong>Claude Mathieu</strong>, <strong>Ghislain Martineau</strong>, <strong>Catherine Côté</strong> et <strong>Mathieu Dupuis</strong></p>
+              </div>
+            </li>
+            <li>
+              <a href="/conditions">Conditions d'utilisation</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  </div>
+</footer>
+
+
+  <script src="../assets/javascripts/scripts.min.js"></script>
+</body>
+</html>

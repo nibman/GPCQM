@@ -1,0 +1,585 @@
+/*-------------------------------------------------------------------
+	HOMEPAGE
+-------------------------------------------------------------------*/
+body#accueil-index{
+	#banner-app{
+		img{
+			display:block;
+			height:auto;
+			margin:0 auto $gutter_width;
+			width:65%;
+
+			@include responsive($mobile){
+				width:85%;
+			}
+		}
+
+		.banner-background{background-image:url(/assets/images/accueil/banner-app.jpg);}
+	}
+
+}
+
+	#next-appointment {
+		float: left;
+		padding: 40px 30px;
+		text-align: center;
+		background-color: #b2e2f0;
+		width: 327px;
+		height: 542px;
+
+		@include responsive(1200px){
+			padding: 15px 10px;
+			width: 100%;
+		  display: table;
+		  box-sizing: border-box;
+		  height: auto;
+		  float: none;
+		}
+		.next-title {
+			color: #0a95ab;
+			padding: 0;
+			.next-dash {
+				@include font-size(24);
+				@include responsive($tablet){
+					@include font-size(20);
+				}
+				&:before,
+				&:after {
+					display: inline-block;
+					position: relative;
+					top: -7px;
+					content: '';
+					width: 28px;
+					border-bottom: 1px solid #0a95ab;
+				}
+				&:before {
+					margin: 0 20px 0 0;
+					@include responsive($tablet) {
+						margin: 0 10px 0 0;
+					}
+				}
+				&:after {
+					margin: 0 0 0 20px;
+					@include responsive($tablet) {
+						margin: 0 0 0 10px;
+					}
+				}
+				&.smaller {
+					@include font-size(23);
+					@include responsive($mobile){
+						@include font-size(20);
+					}
+				}
+			}
+			.next-under {
+				display: block;
+				padding: 10px 0 0 0;
+				@include font-size(40);
+				@include responsive($tablet){
+					@include font-size(35);
+					padding: 5px 0 0;
+				}
+				&.smaller {
+					@include font-size(24);
+					padding: 0 0 5px 0;
+				}
+				&.tiny {
+					@include font-size(20);
+					line-height: 20px;
+					padding: 20px 0 0;
+
+				}
+			}
+		}
+		.date-title {
+			display: block;
+			font-family: $museo-900;
+			color: #fff;
+			text-transform: uppercase;
+			@include font-size(35);
+			line-height: 35px;
+			padding: 0 0 35px 0;
+			@include responsive($tablet) {
+				@include font-size(21);
+				line-height: 22px;
+			}
+			.day {
+				display: block;
+				@include responsive($breakpoint-l) {
+					display: inline-block;
+				}
+			}
+			sup {
+				top: -5px;
+				@include font-size(15);
+			}
+		}
+		.truck {
+			background:url(/assets/images/truck.png) no-repeat 0 0;
+			width: 223px;
+			height: 125px;
+			margin: 35px auto;
+			@include responsive($tablet) {
+				width: 126px;
+				height: 71px;
+				background-size: contain;
+				margin: 15px auto;
+			}
+		}
+		img {
+			&:nth-of-type(1) {
+				padding: 0 0 40px 0;
+			}
+			@include responsive($tablet) {
+				display: none;
+			}
+		}
+	}
+
+	#cheese-moreinfo {
+		clear: both;
+		position: relative;
+		background: #f8e2b7 url(/assets/images/camion-final-blanc.png) no-repeat 0 20px;
+		background-size: cover;
+		text-align: center;
+		margin: 20px 0 40px 0;
+		@include responsive($mobile) {
+			margin: 20px 0;
+		}
+		.cheese-wrapper {
+			padding: 35px 50px;
+			@include responsive($mobile) {
+				padding: 45px 20px 10px;
+			}
+		}
+		.icon-zeste {
+			display: block;
+			text-decoration: none;
+			position: absolute;
+			top: 45px;
+			font-family: $museo-500;
+			font-size: 12px;
+			color: #58595b;
+			@include responsive(1200px) {
+				position: relative;
+				top: auto;
+			  margin: 0 auto;
+			  display: table;
+			  left: -48px;
+			}
+			@include responsive($mobile){
+				left: auto;
+			}
+			.icon,
+			.icon-text {
+				@include responsive(1200px) {
+					float: left;
+					max-width: 108px;
+					text-align: right;
+					margin: 0 5px 0 0;
+					padding: 21px 0 0 0;
+				}
+			}
+			.icon-text {
+				@include responsive(1200px) {
+					@include font-size(14);
+				}
+			}
+			.icon {
+				width: 106px;
+				height: 90px;
+				background: url(/assets/images/icon-zeste.png) no-repeat 0 0;
+				margin: 2px 0 -20px;
+			}
+		}
+		p {
+			max-width: 780px;
+			font-family: $museo-500;
+			margin: 0 auto;
+			 padding: 0;
+			@include font-size(16);
+			line-height: 25px;
+			@include responsive(1200px){
+	  		line-height: 19px;
+	  		margin: 10px auto 0 auto;
+			}
+		}
+	}
+
+	.moreinfo-title {
+		font-family: $museo-900;
+		color: #f57f29;
+		@include font-size(40);
+		line-height: 40px;
+		@include responsive($mobile){
+			@include font-size(26);
+			line-height: 26px;
+		}
+		.recipe & {
+			@include font-size(60);
+			line-height: 60px;
+			@include responsive($breakpoint-l) {
+				@include font-size(40);
+				line-height: 40px;
+				padding: 150px 0 0 0;
+			}
+			@include responsive($mobile) {
+				padding: 190px 0 40px;
+				@include font-size(30);
+				line-height: 30px;
+			}
+		}
+		.moreinfo-under {
+			color: #faa746;
+			@include font-size(30);
+			@include responsive($mobile) {
+	  		@include font-size(17);
+			  padding: 2px 0 0;
+			}
+			.recipe & {
+				@include font-size(70);
+				line-height: 70px;
+				padding: 20px 0 0 0;
+				@include responsive($breakpoint-l) {
+					@include font-size(45);
+					line-height: 45px;
+				}
+				@include responsive($mobile) {
+					@include font-size(30);
+					line-height: 30px;
+				}
+			}
+		}
+		.moreinfo-dash,
+		.moreinfo-under  {
+			display: block;
+		}
+		.moreinfo-dash {
+			&:before,
+			&:after {
+				display: inline-block;
+				position: relative;
+				top: -15px;
+				content: '';
+				width: 30px;
+				border-bottom: 1px solid #f57f29;
+				@include responsive($mobile) {
+					content: none;
+				}
+				.recipe & {
+					content: '';
+					@include responsive($tablet) {
+						width: 20px;
+						top: -10px;
+					}
+				}
+			}
+			&:before {
+				margin: 0 20px 0 0;
+				@include responsive($tablet) {
+					margin: 0 10px 0 0;
+				}
+			}
+			&:after {
+				margin: 0 0 0 20px;
+				@include responsive($tablet) {
+					margin: 0 0 0 10px;
+				}
+			}
+		}
+	}
+
+	#cheese-mobile-list {
+		display: none;
+		background: #c6e7d9;
+		color: rgba(88,89,91,0.5);
+		text-transform: uppercase;
+		padding: 25px 0 0 0;
+		margin: 20px 0 0 0;
+		@include responsive(1200px){
+			display: block;
+		}
+		li {
+			position: relative;
+			border-bottom: 1px solid #b3d4c6;
+			padding: 20px 0 20px 0;
+			&.first {
+				padding-top: 0;
+				.standby {
+					top: 15px;
+				}
+			}
+			> div {
+				padding: 0 0 5px 15px;
+				@include responsive($mobile) {
+				  padding: 0 0 0 15px;
+				}
+			}
+		}
+		.active {
+			color: #58595b;
+			.cheese-link {
+				display: block;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			&.first {
+				.cheese-link {
+					top: 38%;
+				}
+			}
+		}
+		.cheese-city {
+			font-family: $museo-700;
+			@include font-size(18);
+			@include responsive($mobile) {
+				@include font-size(14);
+			}
+		}
+		.cheese-name {
+			font-family: $museo-900;
+			@include font-size(22);
+			line-height: 22px;
+			@include responsive($mobile) {
+				@include font-size(18);
+				line-height: 18px;
+			}
+		}
+		.cheese-location {
+			font-family: $museo-700;
+			padding-bottom: 0;
+			@include font-size(18);
+			@include responsive($mobile) {
+				@include font-size(14);
+			}
+		}
+		.cheese-link,
+		.standby {
+			display: none;
+			position: absolute;
+			right: 15px;
+			top: -5px;
+			font-family: $museo-900;
+			color: #58595b;
+			@include font-size(13);
+			text-align: center;
+			text-decoration: none;
+			@include responsive($mobile) {
+				@include font-size(11);
+				line-height: 11px;
+			}
+			.icon-cheese {
+			  position: relative;
+			  left: 15px;
+			  top: -5px;
+				display: block;
+				background: url(/assets/images/icon-cheese.png) no-repeat 0 0;
+				width: 51px;
+				height: 53px;
+			}
+			.cheese-dash {
+				display: block;
+				&:before,
+				&:after {
+					display: inline-block;
+					position: relative;
+					top: -3px;
+					content: '';
+					width: 12px;
+					border-bottom: 1px solid #58595b;
+					@include responsive($mobile) {
+						width: 5px;
+					}
+				}
+				&:before {
+					margin: 0 5px 0 0;
+				}
+				&:after {
+					margin: 0 0 0 5px;
+				}
+			}
+		}
+		.standby {
+			display: block;
+			color: rgba(88,89,91,0.5);
+			top: 37px;
+			@include responsive($mobile) {
+				top: 33px;
+			}
+			.cheese-dash {
+				&:before,
+				&:after {
+					border-bottom: 1px solid rgba(88,89,91,0.5);
+				}
+			}
+		}
+	}
+
+	#map-wrapper {
+		position: relative;
+		float: right;
+		margin: 0 0 20px 0;
+		width: 795px;
+		height: 622px;
+
+		@include responsive(1200px){
+	   transform: translate(-99999px,0);
+	   position: absolute !important;
+		}
+
+	.cheese-tooltip {
+		.cheese-image {
+			float: left;
+			padding: 10px 30px;
+			background-color: #b2e2f0;
+			font-family: $museo-900;
+			color: #0a95ab;
+			text-transform: uppercase;
+			@include font-size(15);
+		  text-align: center;
+		}
+	  &.standby {
+	  	.cheese-wrapper {
+	  		padding: 10px 0 0px 10px;
+	  	}
+			.cheese-image {
+			  width: 60px;
+			  height: 50px;
+				padding: 10px;
+			}
+	  }
+		.cheese-wrapper {
+			float: left;
+			padding: 20px 0 0px 10px;
+			text-transform: uppercase;
+		}
+		.cheese-city {
+			font-family: $museo-500;
+			color: #58595b;
+			@include font-size(12);
+		}
+		.cheese-name,
+		.cheese-date {
+			font-family: $museo-900;
+			color: #58595b;
+			@include font-size(13);
+		}
+		.cheese-recipe {
+			font-family: $museo-900;
+			color: #f0b16a;
+			max-width: 250px;
+			@include font-size(15);
+		}
+		.day {
+			display: block;
+		}
+	}
+	}
+
+.recipe {
+	color: #58595b;
+	padding: 0;
+	@include responsive(1240px) {
+		padding: 0 10px;
+	}
+	.title-recipe {
+		display: inline-block;
+		background-color: #ef7622;
+		color: #fff;
+		padding: 15px 20px 10px;
+		text-transform: uppercase;
+		margin: 0 0 30px;
+		font-family: $museo-900;
+	}
+	.main-title {
+		font-family: $museo-900;
+		@include font-size(55);
+		color: #58595b;
+		@include responsive($mobile) {
+			@include font-size(40);
+		}
+	}
+	.sub-title {
+		color: #ef7622;
+		padding: 15px 0 12px 0;
+		font-weight: bold;
+		@include font-size(21);
+		font-family: $museo-700;
+	}
+	.ingredients-list {
+		font-weight: bold;
+	}
+	.ingredients-list,
+	.prep-list,
+	.detail-list {
+		@include font-size(20);
+		line-height: 20px;
+		font-family: $museo-500;
+		strong {
+			font-family: $museo-900;
+			font-weight: 100;
+			display: block;
+			text-transform: uppercase;
+			padding: 10px 0 0 0;
+		}
+		.orange-cheese {
+			color: #ef7622;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.prep-list {
+		margin: 0 0 20px 0;
+	}
+	.ingredients-list,
+	.prep-list {
+		li {
+			padding: 0 0 7px 0;
+		}
+	}
+}
+
+.cta-cheese {
+	position: relative;
+	background-color: #b2e2f0;
+	min-height: 285px;
+	padding: 20px 0 0 0;
+	margin: 20px 0 20px;
+	img {
+		margin: 0 auto;
+		display: block;
+	}
+	.cta-link {
+	  position: absolute;
+	  right: 0;
+	  left: 0;
+	  bottom: 45px;
+	  background-color: #fff;
+	  color: #0092aa;
+	  text-decoration: none;
+	  font-family: MuseoSans700Regular,Arial,Helvetica,sans-serif;
+	  padding: 10px 15px;
+	  display: block;
+	  width: 60%;
+	  margin: 0 auto;
+	  text-align: center;
+	}
+}
+
+.layout-article .layout-article-aside {
+	padding:0 0 40px 0;
+}
+
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
+.video-container iframe {
+	position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}

@@ -1,0 +1,31 @@
+
+@include keyframe(fade-out) {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@include keyframe(fade-in) {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@include keyframe(scale-in) {
+	0% { @include scale(0); opacity: 0 }
+	25% { opacity:1 }
+	100% { @include scale(1); }
+}
+
+@include keyframe(scale-out) {
+	0% { @include scale(1); }
+	100% { @include scale(0); }
+}
+
+@include keyframe(translate-in) {
+	0% { @include translate(0, -100%); }
+	100% { @include translate(0, 0); }
+}
+
+@include keyframe(stretchdelay) {
+	 0%, 40%, 100% { @include scaleY(0.4); }  
+    20% { @include scaleY(1.0); }
+}

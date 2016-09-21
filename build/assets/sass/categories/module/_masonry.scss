@@ -1,0 +1,67 @@
+$masonryGutter:$gutter_width/$layout_width*100%;
+
+.masonry-wrapper{
+	margin:0 auto;
+	max-width:$layout_width;
+	position:relative;
+}
+
+.masonry-list{
+	margin-left:-$masonryGutter/2;
+	width:100% + $masonryGutter;
+	
+	.masonry-item{
+		float:left;
+		margin:0 0 $masonryGutter;
+		padding:0 $masonryGutter/2;
+		width:33.33%;
+		@include border-box();
+		
+		> *{margin-bottom:0; padding-bottom:0;}
+	}
+}
+
+
+@include responsive($tablet){
+	$masonryGutter:$gutter_width/$tablet*100%;
+	
+	.masonry-list{
+		margin-left:-$masonryGutter/2;
+		width:100% + $masonryGutter;
+		
+		.masonry-item{
+			margin:0 0 $masonryGutter;
+			padding:0 $masonryGutter/2;
+			width:50%;
+		}
+	}
+}
+
+// For iphone 5 gutters landscape
+@include responsive(568px){
+	$masonryGutter:$gutter_width/568px*100%;
+	
+	.masonry-list{
+		margin-left:-$masonryGutter/2;
+		width:100% + $masonryGutter;
+		
+		.masonry-item{
+			margin:0 0 $masonryGutter;
+			padding:0 $masonryGutter/2;
+			width:50%;
+		}
+	}
+}
+
+@include responsive($mobile){
+	.masonry-list{
+		margin-left:0;
+		width:100%;
+		
+		.masonry-item{
+			margin:0 0 $gutter_width;
+			padding:0;
+			width:100%;
+		}
+	}
+}

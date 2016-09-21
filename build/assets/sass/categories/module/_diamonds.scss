@@ -1,0 +1,50 @@
+.diamond{
+	display:table;
+	height:95px;
+	line-height:100%;
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	top: 10px;
+	width:95px;
+	z-index: 5;
+	@include sprite(-2px, -155px);
+	
+	.diamond-inner {			
+		display:table-cell;		
+		line-height: 100%;
+		vertical-align:middle;
+		@include font-size(12);
+		
+		span {
+			color: $black;
+			font-family: $museo-900;	
+			text-transform: uppercase;	
+		}
+	}
+}
+
+.diamond-video{
+	.icon-play-sm {
+		margin-bottom: 8px;
+	}
+}
+
+.diamond-blog{
+	span{
+		display: block;
+		position:relative;
+		margin-bottom: 5px;
+		
+		&:before{
+			background:$black;
+			bottom:-5px;
+			content:"";
+			height:1px;
+			left:50%;
+			margin:0 0 0 -8.5px;
+			position:absolute;
+			width:$gutter_width;
+		}	
+	}
+}

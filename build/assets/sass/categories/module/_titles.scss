@@ -1,0 +1,45 @@
+.title{}
+
+.title-underlined{
+	font-family:$museo-900;
+	margin-bottom:$gutter_width;
+	padding:22px 0 $gutter_width*2;
+	position:relative;
+	text-align:center;
+	@include font-size(16);
+	
+	&:before{
+		background:$black;
+		bottom:$gutter_width;
+		content:"";
+		height:1px;
+		left:50%;
+		margin:0 0 0 -12.5px;
+		position:absolute;
+		width:$gutter_width;
+	}
+	
+	&.title-underlined-inverted {
+		color: $white;
+		&:before {
+			background: $white;
+		}
+	}
+	
+	&.title-underlined-main{
+		@include font-size(25);
+	}
+}
+
+.title-section{
+	color:$grey;
+	font-family:$museo-700;
+	text-transform:uppercase;
+	@include font-size(12);
+	
+	span{
+		color:$acapulco;
+		display:block;
+		line-height:110%;
+	}
+}
