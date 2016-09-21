@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "We collect data and stream it thru our world class cloud.",
   "main": "index.js",
-  "scripts": {
-    "start":"./index.js"
-  },
   "private": true,
   "author": "Jonathan Harvey",
   "license": "ISC",
