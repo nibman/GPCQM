@@ -4,7 +4,7 @@
   "description": "We collect data and stream it thru our world class cloud.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"index.js"
   },
   "private": true,
   "author": "Jonathan Harvey",
