@@ -1,4 +1,0 @@
-site_name: Biométrie Athletes API
-theme: material
-pages:
-- API de gestion des athlètes: index.md

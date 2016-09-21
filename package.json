@@ -3,19 +3,36 @@
   "version": "0.1.0",
   "description": "We collect data and stream it thru our world class cloud.",
   "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "express": "~4.11.x",
-    "kerberos": "~0.0.x",
-    "parse": "~1.8.0",
-    "parse-server": "~2.2.2",
-    "dnode":"1.2.2",
-    "mongodb":"2.1.21"
-  },
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": ">=4.3"
+  "private": true,
+  "author": "Jonathan Harvey",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.12.10",
+    "del": "^2.1.0",
+    "express": "~4.9.x",
+    "gulp": "^3.9.1",
+    "gulp-absurd": "0.0.2",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.9",
+    "gulp-concat": "2.6.0",
+    "gulp-css-globbing": "^0.1.8",
+    "gulp-htmlclean": "^2.7.6",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-nunjucks-render": "^2.0.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-strip-css-comments": "^1.2.0",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.5",
+    "run-sequence": "^1.1.0",
+    "util": "^0.10.3"
   }
 }
+
