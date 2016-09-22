@@ -67,7 +67,7 @@
     <div id="cheese-moreinfo">
       <div class="cheese-wrapper">
         <h3 class="moreinfo-title"><span class="moreinfo-under">Découvrez le Québec avec</span><span class="moreinfo-dash">La tournée des fromages d’ici</span></h3>
-        <p>La tournée des fromages d’ici nous permet de découvrir le Québec à travers différents fromages, des histoires de famille et de délicieuses recettes. En passant du grilled-cheese à la petite bouchée, nous croyons fermement que le fromage amène son petit plus à chaque occasion. Pour en apprendre plus sur toutes les possibilités de recettes et les fromages à découvrir, Fromages d’ici est votre référence!</p>
+        <p>La tournée des fromages d’ici nous permet de découvrir le Québec à travers différents fromages, des histoires de famille et de délicieuses recettes. Du <em>grilled-cheese</em> à la petite bouchée, le fromage amène son petit plus à chaque occasion. Pour en apprendre davantage sur toutes les possibilités de recettes et les fromages à découvrir, Fromages d’ici est votre référence!</p>
         <a href="http://zeste.tv" target="_blank" class="icon-zeste"><div class="icon-text">En collaboration avec</div><div class="icon"></div></a>
       </div>
     </div>
